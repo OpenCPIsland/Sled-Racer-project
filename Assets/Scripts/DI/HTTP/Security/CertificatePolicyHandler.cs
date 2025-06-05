@@ -6,50 +6,43 @@ using DI.HTTP.Security.Pinning;
 
 namespace DI.HTTP.Security
 {
-	public class CertificatePolicyHandler : ICertificatePolicy
-	{
-		private static CertificatePolicyHandler instance = null;
+    public class CertificatePolicyHandler
+    {
+        private static CertificatePolicyHandler instance = null;
 
-		private IPinset pinset = null;
+        private IPinset pinset = null;
 
-		private CertificatePolicyHandler()
-		{
-			setPinset(DefaultPinsetFactory.getFactory().getPinset());
-		}
+        private CertificatePolicyHandler()
+        {
+            setPinset(DefaultPinsetFactory.getFactory().getPinset());
 
-		public IPinset getPinset()
-		{
-			return pinset;
-		}
+            ServicePointManager.ServerCertificateValidationCallback = ValidateServerCertificate;
+        }
 
-		public void setPinset(IPinset pinset)
-		{
-			this.pinset = pinset;
-		}
+        public IPinset getPinset()
+        {
+            return pinset;
+        }
 
-		public static CertificatePolicyHandler getPolicyHandler()
-		{
-			if (instance == null)
-			{
-				instance = new CertificatePolicyHandler();
-			}
-			return instance;
-		}
+        public void setPinset(IPinset pinset)
+        {
+            this.pinset = pinset;
+        }
 
-		public bool CheckValidationResult(ServicePoint srvPoint, X509Certificate certificate, WebRequest request, int certificateProblem)
-		{
-			return true;
-		}
+        public static CertificatePolicyHandler getPolicyHandler()
+        {
+            if (instance == null)
+            {
+                instance = new CertificatePolicyHandler();
+            }
+            return instance;
+        }
 
-		public static bool ValidateServerCertificate(object sender, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors)
-		{
-			Console.WriteLine("Certificate: {0}", certificate.GetCertHashString());
-			if (sslPolicyErrors == SslPolicyErrors.None)
-			{
-				return true;
-			}
-			Console.WriteLine("Certificate error: {0}", sslPolicyErrors);
-			return false;
-		}
-	}
+        private static bool ValidateServerCertificate(object sender, X509Certificate certificate, X509Chain chain, SslPolicyErrors sslPolicyErrors)
+        {
+            // Only for demo/dev! Accepts all certificates.
+            // Replace with pinning logic if needed.
+            return true;
+        }
+    }
 }
