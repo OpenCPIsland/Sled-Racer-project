@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+#if ENABLE_INPUT_SYSTEM
+using UnityEngine.InputSystem;
+#endif
 
 namespace Disney.ClubPenguin.CPModuleUtils
 {
@@ -60,7 +63,16 @@ namespace Disney.ClubPenguin.CPModuleUtils
 			{
 				pointerHandlerStack.Pop();
 			}
-			if (pointerHandlerStack.Count != 0 && ListenForInput && UnityEngine.Input.GetKeyDown(KeyCode.Escape))
+#if ENABLE_INPUT_SYSTEM
+			bool backPressed = false;
+			if (ListenForInput && Keyboard.current != null && Keyboard.current.escapeKey.wasPressedThisFrame)
+			{
+				backPressed = true;
+			}
+#else
+			bool backPressed = false;
+#endif
+			if (pointerHandlerStack.Count != 0 && backPressed)
 			{
 				IPointerClickHandler pointerClickHandler = pointerHandlerStack.Pop();
 				PointerEventData pointerEventData = new PointerEventData(null);

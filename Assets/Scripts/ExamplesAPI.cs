@@ -1,5 +1,8 @@
 using Fabric;
 using UnityEngine;
+#if ENABLE_INPUT_SYSTEM
+using UnityEngine.InputSystem;
+#endif
 
 public class ExamplesAPI : MonoBehaviour
 {
@@ -11,39 +14,40 @@ public class ExamplesAPI : MonoBehaviour
 
 	private void Update()
 	{
-		if (UnityEngine.Input.GetKeyDown(KeyCode.Alpha1))
+#if ENABLE_INPUT_SYSTEM
+		if (Keyboard.current != null && Keyboard.current.digit1Key.wasPressedThisFrame)
 		{
 			EventManager.Instance.PostEvent("Simple");
 		}
-		else if (UnityEngine.Input.GetKeyDown(KeyCode.Alpha2))
+		else if (Keyboard.current != null && Keyboard.current.digit2Key.wasPressedThisFrame)
 		{
 			EventManager.Instance.PostEvent("Simple", base.gameObject);
 		}
-		else if (UnityEngine.Input.GetKeyDown(KeyCode.Alpha3))
+		else if (Keyboard.current != null && Keyboard.current.digit3Key.wasPressedThisFrame)
 		{
 			EventManager.Instance.PostEvent("Simple", EventAction.PlaySound, null, base.gameObject);
 		}
-		else if (UnityEngine.Input.GetKeyDown(KeyCode.Alpha4))
+		else if (Keyboard.current != null && Keyboard.current.digit4Key.wasPressedThisFrame)
 		{
 			EventManager.Instance.PostEvent("Simple", EventAction.StopSound, null, base.gameObject);
 		}
-		else if (UnityEngine.Input.GetKeyDown(KeyCode.Alpha5))
+		else if (Keyboard.current != null && Keyboard.current.digit5Key.wasPressedThisFrame)
 		{
 			EventManager.Instance.SetParameter("Timeline", "Parameter", 0.5f, base.gameObject);
 		}
-		else if (UnityEngine.Input.GetKeyDown(KeyCode.Alpha6))
+		else if (Keyboard.current != null && Keyboard.current.digit6Key.wasPressedThisFrame)
 		{
 			EventManager.Instance.SetDSPParameter("Event", DSPType.LowPass, "CutoffFrequency", 5000f, 5f, 0.5f, base.gameObject);
 		}
-		else if (UnityEngine.Input.GetKeyDown(KeyCode.Alpha7))
+		else if (Keyboard.current != null && Keyboard.current.digit7Key.wasPressedThisFrame)
 		{
 			EventManager.Instance.PostEvent("DynamicMixer", EventAction.AddPreset, "MuteAll", null);
 		}
-		else if (UnityEngine.Input.GetKeyDown(KeyCode.Alpha8))
+		else if (Keyboard.current != null && Keyboard.current.digit8Key.wasPressedThisFrame)
 		{
 			EventManager.Instance.PostEvent("DynamicMixer", EventAction.RemovePreset, "MuteAll", null);
 		}
-		else if (UnityEngine.Input.GetKeyDown(KeyCode.Alpha9))
+		else if (Keyboard.current != null && Keyboard.current.digit9Key.wasPressedThisFrame)
 		{
 			Fabric.Component componentByName = FabricManager.Instance.GetComponentByName("Audio_Fabric_SFX_Test");
 			if (componentByName != null)
@@ -55,21 +59,21 @@ public class ExamplesAPI : MonoBehaviour
 				}
 			}
 		}
-		else if (UnityEngine.Input.GetKeyDown(KeyCode.A))
+		else if (Keyboard.current != null && Keyboard.current.aKey.wasPressedThisFrame)
 		{
 			FabricManager.Instance.LoadAsset("NameOfPrefab", "Audio_SFX");
 		}
-		else if (UnityEngine.Input.GetKeyDown(KeyCode.B))
+		else if (Keyboard.current != null && Keyboard.current.bKey.wasPressedThisFrame)
 		{
 			FabricManager.Instance.UnloadAsset("Audio_SFX");
 		}
-		else if (UnityEngine.Input.GetKeyDown(KeyCode.C))
+		else if (Keyboard.current != null && Keyboard.current.cKey.wasPressedThisFrame)
 		{
 			InitialiseParameters initialiseParameters = new InitialiseParameters();
 			initialiseParameters._pitch.Value = 2f;
 			EventManager.Instance.PostEvent("Simple", EventAction.PlaySound, null, base.gameObject, initialiseParameters);
 		}
-		else if (UnityEngine.Input.GetKeyDown(KeyCode.D))
+		else if (Keyboard.current != null && Keyboard.current.dKey.wasPressedThisFrame)
 		{
 			if (EventManager.Instance.IsEventActive("Simple", base.gameObject))
 			{
@@ -80,7 +84,7 @@ public class ExamplesAPI : MonoBehaviour
 				UnityEngine.Debug.Log("Event Simple is Inactive");
 			}
 		}
-		else if (UnityEngine.Input.GetKeyDown(KeyCode.E))
+		else if (Keyboard.current != null && Keyboard.current.eKey.wasPressedThisFrame)
 		{
 			Fabric.Component[] componentsByName = FabricManager.Instance.GetComponentsByName("Audio_Simple", base.gameObject);
 			if (componentsByName != null && componentsByName.Length > 0)
@@ -92,10 +96,11 @@ public class ExamplesAPI : MonoBehaviour
 				}
 			}
 		}
-		if (UnityEngine.Input.GetKeyDown(KeyCode.F))
+		if (Keyboard.current != null && Keyboard.current.fKey.wasPressedThisFrame)
 		{
 			eventID = EventManager.GetIDFromEventName("Simple");
 			EventManager.Instance.PostEvent(eventID, base.gameObject);
 		}
+#endif
 	}
 }

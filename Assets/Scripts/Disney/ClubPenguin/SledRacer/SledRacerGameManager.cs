@@ -8,6 +8,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+#if ENABLE_INPUT_SYSTEM
+using UnityEngine.InputSystem;
+#endif
 
 namespace Disney.ClubPenguin.SledRacer
 {
@@ -424,14 +427,16 @@ namespace Disney.ClubPenguin.SledRacer
 
 		private void Update()
 		{
-			if (UnityEngine.Input.GetKeyDown("1"))
+#if ENABLE_INPUT_SYSTEM
+			if (Keyboard.current != null && Keyboard.current.digit1Key.wasPressedThisFrame)
 			{
 				DevTrace("Pressed 1 - ");
 			}
-			if (UnityEngine.Input.GetKeyDown("2"))
+			if (Keyboard.current != null && Keyboard.current.digit2Key.wasPressedThisFrame)
 			{
 				DevTrace("Pressed 2 - ");
 			}
+#endif
 		}
 
 		private void changeStateToGamePlay()
