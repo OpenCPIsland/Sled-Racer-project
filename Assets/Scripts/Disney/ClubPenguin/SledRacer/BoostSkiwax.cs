@@ -50,12 +50,12 @@ namespace Disney.ClubPenguin.SledRacer
 		public override Vector3 FixedUpdate()
 		{
 			Vector3 appliedForces = player.AppliedForces;
-			Vector3 velocity = player.GetComponent<Rigidbody>().velocity;
+			Vector3 velocity = player.GetComponent<Rigidbody>().linearVelocity;
 			if (unappliedBoost)
 			{
 				unappliedBoost = false;
 				velocity.z += VelocityBonus;
-				player.GetComponent<Rigidbody>().velocity = velocity;
+				player.GetComponent<Rigidbody>().linearVelocity = velocity;
 				DevTrace("Applying Skiwax velocity boost (+" + VelocityBonus + " = " + velocity + ")");
 			}
 			return appliedForces;

@@ -47,7 +47,7 @@ namespace Disney.ClubPenguin.SledRacer
 		public override Vector3 FixedUpdate()
 		{
 			Vector3 result = player.AppliedForces;
-			Vector3 velocity = player.GetComponent<Rigidbody>().velocity;
+			Vector3 velocity = player.GetComponent<Rigidbody>().linearVelocity;
 			if (hasExecuted && player.currentLifeState != PlayerController.PlayerLifeState.Crashed)
 			{
 				if (player.currentMoveState != 0)
@@ -59,7 +59,7 @@ namespace Disney.ClubPenguin.SledRacer
 					}
 					else
 					{
-						Vector3 velocity2 = player.GetComponent<Rigidbody>().velocity;
+						Vector3 velocity2 = player.GetComponent<Rigidbody>().linearVelocity;
 						if (velocity2.y > 0f && !checkParachute)
 						{
 							DevTrace("BoostParachute GONNA CHECK '" + player.currentMoveState + "'");
@@ -67,7 +67,7 @@ namespace Disney.ClubPenguin.SledRacer
 						}
 						else
 						{
-							Vector3 velocity3 = player.GetComponent<Rigidbody>().velocity;
+							Vector3 velocity3 = player.GetComponent<Rigidbody>().linearVelocity;
 							if (velocity3.y < 0f && checkParachute)
 							{
 								DevTrace("BoostParachute CHECKING ");
@@ -83,7 +83,7 @@ namespace Disney.ClubPenguin.SledRacer
 										effectInstance.SetActive(value: true);
 									}
 									velocity = Vector3.Scale(velocity, parachuteDeployVelocity);
-									player.GetComponent<Rigidbody>().velocity = velocity;
+									player.GetComponent<Rigidbody>().linearVelocity = velocity;
 								}
 							}
 						}

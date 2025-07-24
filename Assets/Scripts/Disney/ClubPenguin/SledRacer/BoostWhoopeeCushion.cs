@@ -83,7 +83,7 @@ namespace Disney.ClubPenguin.SledRacer
 			Vector3 position = player.transform.position;
 			position += Vector3.up * config.BoostWhoopieCushionAnimBounceHeight;
 			player.transform.position = position;
-			player.GetComponent<Rigidbody>().velocity = a;
+			player.GetComponent<Rigidbody>().linearVelocity = a;
 			player.AddBoost(a.z);
 			player.enableUserInput();
 		}

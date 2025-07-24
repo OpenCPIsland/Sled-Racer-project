@@ -286,13 +286,13 @@ namespace Disney.ClubPenguin.SledRacer
 				float num = storedTravel;
 				Vector3 position2 = trackswap.transform.position;
 				storedTravel = num + position2.z;
-				activeTrackContainer.GetComponent<Rigidbody>().velocity = trackswap.GetComponent<Rigidbody>().velocity;
+				activeTrackContainer.GetComponent<Rigidbody>().linearVelocity = trackswap.GetComponent<Rigidbody>().linearVelocity;
 				foreach (POTrackSegment track2 in ActiveTracks)
 				{
 					track2.ReparentTo(activeTrackContainer.transform);
 				}
 				trackswap.transform.position = Vector3.zero;
-				trackswap.GetComponent<Rigidbody>().velocity = Vector3.zero;
+				trackswap.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
 				TrackContainers.Enqueue(trackswap);
 			}
 			else

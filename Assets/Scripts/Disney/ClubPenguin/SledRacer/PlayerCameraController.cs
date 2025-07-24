@@ -73,13 +73,13 @@ namespace Disney.ClubPenguin.SledRacer
 
 		private void AdjustVerticalOffset()
 		{
-			Vector3 velocity = Player.GetComponent<Rigidbody>().velocity;
+			Vector3 velocity = Player.GetComponent<Rigidbody>().linearVelocity;
 			if (velocity.y < -5f)
 			{
 				heightOffsetUp = Mathf.Min(4f, heightOffsetUp + 0.03f);
 				return;
 			}
-			Vector3 velocity2 = Player.GetComponent<Rigidbody>().velocity;
+			Vector3 velocity2 = Player.GetComponent<Rigidbody>().linearVelocity;
 			if (velocity2.y > 5f)
 			{
 				heightOffsetDown = Mathf.Max(-4f, heightOffsetDown - 0.03f);

@@ -143,7 +143,7 @@ namespace Disney.ClubPenguin.SledRacer
 			targetFlightAngle = Quaternion.FromToRotation(Vector3.up, flightAngles);
 			normalsOffsetAngle = Quaternion.Lerp(normalsOffsetAngle, targetFlightAngle, 10f * Time.deltaTime);
 			Quaternion rotation = player.PlayerScaleObject.transform.rotation;
-			player.PlayerScaleObject.transform.LookAt(player.transform.position + player.GetComponent<Rigidbody>().velocity);
+			player.PlayerScaleObject.transform.LookAt(player.transform.position + player.GetComponent<Rigidbody>().linearVelocity);
 			Quaternion rotation2 = player.PlayerScaleObject.transform.rotation;
 			rotation2.z = normalsOffsetAngle.z;
 			if (normalsOffsetAngle.x < 0f && player.currentLifeState != PlayerController.PlayerLifeState.Invincible)

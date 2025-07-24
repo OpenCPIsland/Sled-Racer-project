@@ -436,7 +436,7 @@ CurrentRider.SetActive(true);
 				num6 = config.PlayerSteerForce;
 				num6 *= vector.x;
 				num6 *= vector2.x;
-				num6 += ((vector.x == 0f) ? 0f : (vector.x / Mathf.Abs(vector.x))) * base.GetComponent<Rigidbody>().velocity.z / 200f * config.PlayerSteerForce;
+				num6 += ((vector.x == 0f) ? 0f : (vector.x / Mathf.Abs(vector.x))) * base.GetComponent<Rigidbody>().linearVelocity.z / 200f * config.PlayerSteerForce;
 			}
 			else if (currentLifeState == PlayerLifeState.Crashed)
 			{
@@ -451,14 +451,14 @@ CurrentRider.SetActive(true);
 			PrevForces += Vector3.forward * num4;
 			PrevForces += Vector3.back * num5;
 			PrevForces += Vector3.right * num6;
-			Vector3 velocity = base.GetComponent<Rigidbody>().velocity;
-			velocity.z = ((currentActionState != PlayerActionState.Boosting) ? Mathf.Min(config.DefaultSledMaxVelocity, base.GetComponent<Rigidbody>().velocity.z) : base.GetComponent<Rigidbody>().velocity.z);
-			velocity.z = ((currentLifeState == PlayerLifeState.Crashed || currentLifeState == PlayerLifeState.Done) ? velocity.z : Mathf.Max(base.GetComponent<Rigidbody>().velocity.z, config.PlayerMinimumForwardVelocity));
-			base.GetComponent<Rigidbody>().velocity = velocity;
+			Vector3 velocity = base.GetComponent<Rigidbody>().linearVelocity;
+			velocity.z = ((currentActionState != PlayerActionState.Boosting) ? Mathf.Min(config.DefaultSledMaxVelocity, base.GetComponent<Rigidbody>().linearVelocity.z) : base.GetComponent<Rigidbody>().linearVelocity.z);
+			velocity.z = ((currentLifeState == PlayerLifeState.Crashed || currentLifeState == PlayerLifeState.Done) ? velocity.z : Mathf.Max(base.GetComponent<Rigidbody>().linearVelocity.z, config.PlayerMinimumForwardVelocity));
+			base.GetComponent<Rigidbody>().linearVelocity = velocity;
 			PrevForces = ResolveBoosts();
 			PrevForces.y *= num;
 			base.GetComponent<Rigidbody>().AddForce(PrevForces);
-			if (base.GetComponent<Rigidbody>().velocity.magnitude >= config.SfxSledHangMinVelocity && canPlaySledHangSfx && currentLifeState != PlayerLifeState.Crashed)
+			if (base.GetComponent<Rigidbody>().linearVelocity.magnitude >= config.SfxSledHangMinVelocity && canPlaySledHangSfx && currentLifeState != PlayerLifeState.Crashed)
 			{
 				canPlaySledHangSfx = false;
 				if (UnityEngine.Random.value > config.SfxSledHangChance)
@@ -466,14 +466,14 @@ CurrentRider.SetActive(true);
 					audioService.SFX.Play(SFXEvent.SFX_SledHang);
 				}
 			}
-			else if (base.GetComponent<Rigidbody>().velocity.magnitude < config.SfxSledHangMinVelocity)
+			else if (base.GetComponent<Rigidbody>().linearVelocity.magnitude < config.SfxSledHangMinVelocity)
 			{
 				canPlaySledHangSfx = true;
 			}
-			RiderAnimator.SetFloat("RiderVelocityZ", base.GetComponent<Rigidbody>().velocity.z);
-			SledAnimator.SetFloat("RiderVelocityZ", base.GetComponent<Rigidbody>().velocity.z);
-			RiderAnimator.SetFloat("RiderVelocityY", base.GetComponent<Rigidbody>().velocity.y);
-			SledAnimator.SetFloat("RiderVelocityY", base.GetComponent<Rigidbody>().velocity.y);
+			RiderAnimator.SetFloat("RiderVelocityZ", base.GetComponent<Rigidbody>().linearVelocity.z);
+			SledAnimator.SetFloat("RiderVelocityZ", base.GetComponent<Rigidbody>().linearVelocity.z);
+			RiderAnimator.SetFloat("RiderVelocityY", base.GetComponent<Rigidbody>().linearVelocity.y);
+			SledAnimator.SetFloat("RiderVelocityY", base.GetComponent<Rigidbody>().linearVelocity.y);
 		}
 
 		private void OnHardLandStart(AnimationEvent other)
@@ -643,7 +643,7 @@ CurrentRider.SetActive(true);
 				{
 					ResetAnimationTrigger("RiderLanding");
 					ResetAnimationTrigger("RiderLandingHard");
-					float num = Math.Abs(base.GetComponent<Rigidbody>().velocity.y);
+					float num = Math.Abs(base.GetComponent<Rigidbody>().linearVelocity.y);
 					string anim = "RiderLanding";
 					if (currentLifeState == PlayerLifeState.Crashed)
 					{
@@ -654,7 +654,7 @@ CurrentRider.SetActive(true);
 						if (num > config.ImpactGroundHardMinVelocity)
 						{
 							anim = "RiderLandingHard";
-							if (base.GetComponent<Rigidbody>().velocity.y <= 100f)
+							if (base.GetComponent<Rigidbody>().linearVelocity.y <= 100f)
 							{
 								audioService.SFX.Play(SFXEvent.SFX_SledImpactSnow);
 							}
@@ -899,7 +899,7 @@ CurrentRider.SetActive(true);
 			PlayerCamera.enabled = true;
 			base.GetComponent<Rigidbody>().useGravity = true;
 			base.GetComponent<Rigidbody>().isKinematic = false;
-			base.GetComponent<Rigidbody>().velocity = Vector3.zero;
+			base.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
 			base.enabled = true;
 			impactedObjectType = null;
 			SelectedSled = ((!(SelectedSled == null)) ? SelectedSled : DefaultSled);
@@ -945,7 +945,7 @@ CurrentRider.SetActive(true);
 			CollisionObject.DispatchReset();
 			base.GetComponent<Rigidbody>().useGravity = true;
 			base.GetComponent<Rigidbody>().isKinematic = false;
-			base.GetComponent<Rigidbody>().velocity = Vector3.zero;
+			base.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
 			base.enabled = true;
 			impactedObjectType = null;
 			ResetAnimationVariables(RiderAnimator);
@@ -1055,9 +1055,9 @@ CurrentRider.SetActive(true);
 
 		public void AddBoost(float _boostAmount = 200f, bool _invulnerable = false)
 		{
-			Vector3 velocity = base.GetComponent<Rigidbody>().velocity;
+			Vector3 velocity = base.GetComponent<Rigidbody>().linearVelocity;
 			velocity.z = _boostAmount;
-			base.GetComponent<Rigidbody>().velocity = velocity;
+			base.GetComponent<Rigidbody>().linearVelocity = velocity;
 			ChangeActionState(PlayerActionState.Boosting);
 			TriggerAnimation("RiderBoost");
 			if (currentLifeState == PlayerLifeState.Alive && _invulnerable)
@@ -1100,7 +1100,7 @@ CurrentRider.SetActive(true);
 
 		private void AdjustWindBuffetLoop()
 		{
-			WindMagnitude.x = base.GetComponent<Rigidbody>().velocity.magnitude / config.SfxVelocityForFullGust;
+			WindMagnitude.x = base.GetComponent<Rigidbody>().linearVelocity.magnitude / config.SfxVelocityForFullGust;
 			WindMagnitude.y = (hitDownVector.distance - 1f) / config.SfxAltitudeForFullGust;
 			WindBuffetLoop.Volume = WindMagnitude.magnitude;
 		}

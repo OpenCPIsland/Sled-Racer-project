@@ -16,7 +16,7 @@ namespace Disney.ClubPenguin.SledRacer
 		private void Update()
 		{
 			var emission = snowSpray.emission;
-			emission.rateOverTime = player.GetComponent<Rigidbody> ().velocity.magnitude * 10f;
+			emission.rateOverTime = player.GetComponent<Rigidbody> ().linearVelocity.magnitude * 10f;
 		}
 	}
 }

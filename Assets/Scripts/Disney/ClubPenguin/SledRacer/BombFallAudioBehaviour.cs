@@ -22,18 +22,18 @@ namespace Disney.ClubPenguin.SledRacer
 
 		private void Update()
 		{
-			Vector3 velocity = player.GetComponent<Rigidbody>().velocity;
+			Vector3 velocity = player.GetComponent<Rigidbody>().linearVelocity;
 			if (player.currentLifeState == PlayerController.PlayerLifeState.Crashed)
 			{
 				if (player.currentMoveState != 0)
 				{
-					Vector3 velocity2 = player.GetComponent<Rigidbody>().velocity;
+					Vector3 velocity2 = player.GetComponent<Rigidbody>().linearVelocity;
 					if (velocity2.y > 0f && !checkBombfall)
 					{
 						checkBombfall = true;
 						return;
 					}
-					Vector3 velocity3 = player.GetComponent<Rigidbody>().velocity;
+					Vector3 velocity3 = player.GetComponent<Rigidbody>().linearVelocity;
 					if (velocity3.y < 0f && checkBombfall)
 					{
 						checkBombfall = false;

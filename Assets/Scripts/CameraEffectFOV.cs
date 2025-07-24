@@ -50,7 +50,7 @@ public class CameraEffectFOV : MonoBehaviour
 	{
 		CheckForChanges();
 		float cameraDefaultFOV = config.CameraDefaultFOV;
-		Vector3 vector = base.transform.InverseTransformDirection(Player.GetComponent<Rigidbody>().velocity);
+		Vector3 vector = base.transform.InverseTransformDirection(Player.GetComponent<Rigidbody>().linearVelocity);
 		float num = Mathf.Clamp(vector.z - config.CameraFOVSpeedMinimum, 0f, config.CameraMaximumFOV);
 		cameraDefaultFOV = Mathf.Lerp(GetComponent<Camera>().fieldOfView, config.CameraDefaultFOV + num * config.CameraZoomRatio, 0.1f);
 		GetComponent<Camera>().fieldOfView = cameraDefaultFOV;
