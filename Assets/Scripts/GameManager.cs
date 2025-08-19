@@ -30,4 +30,12 @@ public class GameManager : MonoBehaviour
 	{
 		return (T)Instance;
 	}
+
+	private void Awake()
+	{
+		if (Application.platform == RuntimePlatform.Android)
+		{
+			Application.targetFrameRate = 120; 
+		}
+	}
 }
