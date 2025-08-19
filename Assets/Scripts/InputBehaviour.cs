@@ -64,73 +64,33 @@ public class InputBehaviour : AbstractInputBehaviour
     }
 
     // TOUCH
-    public bool TouchDown()
+    private Vector2[] GetActiveTouches()
     {
-        if (Touchscreen.current != null)
-        {
-            foreach (var touch in Touchscreen.current.touches)
-            {
-                if (touch.press.wasPressedThisFrame)
-                    return true;
-            }
-        }
-        return false;
-    }
-    public bool TouchUp()
-    {
-        if (Touchscreen.current != null)
-        {
-            foreach (var touch in Touchscreen.current.touches)
-            {
-                if (touch.press.wasReleasedThisFrame)
-                    return true;
-            }
-        }
-        return false;
-    }
-    public Vector2 TouchPosition()
-    {
+        List<Vector2> activeTouches = new List<Vector2>();
         if (Touchscreen.current != null)
         {
             foreach (var touch in Touchscreen.current.touches)
             {
                 if (touch.press.isPressed)
-                    return touch.position.ReadValue();
+                    activeTouches.Add(touch.position.ReadValue());
             }
         }
-        return Vector2.zero;
-    }
-
-    // Touch as Left/Right (basic: left/right half of screen)
-    public bool TouchLeft()
-    {
-        Vector2 pos = TouchPosition();
-        return pos != Vector2.zero && pos.x < Screen.width * 0.5f;
-    }
-    public bool TouchRight()
-    {
-        Vector2 pos = TouchPosition();
-        return pos != Vector2.zero && pos.x >= Screen.width * 0.5f;
-    }
-    public bool TouchUpArrow()
-    {
-        // Touch up is mapped to "touch down" event (e.g. tap anywhere = jump)
-        return TouchDown();
+        return activeTouches.ToArray();
     }
 
     // Example override for jump/right/left if you want to connect them to these input helpers
     internal override bool jump()
     {
-        // Up arrow, W, Space, or any new touch
         bool keyJump = UpArrow();
-        return keyJump || TouchUpArrow();
+        Vector2[] touchPositions = GetActiveTouches();
+        return manager.jump(touchPositions, keyJump);
     }
     internal override bool right()
     {
-        return RightArrow() || TouchRight();
+        return RightArrow() || manager.right(GetActiveTouches());
     }
     internal override bool left()
     {
-        return LeftArrow() || TouchLeft();
+        return LeftArrow() || manager.left(GetActiveTouches());
     }
 }
