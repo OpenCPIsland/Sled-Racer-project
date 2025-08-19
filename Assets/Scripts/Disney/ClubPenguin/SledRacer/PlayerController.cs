@@ -11,34 +11,34 @@ namespace Disney.ClubPenguin.SledRacer
 	{
 		public enum PlayerMoveState
 		{
-			OnGround,
-			InAir,
-			Other
+			OnGround = 0,
+			InAir = 1,
+			Other = 2
 		}
 
 		public enum PlayerActionState
 		{
-			Idle,
-			Jumping,
-			Landing,
-			LandingHard,
-			Boosting,
-			Crashing
+			Idle = 0,
+			Jumping = 1,
+			Landing = 2,
+			LandingHard = 3,
+			Boosting = 4,
+			Crashing = 5
 		}
 
 		public enum PlayerLifeState
 		{
-			Alive,
-			Invincible,
-			Crashed,
-			Done
+			Alive = 0,
+			Invincible = 1,
+			Crashed = 2,
+			Done = 3
 		}
 
 		private enum PlayerCarveTurn
 		{
-			None,
-			Left,
-			Right
+			None = 0,
+			Left = 1,
+			Right = 2
 		}
 
 		public Material SkiwaxMaterial;
@@ -333,24 +333,11 @@ namespace Disney.ClubPenguin.SledRacer
 			{
 			}
 			Material[] materials = componentInChildren.materials;
-
-// Set base rider material for color
-Material material = AvatarUtil.GetRiderMaterial(playerDataService.PlayerData.Account.Colour);
-
-// Apply same material to first two slots
-materials[0] = material;
-materials[1] = material;
-
-// Always apply gold hat material to the third slot
-materials[2] = RiderGoldHatMaterial;
-
-// Assign updated materials back
-componentInChildren.materials = materials;
-
-// Reset animation and show rider
-ResetAnimationVariables(RiderAnimator);
-CurrentRider.SetActive(true);
-
+			Material material = (materials[1] = (materials[0] = AvatarUtil.GetRiderMaterial(playerDataService.PlayerData.Account.Colour)));
+			materials[2] = ((!playerDataService.PlayerData.hasTrophy) ? material : RiderGoldHatMaterial);
+			componentInChildren.materials = materials;
+			ResetAnimationVariables(RiderAnimator);
+			CurrentRider.SetActive(true);
 		}
 
 		public GameObject CreatePlayerElement(GameObject _prefab)
@@ -400,7 +387,7 @@ CurrentRider.SetActive(true);
 				vector = getInput();
 			}
 			PrevForces = Vector3.zero;
-			Vector3 vector2 = ((currentMoveState != 0) ? config.DefaultSledAerialProperties : config.DefaultSledGroundProperties);
+			Vector3 vector2 = ((currentMoveState != PlayerMoveState.OnGround) ? config.DefaultSledAerialProperties : config.DefaultSledGroundProperties);
 			float num = 1f;
 			float num2 = 0f;
 			float num3 = 0f;
@@ -443,8 +430,8 @@ CurrentRider.SetActive(true);
 				num4 = 0f;
 				num6 = config.PlayerSteerForce;
 				num6 *= vector.x;
-				float @float = RiderAnimator.GetFloat("BarrelValue");
-				SledAnimator.SetFloat("BarrelValue", @float);
+				float value = RiderAnimator.GetFloat("BarrelValue");
+				SledAnimator.SetFloat("BarrelValue", value);
 			}
 			PrevForces += Vector3.up * num2;
 			PrevForces += Vector3.down * num3;
@@ -502,7 +489,7 @@ CurrentRider.SetActive(true);
 			}
 			if (boost != null)
 			{
-				if (currentMoveState != 0)
+				if (currentMoveState != PlayerMoveState.OnGround)
 				{
 					ChangeMoveState(PlayerMoveState.OnGround);
 				}
