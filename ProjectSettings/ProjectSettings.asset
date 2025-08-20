@@ -275,8 +275,8 @@ PlayerSettings:
   AndroidTargetArchitectures: 15
   AndroidSplashScreenScale: 2
   androidSplashScreen: {fileID: 2800000, guid: 498291a6d4114b559afe89b16ee7fbd5, type: 3}
-  AndroidKeystoreName: /home/flopinou/Documents/flopinou.keystore
-  AndroidKeyaliasName: flopinouopencpi
+  AndroidKeystoreName: '{inproject}: '
+  AndroidKeyaliasName: 
   AndroidEnableArmv9SecurityFeatures: 1
   AndroidEnableArm64MTE: 0
   AndroidBuildApkPerCpuArchitecture: 0
@@ -288,7 +288,7 @@ PlayerSettings:
   AndroidEnableTango: 0
   androidEnableBanner: 1
   androidUseLowAccuracyLocation: 0
-  androidUseCustomKeystore: 1
+  androidUseCustomKeystore: 0
   m_AndroidBanners:
   - width: 320
     height: 180
@@ -957,6 +957,7 @@ PlayerSettings:
   webGLMemoryLinearGrowthStep: 16
   webGLMemoryGeometricGrowthStep: 0.2
   webGLMemoryGeometricGrowthCap: 96
+  webGLEnableWebGPU: 0
   webGLPowerPreference: 2
   webGLWebAssemblyTable: 0
   webGLWebAssemblyBigInt: 0
