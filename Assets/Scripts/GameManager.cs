@@ -33,9 +33,8 @@ public class GameManager : MonoBehaviour
 
 	private void Awake()
 	{
-		if (Application.platform == RuntimePlatform.Android)
-		{
-			Application.targetFrameRate = 120; 
-		}
+		int refreshRate = Screen.currentResolution.refreshRate;
+		if (refreshRate <= 0) refreshRate = 60;
+		Application.targetFrameRate = refreshRate;
 	}
 }
