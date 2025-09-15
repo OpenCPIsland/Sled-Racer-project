@@ -97,51 +97,6 @@ LightmapSettings:
     type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: dfbcd4c44d4c126428727ab7ba8fd8f8,
     type: 2}
---- !u!1 &1592938427
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1592938429}
-  - component: {fileID: 1592938428}
-  m_Layer: 0
-  m_Name: ShutUpSpeedBlurNonSense
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1592938428
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1592938427}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a577a080515476eeaf0024965e19974, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  maxNormalizedTime: 1000
---- !u!4 &1592938429
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1592938427}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 270.7051, y: -200.02902, z: 5065.3013}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1791169579659014283
 GameObject:
   m_ObjectHideFlags: 0
@@ -1170,4 +1125,3 @@ SceneRoots:
   - {fileID: 1791169579709345945}
   - {fileID: 1791169579709345943}
   - {fileID: 1791169579709345942}
-  - {fileID: 1592938429}
