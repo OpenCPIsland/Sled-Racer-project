@@ -18,6 +18,10 @@ namespace Disney.ClubPenguin.SledRacer
 
 		private bool hasExecuted;
 
+		private Rigidbody playerRigidbody;
+
+		private bool gravityDisabled;
+
 		public BoostParachute(PlayerController _player, float _elevation, Vector3 _drag, Vector3 _velocityLimit)
 			: base(_player)
 		{
@@ -25,7 +29,9 @@ namespace Disney.ClubPenguin.SledRacer
 			elevation = _elevation;
 			parachuteDrag = _drag;
 			parachuteDeployVelocity = _velocityLimit;
-			if (effectInstance != null)
+			playerRigidbody = _player.GetComponent<Rigidbody>();
+			gravityDisabled = false;
+			if (EffectPrefab != null)
 			{
 				effectInstance = (GameObject)Object.Instantiate(EffectPrefab);
 				effectInstance.transform.parent = _player.transform;
@@ -47,44 +53,38 @@ namespace Disney.ClubPenguin.SledRacer
 		public override Vector3 FixedUpdate()
 		{
 			Vector3 result = player.AppliedForces;
-			Vector3 velocity = player.GetComponent<Rigidbody>().linearVelocity;
 			if (hasExecuted && player.currentLifeState != PlayerController.PlayerLifeState.Crashed)
 			{
 				if (player.currentMoveState != 0)
 				{
 					if (active)
 					{
-						DevTrace("BoostParachute GLIDING");
 						result = Stall();
 					}
 					else
 					{
-						Vector3 velocity2 = player.GetComponent<Rigidbody>().linearVelocity;
-						if (velocity2.y > 0f && !checkParachute)
+						Vector3 velocity = playerRigidbody.linearVelocity;
+						if (velocity.y > 0f && !checkParachute)
 						{
-							DevTrace("BoostParachute GONNA CHECK '" + player.currentMoveState + "'");
 							checkParachute = true;
 						}
-						else
+						else if (velocity.y < 0f && checkParachute)
 						{
-							Vector3 velocity3 = player.GetComponent<Rigidbody>().linearVelocity;
-							if (velocity3.y < 0f && checkParachute)
+							checkParachute = false;
+							active = AltitudeCheck();
+							if (active)
 							{
-								DevTrace("BoostParachute CHECKING ");
-								checkParachute = false;
-								active = AltitudeCheck();
-								if (active)
+								DevTrace("BoostParachute DEPLOYED");
+								Service.Get<IAudio>().SFX.Play(SFXEvent.SFX_Boost_Parachute);
+								player.TriggerAnimation("RiderParachute");
+								if (effectInstance != null)
 								{
-									DevTrace("BoostParachute DEPLOYED");
-									Service.Get<IAudio>().SFX.Play(SFXEvent.SFX_Boost_Parachute);
-									player.TriggerAnimation("RiderParachute");
-									if (effectInstance != null)
-									{
-										effectInstance.SetActive(value: true);
-									}
-									velocity = Vector3.Scale(velocity, parachuteDeployVelocity);
-									player.GetComponent<Rigidbody>().linearVelocity = velocity;
+									effectInstance.SetActive(value: true);
 								}
+								velocity = Vector3.Scale(velocity, parachuteDeployVelocity);
+								playerRigidbody.linearVelocity = velocity;
+								gravityDisabled = true;
+								playerRigidbody.useGravity = false;
 							}
 						}
 					}
@@ -93,7 +93,8 @@ namespace Disney.ClubPenguin.SledRacer
 				{
 					Service.Get<IAudio>().SFX.Stop(SFXEvent.SFX_Boost_Parachute);
 					DevTrace("BoostParachute STOWED");
-					player.GetComponent<Rigidbody>().useGravity = true;
+					playerRigidbody.useGravity = true;
+					gravityDisabled = false;
 					checkParachute = false;
 					active = false;
 					if (effectInstance != null)
@@ -116,11 +117,13 @@ namespace Disney.ClubPenguin.SledRacer
 
 		private Vector3 Stall()
 		{
-			player.GetComponent<Rigidbody>().useGravity = false;
+			if (!gravityDisabled)
+			{
+				playerRigidbody.useGravity = false;
+				gravityDisabled = true;
+			}
 			Vector3 appliedForces = player.AppliedForces;
-			DevTrace("Parachute Forces WERE " + appliedForces.ToString());
 			appliedForces = Vector3.Scale(appliedForces, parachuteDrag);
-			DevTrace("Parachute Forces ARE " + appliedForces.ToString());
 			return appliedForces;
 		}
 
