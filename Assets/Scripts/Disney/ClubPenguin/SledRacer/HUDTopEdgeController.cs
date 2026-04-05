@@ -2,6 +2,7 @@ using Disney.ClubPenguin.CPModuleUtils;
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 namespace Disney.ClubPenguin.SledRacer
 {
@@ -9,11 +10,11 @@ namespace Disney.ClubPenguin.SledRacer
 	{
 		public Image PlayerImage;
 
-		public Text CurrentScore;
+		public TMP_Text CurrentScore;
 
-		public Text HighScore;
+		public TMP_Text HighScore;
 
-		public Text PlayerName;
+		public TMP_Text PlayerName;
 
 		public Button PauseButton;
 

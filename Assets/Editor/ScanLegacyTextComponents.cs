@@ -20,7 +20,7 @@ public static class ScanLegacyTextUsage
         @"\bGUIText\s+[a-zA-Z0-9_]+\s*;"
     };
 
-    [MenuItem("Project/Scan Scripts for Legacy Text")]
+    [MenuItem("Project/Temp/Scan Scripts for Legacy Text")]
     public static void Scan()
     {
         string scriptsRoot = Path.Combine(Application.dataPath, "Scripts");
