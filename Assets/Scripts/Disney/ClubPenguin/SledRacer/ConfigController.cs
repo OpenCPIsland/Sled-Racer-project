@@ -198,6 +198,22 @@ namespace Disney.ClubPenguin.SledRacer
 
 		public int IntroFrequency = 5;
 
+		public string DesktopGraphicsQualityConditionalTier = "Standalone_High";
+
+		public int DesktopGraphicsAntiAliasSamplesMedium = 2;
+
+		public int DesktopGraphicsAntiAliasSamplesHigh = 4;
+
+		public int DesktopGraphicsVSyncCount = 1;
+
+		public string WebGraphicsQualityConditionalTier = "WebGL_High";
+
+		public int WebGraphicsAntiAliasSamplesMedium = 2;
+
+		public int WebGraphicsAntiAliasSamplesHigh = 4;
+
+		public int WebGraphicsVSyncCount = 1;
+
 		public string RewardItemType = "HEAD";
 
 		public int RewardItemId = 1996;

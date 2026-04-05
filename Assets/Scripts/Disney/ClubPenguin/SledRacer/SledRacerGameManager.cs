@@ -63,6 +63,8 @@ namespace Disney.ClubPenguin.SledRacer
 
 		private ConfigController Config;
 
+		private SledRacerGraphicsService graphicsService;
+
 		private TrackManager trackScript;
 
 		public PlayerController playerScript;
@@ -120,6 +122,9 @@ namespace Disney.ClubPenguin.SledRacer
 		{
 			waitingForInitLoad = true;
 			Config = Service.Get<ConfigController>();
+			graphicsService = new SledRacerGraphicsService(Config);
+			Service.Set(graphicsService);
+			graphicsService.Init();
 			StartServices();
 			ChangeGameState(GameState.Loading);
 			int introFrequency = Service.Get<ConfigController>().IntroFrequency;
@@ -192,6 +197,10 @@ namespace Disney.ClubPenguin.SledRacer
 			}
 			if (focus)
 			{
+				if (Service.IsSet<SledRacerGraphicsService>())
+				{
+					Service.Get<SledRacerGraphicsService>().Apply();
+				}
 				setScreenAutoRotation();
 			}
 		}
