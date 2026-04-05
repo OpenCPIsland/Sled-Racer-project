@@ -11,8 +11,6 @@ namespace Disney.ClubPenguin.Login.Authentication
 {
 	public class DoLoginCMD
 	{
-		private const int MIN_PASSWORD_LENGTH_LOGIN = 4;
-
 		private string username;
 
 		private string password;
@@ -65,7 +63,7 @@ namespace Disney.ClubPenguin.Login.Authentication
 
 		public event Action<string, bool> InvalidInputSpecified;
 
-		public DoLoginCMD(string username, string password, bool savePassword, string appId, string appVersion, IMWSClient mwsClient, IPDRClient pdrClient, MonoBehaviour timeoutCoRoutineBehaviour, float requestTimeoutSec = 30f, int minPasswordLen = 4, int maxPasswordLen = 32, int paperDollDimensions = 300, string paperDollLang = "en")
+		public DoLoginCMD(string username, string password, bool savePassword, string appId, string appVersion, IMWSClient mwsClient, IPDRClient pdrClient, MonoBehaviour timeoutCoRoutineBehaviour, float requestTimeoutSec = 30f, int minPasswordLen = 0, int maxPasswordLen = int.MaxValue, int paperDollDimensions = 300, string paperDollLang = "en")
 		{
 			this.username = username;
 			this.password = password;
@@ -223,16 +221,6 @@ namespace Disney.ClubPenguin.Login.Authentication
 			{
 				text = "3";
 				arg = false;
-			}
-			else if (password.Length < minPasswordLen)
-			{
-				text = "1";
-				arg = true;
-			}
-			else if (password.Length > maxPasswordLen)
-			{
-				text = "2";
-				arg = true;
 			}
 			if (text != string.Empty)
 			{

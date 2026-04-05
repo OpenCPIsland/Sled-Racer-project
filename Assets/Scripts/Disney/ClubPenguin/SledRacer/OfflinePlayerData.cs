@@ -14,6 +14,7 @@ namespace Disney.ClubPenguin.SledRacer
 		public OfflinePlayerData()
 		{
 			base.Account.Colour = 15;
+			base.Account.Member = true;
 			base.Account.Username = Localizer.Instance.GetTokenTranslation("guest.player.username");
 			base.Account.PlayerSwid = "{-1}";
 			base.Account.PlayerId = -1L;

@@ -180,20 +180,13 @@ namespace Disney.ClubPenguin.SledRacer
 		{
 			friendScores = new Stack<LeaderBoardHighScore>();
 			LeaderboardManager leaderboardManager = Service.Get<LeaderboardManager>();
-			if (Service.Get<PlayerDataService>().IsPlayerLoggedIn())
+			if (!leaderboardManager.LoadCachedFriendHighScores("SledRacer", OnFriendScoresLoaded))
 			{
-				if (!leaderboardManager.LoadCachedFriendHighScores("SledRacer", OnFriendScoresLoaded))
-				{
-					UnityEngine.Debug.Log("GetFriendScores() - Leaderboard was not cached. Fetching now...");
-				}
-				else
-				{
-					UnityEngine.Debug.Log("GetFriendScores() - Leaderboard was cached. No wait time.");
-				}
+				UnityEngine.Debug.Log("GetFriendScores() - Leaderboard was not cached. Fetching now...");
 			}
 			else
 			{
-				OnFriendScoresLoaded(null);
+				UnityEngine.Debug.Log("GetFriendScores() - Leaderboard was cached. No wait time.");
 			}
 		}
 

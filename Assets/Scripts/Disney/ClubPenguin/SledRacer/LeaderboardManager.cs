@@ -185,26 +185,22 @@ namespace Disney.ClubPenguin.SledRacer
             PlayerDataService pds = Service.Get<PlayerDataService>();
             PlayerData playerData = pds.PlayerData;
 
-            if (UseLocalLeaderboard())
+            if (UseLocalLeaderboard() || !pds.IsPlayerLoggedIn())
             {
-                List<SavedPlayerData> rankedPlayers = LocalPlayerAccountService.GetRankedPlayers();
-                LeaderBoardResponse leaderBoardResponse = new LeaderBoardResponse();
-                leaderBoardResponse.Players = new List<LeaderBoardHighScore>();
-                leaderBoardResponse.Countdown = 0;
-                for (int i = 0; i < rankedPlayers.Count; i++)
+                List<LeaderBoardHighScore> list = new List<LeaderBoardHighScore>();
+                foreach (SavedPlayerData rankedPlayer in LocalPlayerAccountService.GetRankedPlayers())
                 {
-                    SavedPlayerData savedPlayerData = rankedPlayers[i];
-                    LeaderBoardHighScore leaderBoardHighScore = new LeaderBoardHighScore();
-                    leaderBoardHighScore.Rank = i + 1;
-                    leaderBoardHighScore.Name = savedPlayerData.UserName;
-                    leaderBoardHighScore.PlayerId = (int)savedPlayerData.PlayerId;
-                    leaderBoardHighScore.PlayerSWID = savedPlayerData.Swid;
-                    leaderBoardHighScore.Score = savedPlayerData.HighScore;
-                    leaderBoardHighScore.Colour = savedPlayerData.PenguinColor;
-                    leaderBoardHighScore.IsFriend = (savedPlayerData.Swid != playerData.Account.PlayerSwid);
-                    leaderBoardHighScore.HasRewardItem = savedPlayerData.HasGoldenHelmet;
-                    leaderBoardResponse.Players.Add(leaderBoardHighScore);
+                    list.Add(BuildLocalPlayerLeaderboardEntry(rankedPlayer, playerData.Account.PlayerSwid));
                 }
+                list.Add(BuildGuestLeaderboardEntry(playerData));
+                list.Sort((LeaderBoardHighScore x, LeaderBoardHighScore y) => (x.Score == y.Score) ? string.Compare(x.Name, y.Name, StringComparison.OrdinalIgnoreCase) : (-1 * x.Score.CompareTo(y.Score)));
+                for (int i = 0; i < list.Count; i++)
+                {
+                    list[i].Rank = i + 1;
+                }
+                LeaderBoardResponse leaderBoardResponse = new LeaderBoardResponse();
+                leaderBoardResponse.Players = list;
+                leaderBoardResponse.Countdown = 0;
                 return leaderBoardResponse;
             }
 
@@ -225,6 +221,33 @@ namespace Disney.ClubPenguin.SledRacer
             response.Countdown = 0;
 
             return response;
+        }
+
+        private static LeaderBoardHighScore BuildLocalPlayerLeaderboardEntry(SavedPlayerData rankedPlayer, string activePlayerSwid)
+        {
+            LeaderBoardHighScore leaderBoardHighScore = new LeaderBoardHighScore();
+            leaderBoardHighScore.Name = rankedPlayer.UserName;
+            leaderBoardHighScore.PlayerId = (int)rankedPlayer.PlayerId;
+            leaderBoardHighScore.PlayerSWID = rankedPlayer.Swid;
+            leaderBoardHighScore.Score = rankedPlayer.HighScore;
+            leaderBoardHighScore.Colour = rankedPlayer.PenguinColor;
+            leaderBoardHighScore.IsFriend = (rankedPlayer.Swid != activePlayerSwid);
+            leaderBoardHighScore.HasRewardItem = rankedPlayer.HasGoldenHelmet;
+            return leaderBoardHighScore;
+        }
+
+        private static LeaderBoardHighScore BuildGuestLeaderboardEntry(PlayerData playerData)
+        {
+            bool flag = playerData != null && playerData.Account != null && playerData.Account.PlayerSwid == OfflinePlayerData.OFFLINE_PLAYER_SWID;
+            LeaderBoardHighScore leaderBoardHighScore = new LeaderBoardHighScore();
+            leaderBoardHighScore.Name = flag ? playerData.Account.Username : Localizer.Instance.GetTokenTranslation("guest.player.username");
+            leaderBoardHighScore.PlayerId = flag ? (int)playerData.Account.PlayerId : -1;
+            leaderBoardHighScore.PlayerSWID = OfflinePlayerData.OFFLINE_PLAYER_SWID;
+            leaderBoardHighScore.Score = HighScore.GetOfflineHighScoreFromPrefs();
+            leaderBoardHighScore.Colour = OfflinePlayerData.OFFLINE_PLAYER_COLOR_INDEX;
+            leaderBoardHighScore.IsFriend = !flag;
+            leaderBoardHighScore.HasRewardItem = flag && playerData.hasTrophy;
+            return leaderBoardHighScore;
         }
 
         private bool IsPlayerLoggedIn()

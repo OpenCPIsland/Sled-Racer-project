@@ -88,6 +88,10 @@ namespace Disney.ClubPenguin.SledRacer
             }
             else if (playerDataService.LoadingAccount || !flag)
             {
+                if (!playerDataService.LoadingAccount && !flag)
+                {
+                    SessionStatePrefs.SaveGuestSession();
+                }
                 ShowLoginButton(!playerDataService.LoadingAccount, playerDataService.LoadingAccount);
             }
             else
@@ -234,6 +238,7 @@ namespace Disney.ClubPenguin.SledRacer
         {
             if (autoLoginActive)
             {
+                SessionStatePrefs.SaveGuestSession();
                 ShowLoginButton(showText: true, showLoadingIcon: false);
                 if (LoadingIcon != null)
                 {

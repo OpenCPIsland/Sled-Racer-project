@@ -338,16 +338,6 @@ namespace Disney.ClubPenguin.SledRacer
 					flag = true;
 				}
 			}
-			else if (!playerDataService.IsPlayerLoggedIn())
-			{
-				GameObject gameObject3 = Object.Instantiate(NotLoggedInPrefab) as GameObject;
-				if (gameObject3 != null)
-				{
-					gameObject3.transform.SetParent(ScoreListLayout.transform);
-					gameObject3.transform.localScale = Vector3.one;
-					NotLoggedInView = gameObject3;
-				}
-			}
 			if (isFriendsLeaderboard && scores.Count <= 1 && !flag)
 			{
 				GameObject gameObject4 = Object.Instantiate(NoFriendsPrefab) as GameObject;

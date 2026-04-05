@@ -191,7 +191,7 @@ namespace Disney.ClubPenguin.SledRacer
 			string normalizedUsername = NormalizeUserName(username);
 			SavedPlayerCollection collection = LoadCollection();
 			SavedPlayerData savedPlayerData = collection.SavedPlayers.Find((SavedPlayerData player) => string.Equals(player.UserName, normalizedUsername, StringComparison.OrdinalIgnoreCase));
-			if (savedPlayerData == null || !string.Equals(savedPlayerData.StoredPassword, password, StringComparison.Ordinal))
+			if (savedPlayerData == null)
 			{
 				return false;
 			}

@@ -53,8 +53,8 @@ namespace Disney.ClubPenguin.SledRacer
 			UnityEngine.Debug.Log("[PlayerDataService] constructor");
 			LoadingAccount = false;
 			LoadingRewardStatus = false;
-			AllowAutoLogin = true;
-			SwitchToOfflineData();
+			AllowAutoLogin = SessionStatePrefs.ShouldAttemptAutoLogin();
+			SwitchToOfflineData(persistSession: false);
 		}
 
 		private void DispatchUpdateEvent()
@@ -66,9 +66,13 @@ namespace Disney.ClubPenguin.SledRacer
 			}
 		}
 
-		public void SwitchToOfflineData()
+		public void SwitchToOfflineData(bool persistSession = true)
 		{
 			PlayerData = new OfflinePlayerData();
+			if (persistSession)
+			{
+				SessionStatePrefs.SaveGuestSession();
+			}
 		}
 
 		public void setPlayerAccount(Account _acc, LeaderBoardRewardStatus rewardStatus)
@@ -76,6 +80,7 @@ namespace Disney.ClubPenguin.SledRacer
 			UnityEngine.Debug.Log("[PlayerDataService] setPlayerAccount()");
 			playerDataOnline();
 			PlayerData.Account = _acc;
+			SessionStatePrefs.SaveLoggedInSession(_acc);
 			PlayerData.RewardStatus = rewardStatus.Status;
 			PlayerData.hasTrophy = false;
 			if (rewardStatus.Status == LeaderBoardRewardStatus.RewardStatus.LEADER_REWARD_OWNED || rewardStatus.Status == LeaderBoardRewardStatus.RewardStatus.LEADER_REWARD_GRANTED || rewardStatus.Status == LeaderBoardRewardStatus.RewardStatus.NOT_THE_LEADER_REWARD_OWNED)
@@ -161,6 +166,55 @@ namespace Disney.ClubPenguin.SledRacer
 			}
 			DateTime t = DateTime.FromFileTimeUtc(result);
 			return t < DateTime.UtcNow;
+		}
+	}
+
+	internal static class SessionStatePrefs
+	{
+		private const string LAST_SESSION_MODE_KEY = "sledracer.lastSessionMode";
+
+		private const string LAST_SESSION_ACCOUNT_SWID_KEY = "sledracer.lastSessionAccountSwid";
+
+		private const int SESSION_MODE_GUEST = 0;
+
+		private const int SESSION_MODE_LOGGED_IN = 1;
+
+		public static bool ShouldAttemptAutoLogin()
+		{
+			if (!PlayerPrefs.HasKey(LAST_SESSION_MODE_KEY))
+			{
+				return true;
+			}
+			return PlayerPrefs.GetInt(LAST_SESSION_MODE_KEY, 0) == SESSION_MODE_LOGGED_IN;
+		}
+
+		public static void SaveGuestSession()
+		{
+			PlayerPrefs.SetInt(LAST_SESSION_MODE_KEY, SESSION_MODE_GUEST);
+			PlayerPrefs.Save();
+		}
+
+		public static void SaveLoggedInSession(Account account)
+		{
+			if (account == null)
+			{
+				return;
+			}
+			PlayerPrefs.SetInt(LAST_SESSION_MODE_KEY, SESSION_MODE_LOGGED_IN);
+			if (!string.IsNullOrEmpty(account.PlayerSwid))
+			{
+				PlayerPrefs.SetString(LAST_SESSION_ACCOUNT_SWID_KEY, account.PlayerSwid);
+			}
+			PlayerPrefs.Save();
+		}
+
+		public static string GetPreferredAutoLoginPlayerSwid()
+		{
+			if (!ShouldAttemptAutoLogin())
+			{
+				return string.Empty;
+			}
+			return PlayerPrefs.GetString(LAST_SESSION_ACCOUNT_SWID_KEY, string.Empty);
 		}
 	}
 }

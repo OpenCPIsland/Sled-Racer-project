@@ -25,10 +25,6 @@ namespace Disney.ClubPenguin.Login.Creation
 
 		public delegate void HtmlLinkClickedDelegate(string url);
 
-		private const int PASSWORD_MINIMUM_LENGTH = 6;
-
-		private const int PASSWORD_MAXIMUM_LENGTH = 32;
-
 		private const int USERNAME_MIN_LENGTH = 4;
 
 		private const int USERNAME_MAX_LENGTH = 12;
@@ -298,19 +294,9 @@ namespace Disney.ClubPenguin.Login.Creation
 				ShowErrorPopup("4", passwordInputField.GetComponent<ErrorPopupComponent>());
 				return false;
 			}
-			if (passwordInputField.text.Length < 6)
+			if (passwordInputField.text.Length == 0)
 			{
 				ShowErrorPopup("1", passwordInputField.GetComponent<ErrorPopupComponent>());
-				return false;
-			}
-			if (passwordInputField.text.Length > 32)
-			{
-				ShowErrorPopup("2", passwordInputField.GetComponent<ErrorPopupComponent>());
-				return false;
-			}
-			if (penguinNameInputField.text.ToLower().Contains(passwordInputField.text.ToLower()))
-			{
-				ShowErrorPopup("5", passwordInputField.GetComponent<ErrorPopupComponent>());
 				return false;
 			}
 			return true;

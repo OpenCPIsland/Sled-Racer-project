@@ -1,6 +1,7 @@
 using Disney.ClubPenguin.Login.BI;
 using Disney.ClubPenguin.Service.MWS;
 using Disney.ClubPenguin.Service.PDR;
+using Disney.ClubPenguin.SledRacer;
 using Disney.HTTP.Client;
 using System;
 using UnityEngine;
@@ -48,10 +49,11 @@ namespace Disney.ClubPenguin.Login.Authentication
 			if (savedPlayerCollection.ExistsOnDisk())
 			{
 				savedPlayerCollection.LoadFromDisk();
-				SavedPlayerData mostRecentlyLoggedInPlayer = savedPlayerCollection.GetMostRecentlyLoggedInPlayer();
-				if (mostRecentlyLoggedInPlayer != null && mostRecentlyLoggedInPlayer.Password != null && mostRecentlyLoggedInPlayer.Password != string.Empty)
+				SavedPlayerData savedPlayerData = GetPreferredPlayer(savedPlayerCollection);
+				string autoLoginPassword = GetAutoLoginPassword(savedPlayerData);
+				if (savedPlayerData != null && !string.IsNullOrEmpty(autoLoginPassword))
 				{
-					DoLoginCMD doLoginCMD = new DoLoginCMD(mostRecentlyLoggedInPlayer.UserName, mostRecentlyLoggedInPlayer.Password,  true, appId, appVersion, mwsClient, pdrClient, timeoutCoRoutineBehaviour, requestTimeoutSec);
+					DoLoginCMD doLoginCMD = new DoLoginCMD(savedPlayerData.UserName, autoLoginPassword, true, appId, appVersion, mwsClient, pdrClient, timeoutCoRoutineBehaviour, requestTimeoutSec);
 					doLoginCMD.LoginSucceeded += OnLoginSucceeded;
 					doLoginCMD.LoginFailed += OnLoginFailed;
 					doLoginCMD.InvalidInputSpecified += OnLoginFailed;
@@ -62,6 +64,33 @@ namespace Disney.ClubPenguin.Login.Authentication
 				}
 			}
 			OnLoginFailed(null);
+		}
+
+		private SavedPlayerData GetPreferredPlayer(SavedPlayerCollection savedPlayerCollection)
+		{
+			string preferredAutoLoginPlayerSwid = SessionStatePrefs.GetPreferredAutoLoginPlayerSwid();
+			if (!string.IsNullOrEmpty(preferredAutoLoginPlayerSwid))
+			{
+				return savedPlayerCollection.SavedPlayers.Find((SavedPlayerData player) => player.Swid == preferredAutoLoginPlayerSwid);
+			}
+			return savedPlayerCollection.GetMostRecentlyLoggedInPlayer();
+		}
+
+		private static string GetAutoLoginPassword(SavedPlayerData savedPlayerData)
+		{
+			if (savedPlayerData == null)
+			{
+				return string.Empty;
+			}
+			if (!string.IsNullOrEmpty(savedPlayerData.Password))
+			{
+				return savedPlayerData.Password;
+			}
+			if (savedPlayerData.IsLocalAccount && !string.IsNullOrEmpty(savedPlayerData.StoredPassword))
+			{
+				return savedPlayerData.StoredPassword;
+			}
+			return string.Empty;
 		}
 
 		public void OnLoginSucceeded(IGetAuthTokenResponse response, string username, string password)
