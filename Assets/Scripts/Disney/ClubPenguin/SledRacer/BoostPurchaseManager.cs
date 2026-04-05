@@ -108,6 +108,7 @@ namespace Disney.ClubPenguin.SledRacer
         public void OnLogout()
         {
             clearPurchases();
+            ForceClaimAllBoosts();
             loadPurchasesFromDisk();
         }
 

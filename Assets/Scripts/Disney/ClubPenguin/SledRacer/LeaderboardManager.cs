@@ -243,7 +243,7 @@ namespace Disney.ClubPenguin.SledRacer
             leaderBoardHighScore.Name = flag ? playerData.Account.Username : Localizer.Instance.GetTokenTranslation("guest.player.username");
             leaderBoardHighScore.PlayerId = flag ? (int)playerData.Account.PlayerId : -1;
             leaderBoardHighScore.PlayerSWID = OfflinePlayerData.OFFLINE_PLAYER_SWID;
-            leaderBoardHighScore.Score = HighScore.GetOfflineHighScoreFromPrefs();
+            leaderBoardHighScore.Score = HighScore.GetGuestHighScoreFromPrefs();
             leaderBoardHighScore.Colour = OfflinePlayerData.OFFLINE_PLAYER_COLOR_INDEX;
             leaderBoardHighScore.IsFriend = !flag;
             leaderBoardHighScore.HasRewardItem = flag && playerData.hasTrophy;

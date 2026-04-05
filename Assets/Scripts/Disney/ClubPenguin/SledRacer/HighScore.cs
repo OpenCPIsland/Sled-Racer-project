@@ -42,6 +42,15 @@ namespace Disney.ClubPenguin.SledRacer
 			return 0;
 		}
 
+		public static int GetGuestHighScoreFromPrefs()
+		{
+			if (PlayerPrefs.HasKey(OFFLINE_HIGH_SCORE_PREF_KEY))
+			{
+				return PlayerPrefs.GetInt(OFFLINE_HIGH_SCORE_PREF_KEY, 0);
+			}
+			return 0;
+		}
+
 		public static void SaveOfflineHighScoreInPrefs(int score)
 		{
 			PlayerPrefs.SetInt(GetOfflineHighScorePrefKey(), score);
