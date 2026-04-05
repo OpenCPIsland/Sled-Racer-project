@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Disney.ClubPenguin.Service.MWS.Domain;
 using UnityEngine;
 
 namespace Disney.ClubPenguin.SledRacer
@@ -18,13 +19,34 @@ namespace Disney.ClubPenguin.SledRacer
 
 		public static int GetOfflineHighScoreFromPrefs()
 		{
-			return PlayerPrefs.GetInt(OFFLINE_HIGH_SCORE_PREF_KEY);
+			string offlineHighScorePrefKey = GetOfflineHighScorePrefKey();
+			if (PlayerPrefs.HasKey(offlineHighScorePrefKey))
+			{
+				return PlayerPrefs.GetInt(offlineHighScorePrefKey, 0);
+			}
+			try
+			{
+				Account account = Service.Get<PlayerDataService>().PlayerData.Account;
+				if (account != null && LocalPlayerAccountService.IsLocalAccount(account))
+				{
+					SavedPlayerData player = LocalPlayerAccountService.GetPlayer(account.PlayerSwid);
+					if (player != null)
+					{
+						return player.HighScore;
+					}
+				}
+			}
+			catch
+			{
+			}
+			return 0;
 		}
 
 		public static void SaveOfflineHighScoreInPrefs(int score)
 		{
-			PlayerPrefs.SetInt(OFFLINE_HIGH_SCORE_PREF_KEY, score);
+			PlayerPrefs.SetInt(GetOfflineHighScorePrefKey(), score);
 			PlayerPrefs.Save();
+			LocalPlayerAccountService.SetCurrentPlayerHighScore(score);
 		}
 
 		public void SetScore(int score)
@@ -48,6 +70,22 @@ namespace Disney.ClubPenguin.SledRacer
 		public void UnBindFromScore(Action<int?> handleScoreChange)
 		{
 			boundToScore.Remove(handleScoreChange);
+		}
+
+		private static string GetOfflineHighScorePrefKey()
+		{
+			try
+			{
+				Account account = Service.Get<PlayerDataService>().PlayerData.Account;
+				if (account != null && LocalPlayerAccountService.IsLocalAccount(account))
+				{
+					return OFFLINE_HIGH_SCORE_PREF_KEY + ":" + account.PlayerSwid;
+				}
+			}
+			catch
+			{
+			}
+			return OFFLINE_HIGH_SCORE_PREF_KEY;
 		}
 	}
 }

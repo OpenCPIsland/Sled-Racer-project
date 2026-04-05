@@ -4,6 +4,7 @@ using Disney.ClubPenguin.CPModuleUtils;
 using Disney.ClubPenguin.Login.Authentication;
 using Disney.ClubPenguin.Service.MWS;
 using Disney.ClubPenguin.Service.PDR;
+using Disney.ClubPenguin.SledRacer;
 using Disney.HTTP.Client;
 using ErrorPopup;
 using ErrorPopup.Core;
@@ -98,6 +99,7 @@ namespace Disney.ClubPenguin.Login.Creation
 			hasAcceptedTermsOfUse = false;
 			parentEmailInputField.keyboardType = TouchScreenKeyboardType.EmailAddress;
 			loginController = GetComponent<LoginController>();
+			NormalizePasswordFields();
 			LocalizedWebLink cpRulesWebLink = CpRulesWebLink;
 			cpRulesWebLink.WebLinkClicked = (LocalizedWebLink.WebLinkClickedDelegate)Delegate.Combine(cpRulesWebLink.WebLinkClicked, new LocalizedWebLink.WebLinkClickedDelegate(OnWebLinkClicked));
 			LocalizedWebLink termsOfUseWebLink = TermsOfUseWebLink;
@@ -142,6 +144,7 @@ namespace Disney.ClubPenguin.Login.Creation
 
 		public void OnShowPasswordToggled(bool toggled)
 		{
+			NormalizePasswordFields();
 			if (toggled)
 			{
 				passwordInputField.inputType = InputField.InputType.Standard;
@@ -156,6 +159,25 @@ namespace Disney.ClubPenguin.Login.Creation
 			passwordInputField.enabled = true;
 			passwordConfirmationInputField.enabled = false;
 			passwordConfirmationInputField.enabled = true;
+		}
+
+		private void NormalizePasswordFields()
+		{
+			NormalizePasswordField(passwordInputField);
+			NormalizePasswordField(passwordConfirmationInputField);
+		}
+
+		private static void NormalizePasswordField(InputField inputField)
+		{
+			if (inputField == null)
+			{
+				return;
+			}
+			inputField.interactable = true;
+			inputField.readOnly = false;
+			inputField.lineType = InputField.LineType.SingleLine;
+			inputField.characterValidation = InputField.CharacterValidation.None;
+			inputField.contentType = InputField.ContentType.Password;
 		}
 
 		public void OnAcceptTermsToggled(bool toggled)
@@ -192,19 +214,25 @@ namespace Disney.ClubPenguin.Login.Creation
 				UnityEngine.Debug.Log("ATTEMPT LOGIN");
 				RootAudioSource.PlayOneShot(OnClickAudioClip);
 				string username = InputFieldStringUtils.ToTitleCase(penguinNameInputField.text);
-				try
+				SavedPlayerData createdPlayer;
+				string errorCode;
+				if (!LocalPlayerAccountService.TryCreateAccount(username, passwordInputField.text, (int)GetComponent<PenguinColor>().Color, out createdPlayer, out errorCode))
 				{
-					Client.CreateAccount(username, passwordInputField.text, loginController.AppVersion, loginController.AppID, parentEmailInputField.text, (int)GetComponent<PenguinColor>().Color, (int)Localizer.Instance.Language, OnCreateAccountResponseReceived);
-				}
-				catch (Exception ex)
-				{
-					UnityEngine.Debug.Log(ex.Message);
-					ShowErrorPopup("0", penguinNameInputField.GetComponent<ErrorPopupComponent>());
+					InputField inputField = (errorCode == "-32297") ? parentEmailInputField : penguinNameInputField;
+					ShowErrorPopup(errorCode, inputField.GetComponent<ErrorPopupComponent>());
+					if (CreationFailed != null)
+					{
+						CreationFailed();
+					}
 					return;
 				}
 				if (CreationAttemptStarted != null)
 				{
 					CreationAttemptStarted();
+				}
+				if (CreationSucceeded != null)
+				{
+					CreationSucceeded(LocalPlayerAccountService.CreateAuthResponse(createdPlayer), parentEmailInputField.text, createdPlayer.UserName, passwordInputField.text);
 				}
 			}
 		}

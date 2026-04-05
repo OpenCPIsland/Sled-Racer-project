@@ -140,8 +140,9 @@ namespace Disney.ClubPenguin.SledRacer
 			if (confirmed)
 			{
 				HighScore.SaveOfflineHighScoreInPrefs(0);
+				Service.Get<PlayerDataService>().PlayerData.HighScore.SetScore(0);
 				PlayerPrefs.SetInt("LaunchCount", 0);
-				PlayerPrefs.SetInt("TutorialComplete:{-1}", 0);
+				PlayerPrefs.SetInt("TutorialComplete:" + Service.Get<PlayerDataService>().PlayerData.Account.PlayerSwid, 0);
 				if (!Service.Get<PlayerDataService>().IsPlayerLoggedIn())
 				{
 					Service.Get<PlayerDataService>().SwitchToOfflineData();

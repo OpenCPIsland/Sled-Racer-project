@@ -67,7 +67,11 @@ namespace Disney.ClubPenguin.Login.BI
 		{
 			if (MWSClient.Instance.AuthToken == null)
 			{
-				throw new Exception("Must be logged in before requesting player information from MWSClient.");
+				UnityEngine.Debug.LogWarning("Skipping MWS player card lookup because no auth token is available. Logging BI player info without wallet data.");
+				this.playerID = playerID;
+				this.playerName = playerName;
+				LogPlayerInfo(0L);
+				return;
 			}
 			this.playerID = playerID;
 			this.playerName = playerName;
@@ -81,7 +85,11 @@ namespace Disney.ClubPenguin.Login.BI
 				UnityEngine.Debug.LogError("Unable to fetch player card data.");
 				return;
 			}
-			long coins = response.PlayerCardData.Coins;
+			LogPlayerInfo(response.PlayerCardData.Coins);
+		}
+
+		private void LogPlayerInfo(long coins)
+		{
 			Dictionary<string, object> dictionary = new Dictionary<string, object>();
 			dictionary.Add("player_id", playerID);
 			dictionary.Add("player_name", playerName);

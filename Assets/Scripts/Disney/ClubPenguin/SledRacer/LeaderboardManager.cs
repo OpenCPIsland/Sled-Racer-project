@@ -24,7 +24,7 @@ namespace Disney.ClubPenguin.SledRacer
 
         public void startGame(string gameType, Action<Game> callback)
         {
-            if (!IsPlayerLoggedIn())
+            if (!IsPlayerLoggedIn() || UseLocalLeaderboard())
             {
                 callback(null);
                 return;
@@ -38,7 +38,7 @@ namespace Disney.ClubPenguin.SledRacer
 
         public void saveGame(GameResult gameResult, Action<GameResult> callback)
         {
-            if (!IsPlayerLoggedIn())
+            if (!IsPlayerLoggedIn() || UseLocalLeaderboard())
             {
                 callback(null);
                 return;
@@ -100,7 +100,7 @@ namespace Disney.ClubPenguin.SledRacer
 
         public void LoadMyAllTimeHighScore(string gameType, Action<int> SetHighScoreCallback)
         {
-            if (!IsPlayerLoggedIn())
+            if (!IsPlayerLoggedIn() || UseLocalLeaderboard())
             {
                 SetHighScoreCallback(HighScore.GetOfflineHighScoreFromPrefs());
                 return;
@@ -114,7 +114,7 @@ namespace Disney.ClubPenguin.SledRacer
 
         public virtual void LoadAllHighScores(string gameType, Action<LeaderBoardResponse> SetHighScoresCallback)
         {
-            if (!IsPlayerLoggedIn())
+            if (!IsPlayerLoggedIn() || UseLocalLeaderboard())
             {
                 SetHighScoresCallback(BuildOfflineLeaderboard());
                 return;
@@ -128,7 +128,7 @@ namespace Disney.ClubPenguin.SledRacer
 
         public void LoadFriendHighScores(string gameType, Action<LeaderBoardResponse> SetHighScoresCallback)
         {
-            if (!IsPlayerLoggedIn())
+            if (!IsPlayerLoggedIn() || UseLocalLeaderboard())
             {
                 LeaderBoardResponse offline = BuildOfflineLeaderboard();
                 cachedFriendsResponse = offline;
@@ -167,9 +167,10 @@ namespace Disney.ClubPenguin.SledRacer
 
         public void GetRewardStatus(string gameType, Action<LeaderBoardRewardStatus> GetRewardStatusCallback)
         {
-            if (!IsPlayerLoggedIn())
+            if (!IsPlayerLoggedIn() || UseLocalLeaderboard())
             {
-                GetRewardStatusCallback(new LeaderBoardRewardStatus());
+                SavedPlayerData player = LocalPlayerAccountService.GetPlayer(Service.Get<PlayerDataService>().PlayerData.Account.PlayerSwid);
+                GetRewardStatusCallback(LocalPlayerAccountService.GetRewardStatus(player));
                 return;
             }
 
@@ -184,14 +185,40 @@ namespace Disney.ClubPenguin.SledRacer
             PlayerDataService pds = Service.Get<PlayerDataService>();
             PlayerData playerData = pds.PlayerData;
 
+            if (UseLocalLeaderboard())
+            {
+                List<SavedPlayerData> rankedPlayers = LocalPlayerAccountService.GetRankedPlayers();
+                LeaderBoardResponse leaderBoardResponse = new LeaderBoardResponse();
+                leaderBoardResponse.Players = new List<LeaderBoardHighScore>();
+                leaderBoardResponse.Countdown = 0;
+                for (int i = 0; i < rankedPlayers.Count; i++)
+                {
+                    SavedPlayerData savedPlayerData = rankedPlayers[i];
+                    LeaderBoardHighScore leaderBoardHighScore = new LeaderBoardHighScore();
+                    leaderBoardHighScore.Rank = i + 1;
+                    leaderBoardHighScore.Name = savedPlayerData.UserName;
+                    leaderBoardHighScore.PlayerId = (int)savedPlayerData.PlayerId;
+                    leaderBoardHighScore.PlayerSWID = savedPlayerData.Swid;
+                    leaderBoardHighScore.Score = savedPlayerData.HighScore;
+                    leaderBoardHighScore.Colour = savedPlayerData.PenguinColor;
+                    leaderBoardHighScore.IsFriend = (savedPlayerData.Swid != playerData.Account.PlayerSwid);
+                    leaderBoardHighScore.HasRewardItem = savedPlayerData.HasGoldenHelmet;
+                    leaderBoardResponse.Players.Add(leaderBoardHighScore);
+                }
+                return leaderBoardResponse;
+            }
+
             int score = HighScore.GetOfflineHighScoreFromPrefs();
 
             LeaderBoardHighScore entry = new LeaderBoardHighScore();
             entry.Rank = 1;
             entry.Name = playerData.Account.Username;
+            entry.PlayerId = (int)playerData.Account.PlayerId;
             entry.PlayerSWID = playerData.Account.PlayerSwid;
             entry.Score = score;
             entry.Colour = playerData.Account.Colour;
+            entry.IsFriend = false;
+            entry.HasRewardItem = playerData.hasTrophy;
 
             LeaderBoardResponse response = new LeaderBoardResponse();
             response.Players = new List<LeaderBoardHighScore> { entry };
@@ -224,6 +251,18 @@ namespace Disney.ClubPenguin.SledRacer
         private string currentLanguage()
         {
             return LocalizationLanguage.GetLanguageString(Localizer.Instance.Language);
+        }
+
+        private bool UseLocalLeaderboard()
+        {
+            try
+            {
+                return LocalPlayerAccountService.IsLocalAccount(Service.Get<PlayerDataService>().PlayerData.Account);
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

@@ -483,13 +483,32 @@ namespace Disney.ClubPenguin.SledRacer
 				postLoginAction();
 				postLoginAction = null;
 			}
+			bool flag = playerDataService.IsPlayerLoggedIn();
 			playerDataService.LoadingAccount = true;
 			playerDataService.LoadingRewardStatus = true;
+			if (LocalPlayerAccountService.IsLocalAuthResponse(response))
+			{
+				yield return null;
+				if (flag)
+				{
+					Service.Get<EventDataService>().SendUIEvent(this, new UIEvent(UIEvent.uiGameEvent.SwitchingUser));
+				}
+				Service.Get<EventDataService>().SendUIEvent(this, new UIEvent(UIEvent.uiGameEvent.LoginSuccess));
+				SavedPlayerData player = LocalPlayerAccountService.GetPlayer(response.AuthData.PlayerSwid);
+				playerDataService.LoadingAccount = false;
+				playerDataService.LoadingRewardStatus = false;
+				playerDataService.LoadedAccount = LocalPlayerAccountService.BuildAccount(player);
+				playerDataService.LoadedRewardStatus = LocalPlayerAccountService.GetRewardStatus(player);
+				OnAccountAndRewardStatusLoaded();
+				Service.Get<LeaderboardManager>().LoadCachedFriendHighScores("SledRacer", OnFriendHighScoresLoaded);
+				CleanupLoginContext();
+				yield break;
+			}
 			Service.Get<IMWSClient>().GetAccount(OnGetAccount);
 			loadRewardStatus(response.AuthData.PlayerSwid);
 			Service.Get<LeaderboardManager>().LoadCachedFriendHighScores("SledRacer", OnFriendHighScoresLoaded);
 			yield return null;
-			if (playerDataService.IsPlayerLoggedIn())
+			if (flag)
 			{
 				Service.Get<EventDataService>().SendUIEvent(this, new UIEvent(UIEvent.uiGameEvent.SwitchingUser));
 			}

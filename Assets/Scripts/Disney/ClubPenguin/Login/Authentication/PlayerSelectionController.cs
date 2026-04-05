@@ -1,3 +1,4 @@
+using Disney.ClubPenguin.SledRacer;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -43,10 +44,17 @@ namespace Disney.ClubPenguin.Login.Authentication
 			_SavedPlayer = value;
 			Text componentInChildren = savedPlayerView.GetComponentInChildren<Text>();
 			componentInChildren.text = _SavedPlayer.UserName;
-			Texture2D texture2D = new Texture2D(1, 1, TextureFormat.ARGB32, false);
-			texture2D.LoadImage(_SavedPlayer.PaperDollBytes);
-			Sprite sprite = Sprite.Create(texture2D, new Rect(0f, 0f, texture2D.width, texture2D.height), new Vector2(0f, 0f));
-			savedPlayerImage.sprite = sprite;
+			if (_SavedPlayer.PaperDollBytes != null && _SavedPlayer.PaperDollBytes.Length > 0)
+			{
+				Texture2D texture2D = new Texture2D(1, 1, TextureFormat.ARGB32, false);
+				texture2D.LoadImage(_SavedPlayer.PaperDollBytes);
+				Sprite sprite = Sprite.Create(texture2D, new Rect(0f, 0f, texture2D.width, texture2D.height), new Vector2(0f, 0f));
+				savedPlayerImage.sprite = sprite;
+			}
+			else
+			{
+				savedPlayerImage.sprite = AvatarUtil.GetLargeAvatar(_SavedPlayer.PenguinColor);
+			}
 			savedPlayerImage.enabled = true;
 			ShowSavedPlayerView();
 		}

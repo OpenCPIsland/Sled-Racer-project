@@ -333,8 +333,11 @@ namespace Disney.ClubPenguin.SledRacer
 			{
 			}
 			Material[] materials = componentInChildren.materials;
-			Material material = (materials[1] = (materials[0] = AvatarUtil.GetRiderMaterial(playerDataService.PlayerData.Account.Colour)));
-			materials[2] = ((!playerDataService.PlayerData.hasTrophy) ? material : RiderGoldHatMaterial);
+			Material material = (!playerDataService.PlayerData.hasTrophy) ? AvatarUtil.GetRiderMaterial(playerDataService.PlayerData.Account.Colour) : AvatarUtil.GetGoldenHelmetRiderMaterial(playerDataService.PlayerData.Account.Colour, RiderGoldHatMaterial);
+			for (int i = 0; i < materials.Length; i++)
+			{
+				materials[i] = material;
+			}
 			componentInChildren.materials = materials;
 			ResetAnimationVariables(RiderAnimator);
 			CurrentRider.SetActive(true);

@@ -274,21 +274,44 @@ namespace Disney.ClubPenguin.Service.DirectoryService
 
 		public void CheckVersion()
 		{
+			if (!CanCheckCompatibility())
+			{
+				Debug.Log("[DirectoryServiceClient] Skipping compatibility check because the directory service is not configured for this build.");
+				return;
+			}
 			GetCompatibility(AppID, AppVersion, delegate(IGetCompatibilityResponse response)
 			{
-				if (response.IsError)
+				if (response == null)
+				{
+					Debug.LogWarning("[DirectoryServiceClient] Compatibility check returned no response. Skipping forced update handling.");
+				}
+				else if (response.IsError)
 				{
 					Debug.LogError("Service API version check returned an error. Will assume the client is compatible with the API. Error: HTTP " + response.StatusCode + " - " + response.StatusMessage);
 				}
+				else if (response.CompatibilityStatus == null)
+				{
+					Debug.LogWarning("[DirectoryServiceClient] Compatibility check returned no compatibility status. Skipping forced update handling.");
+				}
 				else if (response.CompatibilityStatus.Status == 1)
 				{
-					this.OnUpdateRecommended();
+					this.OnUpdateRecommended?.Invoke();
 				}
 				else if (response.CompatibilityStatus.Status == 2)
 				{
-					this.OnUpdateRequired();
+					this.OnUpdateRequired?.Invoke();
 				}
 			});
+		}
+
+		private bool CanCheckCompatibility()
+		{
+			if (string.IsNullOrEmpty(AppID) || string.IsNullOrEmpty(AppVersion))
+			{
+				return false;
+			}
+			string directoryServiceUrl = DirectoryServiceUrl;
+			return !string.IsNullOrEmpty(directoryServiceUrl) && directoryServiceUrl.IndexOf("PUT-YOUR-API-URL-HERE", StringComparison.OrdinalIgnoreCase) < 0;
 		}
 
 		private static int CurrentUnixTimestamp()

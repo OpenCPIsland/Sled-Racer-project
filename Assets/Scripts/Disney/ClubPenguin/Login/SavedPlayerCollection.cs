@@ -7,6 +7,8 @@ using UnityEngine;
 
 namespace Disney.ClubPenguin.Login
 {
+	using Disney.ClubPenguin.SledRacer;
+
 	[Serializable]
 	public class SavedPlayerCollection
 	{
@@ -51,19 +53,12 @@ namespace Disney.ClubPenguin.Login
 
 		private void RemoveCorruptPlayers()
 		{
-			SavedPlayerData[] array = SavedPlayers.ToArray();
-			for (int num = array.Length - 1; num >= 0; num--)
-			{
-				SavedPlayerData savedPlayerData = array[num];
-				if (savedPlayerData.DisplayName == null || savedPlayerData.DisplayName == string.Empty || savedPlayerData.UserName == null || savedPlayerData.UserName == string.Empty || savedPlayerData.Swid == null || savedPlayerData.Swid == string.Empty)
-				{
-					SavedPlayers.Remove(savedPlayerData);
-				}
-			}
+			LocalPlayerAccountService.NormalizeCollection(this);
 		}
 
 		public void UpdateSavedPlayer(SavedPlayerData savedPlayerData)
 		{
+			RemoveCorruptPlayers();
 			RemoveSavedPlayer(savedPlayerData);
 			SavedPlayers.Insert(0, savedPlayerData);
 			if (SavedPlayers.Count > 6)
@@ -115,6 +110,7 @@ namespace Disney.ClubPenguin.Login
 				string text = EncryptionHelper.DecryptFile(DefaultFilePath, savedPlayerCollection.EncryptedPasswords);
 				if (text == null)
 				{
+					RemoveCorruptPlayers();
 					return;
 				}
 				string[] array = text.Split(',');
@@ -125,6 +121,7 @@ namespace Disney.ClubPenguin.Login
 						SavedPlayers[i].Password = array[i];
 					}
 				}
+				RemoveCorruptPlayers();
 				return;
 			}
 			throw new Exception("Could not load save file from disk");
@@ -132,6 +129,7 @@ namespace Disney.ClubPenguin.Login
 
 		public void SaveToDisk()
 		{
+			RemoveCorruptPlayers();
 			string text = string.Empty;
 			for (int i = 0; i < SavedPlayers.Count; i++)
 			{

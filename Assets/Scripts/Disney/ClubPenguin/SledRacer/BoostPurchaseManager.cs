@@ -81,6 +81,15 @@ namespace Disney.ClubPenguin.SledRacer
         {
             isLoading = true;
             ForceClaimAllBoosts(); // Ensure all boosts are claimed on login
+            if (LocalPlayerAccountService.IsLocalAccount(Service.Get<PlayerDataService>().PlayerData.Account))
+            {
+                isLoading = false;
+                if (this.OnLoadComplete != null)
+                {
+                    this.OnLoadComplete(this, null);
+                }
+                return;
+            }
 
             loadPurchasesFromMWS(delegate (HashSet<string> registeredPurchases)
             {

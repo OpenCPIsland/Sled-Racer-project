@@ -77,6 +77,7 @@ namespace Disney.ClubPenguin.SledRacer
 			playerDataOnline();
 			PlayerData.Account = _acc;
 			PlayerData.RewardStatus = rewardStatus.Status;
+			PlayerData.hasTrophy = false;
 			if (rewardStatus.Status == LeaderBoardRewardStatus.RewardStatus.LEADER_REWARD_OWNED || rewardStatus.Status == LeaderBoardRewardStatus.RewardStatus.LEADER_REWARD_GRANTED || rewardStatus.Status == LeaderBoardRewardStatus.RewardStatus.NOT_THE_LEADER_REWARD_OWNED)
 			{
 				PlayerData.hasTrophy = true;

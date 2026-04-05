@@ -1,6 +1,7 @@
 using Disney.ClubPenguin.CPModuleUtils;
 using Disney.ClubPenguin.Service.MWS;
 using Disney.ClubPenguin.Service.PDR;
+using Disney.ClubPenguin.SledRacer;
 using Disney.HTTP.Client;
 using System;
 using System.Collections;
@@ -92,8 +93,18 @@ namespace Disney.ClubPenguin.Login.Authentication
 				{
 					this.LoginRequestSent();
 				}
-				mwsClient.GetAuthToken(appId, appVersion, username, password, OnLoginResponseReceived);
-				timeoutCoRoutineBehaviour.StartCoroutine(CheckLoginRequestTimedOut());
+				if (LocalPlayerAccountService.TryLogin(username, password, savePassword, out loggedInPlayerData))
+				{
+					successfulLoginResponse = LocalPlayerAccountService.CreateAuthResponse(loggedInPlayerData);
+					if (this.LoginSucceeded != null)
+					{
+						this.LoginSucceeded(successfulLoginResponse, username, password);
+					}
+				}
+				else if (this.LoginFailed != null)
+				{
+					this.LoginFailed(new HTTPErrorResponse(401, "Incorrect username or password"));
+				}
 			}
 		}
 
@@ -222,11 +233,6 @@ namespace Disney.ClubPenguin.Login.Authentication
 			{
 				text = "2";
 				arg = true;
-			}
-			if (Application.internetReachability == NetworkReachability.NotReachable)
-			{
-				text = "0";
-				arg = false;
 			}
 			if (text != string.Empty)
 			{

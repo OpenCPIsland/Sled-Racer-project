@@ -28,21 +28,24 @@ namespace Disney.ClubPenguin.SledRacer
 
         protected override void VStart()
         {
-            ShowLoginButton(showText: false, showLoadingIcon: false);
             playerDataService = Service.Get<PlayerDataService>();
             eventDataService = Service.Get<EventDataService>();
-            avatarImage = AvatarImageObject.GetComponent<Image>();
-
-            if (AvatarHatImageObject != null)
-                avatarHatImage = AvatarHatImageObject.GetComponent<Image>();
-            else
-                avatarHatImage = null;
-
+            ResolveSerializedReferences();
+            ShowLoginButton(showText: false, showLoadingIcon: false);
+            avatarImage = (AvatarImageObject != null) ? AvatarImageObject.GetComponent<Image>() : null;
+            ResolveAvatarHatImage();
             if (avatarHatImage != null)
+            {
                 avatarHatImage.gameObject.SetActive(false);
-
-            playerDataService.Subscribe(OnPlayerDataUpdate);
-            HardwareBackButtonDispatcher.SetTargetClickHandler(QuitButton);
+            }
+            if (playerDataService != null)
+            {
+                playerDataService.Subscribe(OnPlayerDataUpdate);
+            }
+            if (QuitButton != null)
+            {
+                HardwareBackButtonDispatcher.SetTargetClickHandler(QuitButton);
+            }
         }
 
         [Conditional("FALSE")]
@@ -56,8 +59,14 @@ namespace Disney.ClubPenguin.SledRacer
 
         private void OnDestroy()
         {
-            playerDataService.UnSubscribe(OnPlayerDataUpdate);
-            eventDataService.OnUIEvent -= OnUIEvent;
+            if (playerDataService != null)
+            {
+                playerDataService.UnSubscribe(OnPlayerDataUpdate);
+            }
+            if (eventDataService != null)
+            {
+                eventDataService.OnUIEvent -= OnUIEvent;
+            }
         }
 
         protected override void Init()
@@ -218,7 +227,6 @@ namespace Disney.ClubPenguin.SledRacer
             {
                 UnityEngine.Debug.Log("OnPlayerDataUpdate: RewardStatus=" + playerDataService.PlayerData.RewardStatus.ToString());
                 ShowAvatar();
-                // Removed reward status modification to ensure Gold Hat stays visible
             }
         }
 
@@ -227,60 +235,198 @@ namespace Disney.ClubPenguin.SledRacer
             if (autoLoginActive)
             {
                 ShowLoginButton(showText: true, showLoadingIcon: false);
-                LoadingIcon.SetActive(false);
+                if (LoadingIcon != null)
+                {
+                    LoadingIcon.SetActive(false);
+                }
             }
         }
 
         private void OnLogout()
         {
             ShowLoginButton(showText: true, showLoadingIcon: false);
-            PenguinName.text = string.Empty;
         }
 
         private void ShowLoginButton(bool showText, bool showLoadingIcon)
         {
             UnityEngine.Debug.Log("[MainMenuController] ShowLoginButton()");
-            Avatar.SetActive(false);
-            LoginButtonContainer.SetActive(true);
-            ClickToLoginText.enabled = showText;
-            LoadingIcon.SetActive(showLoadingIcon);
+            ResolveSerializedReferences();
+            if (Avatar != null)
+            {
+                Avatar.SetActive(false);
+            }
+            if (LoginButtonContainer != null)
+            {
+                LoginButtonContainer.SetActive(true);
+            }
+            if (ClickToLoginText != null)
+            {
+                ClickToLoginText.text = GetLoggedOutLabel();
+                ClickToLoginText.enabled = showText;
+            }
+            if (PenguinName != null && PenguinName != ClickToLoginText)
+            {
+                PenguinName.text = string.Empty;
+            }
+            if (avatarHatImage != null)
+            {
+                avatarHatImage.enabled = false;
+                avatarHatImage.gameObject.SetActive(false);
+            }
+            if (LoadingIcon != null)
+            {
+                LoadingIcon.SetActive(showLoadingIcon);
+            }
         }
 
         private void ShowAvatar()
         {
             UnityEngine.Debug.Log("[MainMenuController] ShowAvatar()");
-            LoginButtonContainer.SetActive(false);
-            Avatar.SetActive(true);
-            PlayerData playerData = playerDataService.PlayerData;
-
-            if (avatarImage.sprite != null)
-                Resources.UnloadAsset(avatarImage.sprite);
-
-            avatarImage.sprite = AvatarUtil.GetLargeAvatar(playerData.Account.Colour);
-
-            // Always show Gold Hat
-            if (AvatarHatImageObject == null)
-                AvatarHatImageObject = Avatar.transform.Find("AvatarHatImage")?.gameObject;
-
-            if (AvatarHatImageObject != null)
+            ResolveSerializedReferences();
+            bool flag = UsesSharedAvatarImage();
+            if (LoginButtonContainer != null)
             {
-                avatarHatImage = AvatarHatImageObject.GetComponent<Image>();
-                Sprite goldHat = Resources.Load<Sprite>("AvatarSprites/Pengiun_GoldHat");
-                if (goldHat == null)
-                    UnityEngine.Debug.LogError("Gold Hat sprite not found! Check path and spelling.");
-
-                avatarHatImage.sprite = goldHat;
-                avatarHatImage.enabled = true;
-                avatarHatImage.gameObject.SetActive(true);
-                avatarHatImage.transform.SetAsLastSibling();
+                LoginButtonContainer.SetActive(flag);
+            }
+            if (Avatar != null)
+            {
+                Avatar.SetActive(true);
+            }
+            PlayerData playerData = (playerDataService != null) ? playerDataService.PlayerData : null;
+            if (playerData == null || playerData.Account == null)
+            {
+                ShowLoginButton(showText: true, showLoadingIcon: false);
+                return;
+            }
+            if (avatarImage == null && AvatarImageObject != null)
+            {
+                avatarImage = AvatarImageObject.GetComponent<Image>();
+            }
+            if (avatarImage != null)
+            {
+                if (avatarImage.sprite != null)
+                {
+                    Resources.UnloadAsset(avatarImage.sprite);
+                }
+                avatarImage.sprite = AvatarUtil.GetLargeAvatar(playerData.Account.Colour);
+            }
+            ResolveAvatarHatImage();
+            if (avatarHatImage != null)
+            {
+                if (playerData.hasTrophy)
+                {
+                    Sprite goldHat = Resources.Load<Sprite>("AvatarSprites/Pengiun_GoldHat");
+                    if (goldHat == null)
+                    {
+                        UnityEngine.Debug.LogError("Gold Hat sprite not found! Check path and spelling.");
+                    }
+                    avatarHatImage.sprite = goldHat;
+                    avatarHatImage.enabled = true;
+                    avatarHatImage.gameObject.SetActive(true);
+                    avatarHatImage.transform.SetAsLastSibling();
+                }
+                else
+                {
+                    avatarHatImage.enabled = false;
+                    avatarHatImage.gameObject.SetActive(false);
+                }
             }
             else
             {
                 UnityEngine.Debug.LogError("AvatarHatImageObject not found! Gold Hat cannot be shown.");
             }
+            if (ClickToLoginText != null && ClickToLoginText != PenguinName)
+            {
+                ClickToLoginText.enabled = false;
+            }
+            if (PenguinName != null)
+            {
+                PenguinName.enabled = true;
+                PenguinName.text = (playerDataService != null && playerDataService.IsPlayerLoggedIn()) ? playerData.Account.Username : string.Empty;
+            }
+            if (LoadingIcon != null)
+            {
+                LoadingIcon.SetActive(false);
+            }
+        }
 
-            PenguinName.text = playerDataService.IsPlayerLoggedIn() ? playerData.Account.Username : string.Empty;
-            LoadingIcon.SetActive(false);
+        private void ResolveSerializedReferences()
+        {
+            if (LoginButtonContainer == null)
+            {
+                LoginButtonContainer = FindChildObject("LoginImage");
+            }
+            if (Avatar == null)
+            {
+                Avatar = FindChildObject("LoginAvatar");
+            }
+            if (AvatarImageObject == null || AvatarImageObject.GetComponent<Image>() == null)
+            {
+                AvatarImageObject = FindChildObject("PengiunImage");
+                if (AvatarImageObject == null)
+                {
+                    AvatarImageObject = FindChildObject("PenguinImage");
+                }
+            }
+            if (PenguinName == null)
+            {
+                PenguinName = FindChildText("PenguinName");
+            }
+            if (ClickToLoginText == null)
+            {
+                ClickToLoginText = PenguinName;
+            }
+            if (LoadingIcon == null)
+            {
+                LoadingIcon = FindChildObject("LoadingIcon");
+            }
+        }
+
+        private void ResolveAvatarHatImage()
+        {
+            if (AvatarHatImageObject == null || AvatarHatImageObject.GetComponent<Image>() == null)
+            {
+                AvatarHatImageObject = FindChildObject("GoldHatImage");
+                if (AvatarHatImageObject == null && Avatar != null)
+                {
+                    Transform transform = Avatar.transform.Find("AvatarHatImage");
+                    AvatarHatImageObject = (transform != null) ? transform.gameObject : null;
+                }
+            }
+            avatarHatImage = (AvatarHatImageObject != null) ? AvatarHatImageObject.GetComponent<Image>() : null;
+        }
+
+        private GameObject FindChildObject(string objectName)
+        {
+            Transform[] componentsInChildren = GetComponentsInChildren<Transform>(true);
+            foreach (Transform transform in componentsInChildren)
+            {
+                if (transform.name == objectName)
+                {
+                    return transform.gameObject;
+                }
+            }
+            return null;
+        }
+
+        private Text FindChildText(string objectName)
+        {
+            GameObject childObject = FindChildObject(objectName);
+            return (childObject != null) ? childObject.GetComponent<Text>() : null;
+        }
+
+        private bool UsesSharedAvatarImage()
+        {
+            return AvatarImageObject != null && LoginButtonContainer != null && AvatarImageObject.transform.IsChildOf(LoginButtonContainer.transform) && (Avatar == null || !AvatarImageObject.transform.IsChildOf(Avatar.transform));
+        }
+
+        private string GetLoggedOutLabel()
+        {
+            if (playerDataService != null && !playerDataService.IsPlayerLoggedIn() && playerDataService.PlayerData != null && playerDataService.PlayerData.Account != null && !string.IsNullOrEmpty(playerDataService.PlayerData.Account.Username))
+            {
+                return playerDataService.PlayerData.Account.Username;
+            }
+            return "Guest";
         }
     }
 }

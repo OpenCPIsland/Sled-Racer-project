@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.Serialization;
 
 [Serializable]
 public class SavedPlayerData
@@ -16,6 +17,24 @@ public class SavedPlayerData
 	public string Swid;
 
 	public byte[] PaperDollBytes;
+
+	[OptionalField]
+	public long PlayerId;
+
+	[OptionalField]
+	public int PenguinColor;
+
+	[OptionalField]
+	public int HighScore;
+
+	[OptionalField]
+	public bool IsLocalAccount;
+
+	[OptionalField]
+	public bool HasGoldenHelmet;
+
+	[OptionalField]
+	public string StoredPassword;
 
 	[NonSerialized]
 	public string Password;

@@ -205,6 +205,11 @@ namespace Disney.ClubPenguin.SledRacer
 		private void OnApplicationPause(bool pause)
 		{
 			UnityEngine.Debug.Log("OnApplicationPause: " + pause);
+			if (TouchScreenKeyboard.visible)
+			{
+				UnityEngine.Debug.Log("Ignoring pause transition while software keyboard is visible.");
+				return;
+			}
 			if (!pause)
 			{
 				ForcedUpdateManager.Instance.AlertOnUpdateRecommended = false;
@@ -225,16 +230,41 @@ namespace Disney.ClubPenguin.SledRacer
 		private void applicationForeground()
 		{
 			UnityEngine.Debug.Log("applicationForeground");
-			Service.Get<NotificationService>().ClearNotifications();
+			NotificationService notificationService = Service.Get<NotificationService>();
+			if (notificationService != null)
+			{
+				notificationService.ClearNotifications();
+			}
 			PlayerDataService playerDataService = Service.Get<PlayerDataService>();
-			ForcedUpdateManager.Instance.PlayerId = ((!playerDataService.IsPlayerLoggedIn()) ? null : new long?(playerDataService.PlayerData.Account.PlayerId));
-			ForcedUpdateManager.Instance.CheckVersion();
+			IForcedUpdateManager forcedUpdateManager = ForcedUpdateManager.Instance;
+			if (forcedUpdateManager == null)
+			{
+				return;
+			}
+			long? value = null;
+			if (playerDataService != null && playerDataService.PlayerData != null && playerDataService.IsPlayerLoggedIn() && playerDataService.PlayerData.Account != null)
+			{
+				value = playerDataService.PlayerData.Account.PlayerId;
+			}
+			forcedUpdateManager.PlayerId = value;
+			try
+			{
+				forcedUpdateManager.CheckVersion();
+			}
+			catch (Exception ex)
+			{
+				UnityEngine.Debug.LogWarning("Skipping version check after foreground transition: " + ex.Message);
+			}
 		}
 
 		private void applicationBackground()
 		{
 			UnityEngine.Debug.Log("applicationBackground");
-			Service.Get<NotificationService>().SetNotifications();
+			NotificationService notificationService = Service.Get<NotificationService>();
+			if (notificationService != null)
+			{
+				notificationService.SetNotifications();
+			}
 		}
 
 		private IEnumerator monitorExternalMusic()
@@ -396,6 +426,7 @@ namespace Disney.ClubPenguin.SledRacer
 
 		private void OnHighScoreSaved(GameResult result)
 		{
+			bool flag = LocalPlayerAccountService.ConsumePendingGoldenHelmetUnlock();
 			PlayerData playerData = Service.Get<PlayerDataService>().PlayerData;
 			playerData.LastGameCoinsEarned = 0L;
 			playerData.TotalCoins = 0L;
@@ -416,11 +447,19 @@ namespace Disney.ClubPenguin.SledRacer
 				UIManager.CurrentLoader.OnFinished += delegate
 				{
 					UIManager.ShowEndGame();
+					if (flag)
+					{
+						UIManager.ShowGoldenGogglesDialog();
+					}
 				};
 			}
 			else
 			{
 				UIManager.ShowEndGame();
+				if (flag)
+				{
+					UIManager.ShowGoldenGogglesDialog();
+				}
 			}
 			Service.Get<LoadingPanelController>().RemoveLoadingComponent("saveGame");
 		}
