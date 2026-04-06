@@ -53,7 +53,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 4429678797406252052, guid: a72493d9c894328748d311c6347b175b,
+        m_Texture: {fileID: 8676955081744710224, guid: 0382d8e9b8cd3764aa75f90fafc8ea44,
           type: 2}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -100,7 +100,7 @@ Material:
     - _GlowOffset: 0
     - _GlowOuter: 0.05
     - _GlowPower: 0.75
-    - _GradientScale: 14
+    - _GradientScale: 13
     - _LightAngle: 3.1416
     - _MaskSoftnessX: 0
     - _MaskSoftnessY: 0
@@ -114,9 +114,9 @@ Material:
     - _Parallax: 0.02
     - _PerspectiveFilter: 0.875
     - _Reflectivity: 10
-    - _ScaleRatioA: 0.9285714
-    - _ScaleRatioB: 0.75446427
-    - _ScaleRatioC: 0.75446427
+    - _ScaleRatioA: 0.9230769
+    - _ScaleRatioB: 0.75
+    - _ScaleRatioC: 0.75
     - _ScaleX: 1
     - _ScaleY: 1
     - _ShaderFlags: 0
@@ -154,6 +154,6 @@ Material:
     - _ReflectFaceColor: {r: 0, g: 0, b: 0, a: 1}
     - _ReflectOutlineColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecularColor: {r: 1, g: 1, b: 1, a: 1}
-    - _UnderlayColor: {r: 0, g: 0, b: 0, a: 0.20392157}
+    - _UnderlayColor: {r: 0.14117648, g: 0.047058824, b: 0.003921569, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
