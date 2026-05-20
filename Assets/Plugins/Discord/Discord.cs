@@ -4030,6 +4030,10 @@ public static unsafe class NativeMethods {
                    CallingConvention = CallingConvention.Cdecl)]
         public static extern void SetNoAudioInputThreshold(Client* self, float dBFSThreshold);
         [DllImport(LibraryName,
+                   EntryPoint = "Discord_Client_SetNoiseCancellation",
+                   CallingConvention = CallingConvention.Cdecl)]
+        public static extern void SetNoiseCancellation(Client* self, bool on);
+        [DllImport(LibraryName,
                    EntryPoint = "Discord_Client_SetNoiseSuppression",
                    CallingConvention = CallingConvention.Cdecl)]
         public static extern void SetNoiseSuppression(Client* self, bool on);
@@ -13077,6 +13081,23 @@ public class Client : IDisposable {
         }
     }
     /// <summary>
+    ///  Enables or disables Krisp noise cancellation.
+    /// </summary>
+    /// <remarks>
+    ///  Defaults to off. When enabled, noise suppression is automatically disabled.
+    ///
+    /// </remarks>
+    public void SetNoiseCancellation(bool on) {
+        if (disposed_ != 0) {
+            throw new ObjectDisposedException(nameof(Client));
+        }
+        unsafe {
+            fixed(NativeMethods.Client* self = &this.self) {
+                NativeMethods.Client.SetNoiseCancellation(self, on);
+            }
+        }
+    }
+    /// <summary>
     ///  Enables basic background noise suppression.
     /// </summary>
     /// <remarks>
@@ -13452,7 +13473,7 @@ public class Client : IDisposable {
     ///  for you when performing the authorization. You can override state if you want for your own
     ///  flow, but please be mindful to keep it a secure, random value.
     ///  - If you are using the Client::GetToken function you will need to provide a "code
-    ///  challenge" or "code verifier". We'll spare you the boring details of how that works (woo…
+    ///  challenge" or "code verifier". We'll spare you the boring details of how that works (woo...
     ///  crypto), as we've made a simple function to create these for you,
     ///  Client::CreateAuthorizationCodeVerifier. That returns a struct with two items, a
     ///  `challenge` value to pass into this function and a `verifier` value to pass into

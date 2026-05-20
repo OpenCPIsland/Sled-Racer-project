@@ -40,7 +40,7 @@ namespace Fabric
 			}
 			samples = new float[2, 256];
 			tempSamples = new float[256];
-			listener = (AudioListener)UnityEngine.Object.FindObjectOfType(typeof(AudioListener));
+			listener = UnityEngine.Object.FindFirstObjectByType<AudioListener>();
 			CollectAudioComponents();
 		}
 

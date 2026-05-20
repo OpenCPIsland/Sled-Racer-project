@@ -1,6 +1,6 @@
 {
     "name": "Discord.Sdk",
-    "rootNamespace": "",
+    "rootNamespace": "Discord.Sdk",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],

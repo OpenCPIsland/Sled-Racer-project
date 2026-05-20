@@ -114,7 +114,7 @@ namespace Fabric
 					}
 					if (_instance == null)
 					{
-						_instance = (EventManager)UnityEngine.Object.FindObjectOfType(typeof(EventManager));
+						_instance = UnityEngine.Object.FindFirstObjectByType<EventManager>();
 					}
 				}
 				return _instance;

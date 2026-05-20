@@ -18,7 +18,7 @@ namespace Fabric
 			}
 			else
 			{
-				fabricManager = (FabricManager)Object.FindObjectOfType(typeof(FabricManager));
+				fabricManager = Object.FindFirstObjectByType<FabricManager>();
 			}
 			return fabricManager;
 		}

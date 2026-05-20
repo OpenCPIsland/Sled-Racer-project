@@ -3948,7 +3948,7 @@ namespace Fabric
 		{
 			FabricManager.CleanUpPreviewGameObjects();
 			GameObject gameObject = null;
-			AudioListener audioListener = (AudioListener)UnityEngine.Object.FindObjectOfType(typeof(AudioListener));
+			AudioListener audioListener = UnityEngine.Object.FindFirstObjectByType<AudioListener>();
 			if (audioListener == null && sceneViewCamera != null)
 			{
 				audioListener = sceneViewCamera.GetComponent<AudioListener>();

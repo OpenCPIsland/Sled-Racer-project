@@ -205,8 +205,8 @@ namespace Fabric
 			{
 				if (_instance == null)
 				{
-					GameObject[] array = UnityEngine.Object.FindObjectsOfType(typeof(GameObject)) as GameObject[];
-					for (int i = 0; i < array.Length; i++)
+                    GameObject[] array = UnityEngine.Object.FindObjectsByType<GameObject>(FindObjectsSortMode.None);
+                    for (int i = 0; i < array.Length; i++)
 					{
 						_instance = array[i].GetComponent<FabricManager>();
 						if (_instance != null)
@@ -306,7 +306,7 @@ namespace Fabric
 			_instance = this;
 			if (_VRAudioManager.HasVRSolutions())
 			{
-				FabricAudioListener fabricAudioListener = (FabricAudioListener)UnityEngine.Object.FindObjectOfType(typeof(FabricAudioListener));
+				FabricAudioListener fabricAudioListener = UnityEngine.Object.FindFirstObjectByType<FabricAudioListener>();
 				if (fabricAudioListener != null)
 				{
 					GameObject audioListener = _VRAudioManager.GetAudioListener();
@@ -353,7 +353,7 @@ namespace Fabric
 			if (Application.isEditor)
 			{
 				CodeProfiler.enabled = true;
-				FabricManager[] array = UnityEngine.Object.FindObjectsOfType(typeof(FabricManager)) as FabricManager[];
+				FabricManager[] array = UnityEngine.Object.FindObjectsByType<FabricManager>(FindObjectsSortMode.None);
 				if (array.Length > 1)
 				{
 					DebugLog.Print("More than two FabricManager instances available!!!", DebugLevel.Error);
@@ -368,7 +368,7 @@ namespace Fabric
 
 		private void Start()
 		{
-			_audioListener = (AudioListener)UnityEngine.Object.FindObjectOfType(typeof(AudioListener));
+			_audioListener = UnityEngine.Object.FindFirstObjectByType<AudioListener>();
 			VolumeMeter component = base.gameObject.GetComponent<VolumeMeter>();
 			if (component != null)
 			{
@@ -826,7 +826,7 @@ namespace Fabric
 						_components.Remove(groupComponentProxy._groupComponent);
 					}
 					_groupComponentProxiesToDestroy.Remove(groupComponentProxy);
-					UnityEngine.Object.DestroyObject(groupComponentProxy.gameObject);
+					UnityEngine.Object.Destroy(groupComponentProxy.gameObject);
 				}
 			}
 		}
