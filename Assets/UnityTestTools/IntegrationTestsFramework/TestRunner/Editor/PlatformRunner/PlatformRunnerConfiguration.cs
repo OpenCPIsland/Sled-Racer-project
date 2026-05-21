@@ -41,7 +41,6 @@ public class PlatformRunnerConfiguration
         var path = Path.Combine("Temp", projectName);
         switch (buildTarget)
         {
-            case BuildTarget.StandaloneWindows:
             case BuildTarget.StandaloneWindows64:
                 return path + ".exe";
             case BuildTarget.StandaloneOSX:
