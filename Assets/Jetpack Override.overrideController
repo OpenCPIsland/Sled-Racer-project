@@ -3,15 +3,16 @@
 --- !u!221 &22100000
 AnimatorOverrideController:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: "Jetpack Override"
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Jetpack Override
   m_Controller: {fileID: 9100000, guid: fda4d82465dd4c5997a8d97d8275641a, type: 2}
   m_Clips:
   - m_OriginalClip: {fileID: 7400000, guid: e2c749b832594e92921b1093c58c4711, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 9a9f9ea8e49243f88edf7cf56de0534b, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 951f36559b4145acb0bc67cf6590bb5c, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: 2e9a601e22a842ad957994989b41375c, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 1cf9d61bf0e24dbda8fd01b922fab776, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 4e37f8c5a6dc4560be5896dd8d46edf4, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: ffdb5fa1bba64f798ee4b5dfc93c48bb, type: 2}
     m_OverrideClip: {fileID: 7400000, guid: d81321142cc04d6da8d0d17a3989a625, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: 13ac8abf55844cf4a8541adc665531c5, type: 2}
@@ -61,10 +62,6 @@ AnimatorOverrideController:
   - m_OriginalClip: {fileID: 7400000, guid: c5c6c82838084510b832ac231e6540e1, type: 2}
     m_OverrideClip: {fileID: 7400000, guid: 8f9799b1db6a48e5a303339cb8845b7c, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: 3b9ad72c817944dcab9f0fe4f18aac1d, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 8f9799b1db6a48e5a303339cb8845b7c, type: 2}
-  - m_OriginalClip: {fileID: 7400000, guid: d37f916e1f5b4f79b8c97a29a59bd360, type: 2}
-    m_OverrideClip: {fileID: 7400000, guid: 8f9799b1db6a48e5a303339cb8845b7c, type: 2}
-  - m_OriginalClip: {fileID: 7400000, guid: c49170838318480aa4093894a7604ab1, type: 2}
     m_OverrideClip: {fileID: 7400000, guid: 8f9799b1db6a48e5a303339cb8845b7c, type: 2}
   - m_OriginalClip: {fileID: 7400000, guid: 2dc5901d431d421491a70a40c44c34ff, type: 2}
     m_OverrideClip: {fileID: 7400000, guid: 8f9799b1db6a48e5a303339cb8845b7c, type: 2}
