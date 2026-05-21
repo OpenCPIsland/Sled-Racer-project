@@ -74,3 +74,4 @@ crashlytics-build.properties
 .vsconfig
 *.slnx
 /Assets/Fabric/Editor/ProjectData
+/.utmp
