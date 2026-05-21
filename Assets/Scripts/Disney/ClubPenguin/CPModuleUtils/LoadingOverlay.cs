@@ -79,7 +79,7 @@ namespace Disney.ClubPenguin.CPModuleUtils
 
 		private void LockInputFocus()
 		{
-			rayCasters = (UnityEngine.Object.FindObjectsOfType(typeof(GraphicRaycaster)) as GraphicRaycaster[]);
+			rayCasters = (UnityEngine.Object.FindObjectsByType<GraphicRaycaster>(FindObjectsSortMode.None));
 			previousRayCasterStates = new bool[rayCasters.Length];
 			for (int i = 0; i < rayCasters.Length; i++)
 			{

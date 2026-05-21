@@ -16,6 +16,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Networking;
 
 namespace Disney.ClubPenguin.SledRacer
 {
@@ -738,7 +739,8 @@ namespace Disney.ClubPenguin.SledRacer
 
 		private IEnumerator trackOpenExternalApp(string url)
 		{
-			yield return new WWW(url);
+			UnityWebRequest www = UnityWebRequest.Get(url);
+			yield return www.SendWebRequest();
 		}
 
 		private void OpenExternalURL(string url)

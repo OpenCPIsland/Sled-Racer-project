@@ -6,7 +6,7 @@ namespace InAppPurchases
 	{
 		public void Execute()
 		{
-			IAPContext[] array = Object.FindObjectsOfType(typeof(IAPContext)) as IAPContext[];
+		IAPContext[] array = Object.FindObjectsByType<IAPContext>(FindObjectsSortMode.None);
 			IAPContext[] array2 = array;
 			foreach (IAPContext iAPContext in array2)
 			{

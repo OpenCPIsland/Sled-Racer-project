@@ -1,136 +1,163 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Networking;
 
 namespace DI.CMS.FileManagement
 {
-	public class VersionedFileManifestLoader : IManifestLoader
-	{
-		private const int MAX_LOAD_ATTEMPTS = 3;
+    public class VersionedFileManifestLoader : IManifestLoader
+    {
+        private const int MAX_LOAD_ATTEMPTS = 3;
 
-		private const float LOAD_ATTEMPT_INTERVAL = 0.5f;
+        private const float LOAD_ATTEMPT_INTERVAL = 0.5f;
 
-		private FmsOptions options;
+        private FmsOptions options;
 
-		private IFileManifest manifest;
+        private IFileManifest manifest;
 
-		private string manifestUrl;
+        private string manifestUrl;
 
-		private int loadAttempts;
+        private int loadAttempts;
 
-		public VersionedFileManifestLoader(FmsOptions options)
-		{
-		}
+        public VersionedFileManifestLoader(FmsOptions options)
+        {
+        }
 
-		public void Load(FmsOptions options, string manifestUrl)
-		{
-			this.options = options;
-			this.manifestUrl = manifestUrl;
-			Debug.Log(string.Format("Setting manifestUrl to {0}", manifestUrl));
-			AttemptManifestRequest(0u, null);
-		}
+        public void Load(FmsOptions options, string manifestUrl)
+        {
+            this.options = options;
+            this.manifestUrl = manifestUrl;
 
-		public bool IsLoaded()
-		{
-			return manifest != null;
-		}
+            Debug.Log(string.Format("Setting manifestUrl to {0}", manifestUrl));
 
-		public IFileManifest GetManifest()
-		{
-			if (!IsLoaded())
-			{
-				throw new Exception("The versioned manifest has not been instantiated yet. Has VersionedFileManifestLoader.Load been called?");
-			}
-			return manifest;
-		}
+            AttemptManifestRequest(0u, null);
+        }
 
-		private void AttemptManifestRequest(uint id, object cookie)
-		{
-			if (++loadAttempts > 3)
-			{
-				if (options.FMSListener != null)
-				{
-					try
-					{
-						options.FMSListener.OnManifestLoadFailure(new CMSException("Retry count (" + 3 + ") exceeded."));
-					}
-					catch (Exception)
-					{
-					}
-					options.FMSListener.OnManifestLoadComplete();
-				}
-			}
-			else
-			{
-				options.Context.StartCoroutine(RequestManifestFile());
-			}
-		}
+        public bool IsLoaded()
+        {
+            return manifest != null;
+        }
 
-		private void RetryRequest()
-		{
-			AttemptManifestRequest(0u, null);
-		}
+        public IFileManifest GetManifest()
+        {
+            if (!IsLoaded())
+            {
+                throw new Exception("The versioned manifest has not been instantiated yet. Has VersionedFileManifestLoader.Load been called?");
+            }
 
-		private IEnumerator RequestManifestFile()
-		{
-			WWW www = new WWW(manifestUrl);
-			yield return www;
-			if (www.error != null)
-			{
-				Debug.LogError(string.Format("Unable to request manifest file [{0}] on attempt #{1} with the following error: {2}", manifestUrl, loadAttempts, www.error));
-				RetryRequest();
-			}
-			else if (www.isDone)
-			{
-				if (www.text != string.Empty)
-				{
-					PrepareManifest(www.text);
-				}
-				else
-				{
-					Debug.LogError(string.Format("Manifest request attempt #{0} yielded an empty manifest.", loadAttempts));
-					RetryRequest();
-				}
-			}
-			www.Dispose();
-		}
+            return manifest;
+        }
 
-		private void PrepareManifest(string json)
-		{
-			Exception ex = null;
-			manifest = new VersionedFileManifest();
-			try
-			{
-				manifest.Prepare(options, json);
-			}
-			catch (Exception ex2)
-			{
-				ex = ex2;
-			}
-			if (options.FMSListener != null)
-			{
-				try
-				{
-					if (ex != null)
-					{
-						options.FMSListener.OnManifestLoadFailure(ex);
-					}
-					else
-					{
-						options.FMSListener.OnManifestLoadSuccess();
-					}
-				}
-				catch (Exception exception)
-				{
-					Debug.LogError("The FMS Listener threw an exception.");
-					Debug.LogException(exception);
-				}
-				options.FMSListener.OnManifestLoadComplete();
-			}
-			else if (ex != null)
-			{
-				throw ex;
-			}
-		}
-	}
+        private void AttemptManifestRequest(uint id, object cookie)
+        {
+            if (++loadAttempts > 3)
+            {
+                if (options.FMSListener != null)
+                {
+                    try
+                    {
+                        options.FMSListener.OnManifestLoadFailure(new CMSException("Retry count (" + 3 + ") exceeded."));
+                    }
+                    catch (Exception)
+                    {
+                    }
+
+                    options.FMSListener.OnManifestLoadComplete();
+                }
+            }
+            else
+            {
+                options.Context.StartCoroutine(RequestManifestFile());
+            }
+        }
+
+        private void RetryRequest()
+        {
+            AttemptManifestRequest(0u, null);
+        }
+
+        private IEnumerator RequestManifestFile()
+        {
+            UnityWebRequest www = UnityWebRequest.Get(manifestUrl);
+
+            yield return www.SendWebRequest();
+
+            if (www.result != UnityWebRequest.Result.Success)
+            {
+                Debug.LogError(string.Format(
+                    "Unable to request manifest file [{0}] on attempt #{1} with the following error: {2}",
+                    manifestUrl,
+                    loadAttempts,
+                    www.error));
+
+                RetryRequest();
+            }
+            else if (www.isDone)
+            {
+                string text = string.Empty;
+
+                if (www.downloadHandler != null)
+                {
+                    text = www.downloadHandler.text;
+                }
+
+                if (!string.IsNullOrEmpty(text))
+                {
+                    PrepareManifest(text);
+                }
+                else
+                {
+                    Debug.LogError(string.Format(
+                        "Manifest request attempt #{0} yielded an empty manifest.",
+                        loadAttempts));
+
+                    RetryRequest();
+                }
+            }
+
+            www.Dispose();
+        }
+
+        private void PrepareManifest(string json)
+        {
+            Exception ex = null;
+
+            manifest = new VersionedFileManifest();
+
+            try
+            {
+                manifest.Prepare(options, json);
+            }
+            catch (Exception ex2)
+            {
+                ex = ex2;
+            }
+
+            if (options.FMSListener != null)
+            {
+                try
+                {
+                    if (ex != null)
+                    {
+                        options.FMSListener.OnManifestLoadFailure(ex);
+                    }
+                    else
+                    {
+                        options.FMSListener.OnManifestLoadSuccess();
+                    }
+                }
+                catch (Exception exception)
+                {
+                    Debug.LogError("The FMS Listener threw an exception.");
+                    Debug.LogException(exception);
+                }
+
+                options.FMSListener.OnManifestLoadComplete();
+            }
+            else if (ex != null)
+            {
+                throw ex;
+            }
+        }
+    }
 }

@@ -7,6 +7,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Networking;
 
 [RequireComponent(typeof(DisplayNativeWebPage), typeof(AudioSource))]
 public class MembershipBenefits : MonoBehaviour
@@ -103,8 +104,8 @@ public class MembershipBenefits : MonoBehaviour
 
 	private IEnumerator CheckInternetReachability()
 	{
-		WWW www = new WWW(TranslatedPageURL);
-		yield return www;
+		UnityWebRequest www = UnityWebRequest.Get(TranslatedPageURL);
+		yield return www.SendWebRequest();
 		if (www.error != null)
 		{
 			DisplayOfflinePage();

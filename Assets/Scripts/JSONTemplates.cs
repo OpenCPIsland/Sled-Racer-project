@@ -518,10 +518,6 @@ public static class JSONTemplates
 		{
 			result.outTangent = obj.GetField("outTangent").n;
 		}
-		if (obj.HasField("tangentMode"))
-		{
-			result.tangentMode = (int)obj.GetField("tangentMode").n;
-		}
 		return result;
 	}
 
@@ -535,10 +531,6 @@ public static class JSONTemplates
 		if (k.outTangent != 0f)
 		{
 			obj.AddField("outTangent", k.outTangent);
-		}
-		if (k.tangentMode != 0)
-		{
-			obj.AddField("tangentMode", k.tangentMode);
 		}
 		if (k.time != 0f)
 		{
