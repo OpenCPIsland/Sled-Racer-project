@@ -629,7 +629,7 @@ namespace Disney.ClubPenguin.SledRacer
 			{
 				RiderAnimator.SetBool("RiderOnGround", true);
 				SledAnimator.SetBool("RiderOnGround", true);
-				if (currentMoveState == PlayerMoveState.InAir)
+				if (currentMoveState != PlayerMoveState.OnGround)
 				{
 					ResetAnimationTrigger("RiderLanding");
 					ResetAnimationTrigger("RiderLandingHard");
