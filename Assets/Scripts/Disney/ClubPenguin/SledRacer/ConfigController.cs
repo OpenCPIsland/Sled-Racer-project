@@ -164,7 +164,7 @@ namespace Disney.ClubPenguin.SledRacer
 
 		public float ImpactGroundMinVelocity = -30f;
 
-		public float ImpactGroundHardMinVelocity = 80f;
+		public float ImpactGroundHardMinVelocity = 5f; // Lowered from 80f. - Malcolm
 
 		public float SfxCatchAirDistanceFromGround = 15f;
 
