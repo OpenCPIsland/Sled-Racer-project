@@ -1,35 +1,64 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.EnhancedTouch;
+using Touch = UnityEngine.InputSystem.EnhancedTouch.Touch;
 
 public class InputBehaviour : AbstractInputBehaviour
 {
     private InputManager manager;
+
     public bool UseMouse;
-    public bool applicationIsOnPC { get; private set; }
+
+    public bool applicationIsOnPC
+    {
+        private get;
+        set;
+    }
+
+    private InputAction horizontalAction;
+    private InputAction verticalAction;
 
     private void Awake()
     {
         manager = new InputManager();
         CalcApplicationIsOnPC();
+        EnhancedTouchSupport.Enable();
+
+        verticalAction = new InputAction("Vertical", type: InputActionType.Value, expectedControlType: "Axis");
+        verticalAction.AddCompositeBinding("1DAxis")
+            .With("Negative", "<Keyboard>/s")
+            .With("Positive", "<Keyboard>/w");
+        verticalAction.AddCompositeBinding("1DAxis")
+            .With("Negative", "<Keyboard>/downArrow")
+            .With("Positive", "<Keyboard>/upArrow");
+        verticalAction.Enable();
+
+        horizontalAction = new InputAction("Horizontal", type: InputActionType.Value, expectedControlType: "Axis");
+        horizontalAction.AddCompositeBinding("1DAxis")
+            .With("Negative", "<Keyboard>/a")
+            .With("Positive", "<Keyboard>/d");
+        horizontalAction.AddCompositeBinding("1DAxis")
+            .With("Negative", "<Keyboard>/leftArrow")
+            .With("Positive", "<Keyboard>/rightArrow");
+        horizontalAction.Enable();
+    }
+
+    private void OnDestroy()
+    {
+        verticalAction?.Disable();
+        verticalAction?.Dispose();
+        horizontalAction?.Disable();
+        horizontalAction?.Dispose();
+        EnhancedTouchSupport.Disable();
     }
 
     private void CalcApplicationIsOnPC()
     {
-        bool flag = Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.WindowsPlayer;
+        bool flag = Application.platform == RuntimePlatform.WindowsEditor || Application.platform == RuntimePlatform.WindowsPlayer || Application.platform == RuntimePlatform.WebGLPlayer;
         bool flag2 = Application.platform == RuntimePlatform.OSXEditor || Application.platform == RuntimePlatform.OSXPlayer;
         bool flag3 = Application.platform == RuntimePlatform.LinuxEditor || Application.platform == RuntimePlatform.LinuxPlayer;
-        bool flag4 = Application.platform == RuntimePlatform.WebGLPlayer && !IsMobileWebGL();
-        applicationIsOnPC = (flag || flag2 || flag3 || flag4);
-    }
-
-    private bool IsMobileWebGL()
-    {
-#if UNITY_WEBGL && !UNITY_EDITOR
-        return (Screen.width <= 800 || Screen.height <= 600);
-#else
-        return false;
-#endif
+        applicationIsOnPC = (flag || flag2 || flag3) && SystemInfo.deviceType != DeviceType.Handheld;
     }
 
     public void setInputManager(InputManager inputManager)
@@ -37,60 +66,60 @@ public class InputBehaviour : AbstractInputBehaviour
         manager = inputManager;
     }
 
-    // MOUSE & KEYBOARD
-    public bool MouseDown()
-    {
-        return Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame;
-    }
-    public bool MouseUp()
-    {
-        return Mouse.current != null && Mouse.current.leftButton.wasReleasedThisFrame;
-    }
-    public Vector2 MousePosition()
-    {
-        return Mouse.current != null ? Mouse.current.position.ReadValue() : Vector2.zero;
-    }
-    public bool LeftArrow()
-    {
-        return Keyboard.current != null && (Keyboard.current.leftArrowKey.isPressed || Keyboard.current.aKey.isPressed);
-    }
-    public bool RightArrow()
-    {
-        return Keyboard.current != null && (Keyboard.current.rightArrowKey.isPressed || Keyboard.current.dKey.isPressed);
-    }
-    public bool UpArrow()
-    {
-        return Keyboard.current != null && (Keyboard.current.upArrowKey.wasPressedThisFrame || Keyboard.current.wKey.wasPressedThisFrame || Keyboard.current.spaceKey.wasPressedThisFrame);
-    }
-
-    // TOUCH
-    private Vector2[] GetActiveTouches()
-    {
-        List<Vector2> activeTouches = new List<Vector2>();
-        if (Touchscreen.current != null)
-        {
-            foreach (var touch in Touchscreen.current.touches)
-            {
-                if (touch.press.isPressed)
-                    activeTouches.Add(touch.position.ReadValue());
-            }
-        }
-        return activeTouches.ToArray();
-    }
-
-    // Example override for jump/right/left if you want to connect them to these input helpers
     internal override bool jump()
     {
-        bool keyJump = UpArrow();
-        Vector2[] touchPositions = GetActiveTouches();
-        return manager.jump(touchPositions, keyJump);
+        if (applicationIsOnPC)
+        {
+            return manager.jump(new Vector2[0], verticalAction.ReadValue<float>() != 0f);
+        }
+        return manager.jump(getTouchPositions(), false);
     }
+
     internal override bool right()
     {
-        return RightArrow() || manager.right(GetActiveTouches());
+        if (applicationIsOnPC)
+        {
+            if (UseMouse)
+            {
+                if (Mouse.current != null && Mouse.current.leftButton.isPressed)
+                {
+                    return manager.right((Vector3)Mouse.current.position.ReadValue());
+                }
+                return false;
+            }
+            return manager.right(horizontalAction.ReadValue<float>());
+        }
+        return manager.right(getTouchPositions());
     }
+
     internal override bool left()
     {
-        return LeftArrow() || manager.left(GetActiveTouches());
+        if (applicationIsOnPC)
+        {
+            if (UseMouse)
+            {
+                if (Mouse.current != null && Mouse.current.leftButton.isPressed)
+                {
+                    return manager.left((Vector3)Mouse.current.position.ReadValue());
+                }
+                return false;
+            }
+            return manager.left(horizontalAction.ReadValue<float>());
+        }
+        return manager.left(getTouchPositions());
+    }
+
+    private Vector2[] getTouchPositions()
+    {
+        List<Vector2> list = new List<Vector2>();
+        foreach (Touch touch in Touch.activeTouches)
+        {
+            if (touch.phase != UnityEngine.InputSystem.TouchPhase.Ended &&
+                touch.phase != UnityEngine.InputSystem.TouchPhase.Canceled)
+            {
+                list.Add(touch.screenPosition);
+            }
+        }
+        return list.ToArray();
     }
 }
