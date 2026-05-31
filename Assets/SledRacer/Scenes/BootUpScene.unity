@@ -142,6 +142,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2018896325
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2018896327}
+  - component: {fileID: 2018896326}
+  m_Layer: 0
+  m_Name: IntroVideoPlayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2018896326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2018896325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4540f63a16a3c3c47b9ce69cdd29a2f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IntroVideoPlayer
+  fabricMusicStopEvent: MainMenuMusic/Stop
+  fabricMusicStartEvent: MainMenuMusic/Play
+  fabricAudioGameObjectName: MainMenuMusicSource
+--- !u!4 &2018896327
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2018896325}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: -0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1791169579659014283
 GameObject:
   m_ObjectHideFlags: 0
@@ -748,6 +795,14 @@ MonoBehaviour:
   NotificationMinuteOfHour: 30
   NotificationMinFirstNotificationDelayMinutes: 60
   IntroFrequency: 5
+  DesktopGraphicsQualityConditionalTier: Standalone_High
+  DesktopGraphicsAntiAliasSamplesMedium: 2
+  DesktopGraphicsAntiAliasSamplesHigh: 4
+  DesktopGraphicsVSyncCount: 1
+  WebGraphicsQualityConditionalTier: WebGL_High
+  WebGraphicsAntiAliasSamplesMedium: 2
+  WebGraphicsAntiAliasSamplesHigh: 4
+  WebGraphicsVSyncCount: 1
   RewardItemType: HEAD
   RewardItemId: 1996
 --- !u!114 &1791169581554839740
@@ -1171,3 +1226,4 @@ SceneRoots:
   - {fileID: 1791169579709345943}
   - {fileID: 1791169579709345942}
   - {fileID: 1946133129}
+  - {fileID: 2018896327}
