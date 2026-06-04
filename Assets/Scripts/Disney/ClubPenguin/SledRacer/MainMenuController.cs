@@ -73,7 +73,10 @@ namespace Disney.ClubPenguin.SledRacer
         {
             VideoCheck();
             eventDataService.OnUIEvent += OnUIEvent;
-            Service.Get<IAudio>().Music.Play(MusicTrack.MainMenu);
+            if (!IntroVideoPlayer.IsPlaying)
+            {
+                Service.Get<IAudio>().Music.Play(MusicTrack.MainMenu);
+            }
             Service.Get<IAudio>().Ambience.Play(AmbienceTrack.UIAmbientGusting);
             Service.Get<IAudio>().Ambience.Volume = 1f;
             ShowAppIcons();
