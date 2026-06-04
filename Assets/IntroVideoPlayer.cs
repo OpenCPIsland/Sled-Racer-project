@@ -5,11 +5,13 @@ using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using UnityEngine.Video;
 using Disney.ClubPenguin.SledRacer;
+using Disney.ClubPenguin.CPModuleUtils;
 
 public class IntroVideoPlayer : MonoBehaviour
 {
+    public static bool IsPlaying { get; private set; }
+
     private const string VideoResourcePath = "IntroVideo";
-    private const string MusicEventName = "MUS_Main";
 
     private VideoPlayer _videoPlayer;
     private AudioSource _audioSource;
@@ -20,6 +22,7 @@ public class IntroVideoPlayer : MonoBehaviour
 
     private void Awake()
     {
+        IsPlaying = true;
         DontDestroyOnLoad(gameObject);
         _audioSource = gameObject.AddComponent<AudioSource>();
         _videoPlayer = gameObject.AddComponent<VideoPlayer>();
@@ -33,8 +36,15 @@ public class IntroVideoPlayer : MonoBehaviour
 
     private void Update()
     {
-        if (_videoFinished) return;
-        if (_skipRequested) return;
+        if (_videoFinished)
+        {
+            return;
+        }
+
+        if (_skipRequested)
+        {
+            return;
+        }
 
         if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
         {
@@ -80,8 +90,10 @@ public class IntroVideoPlayer : MonoBehaviour
 
         GameObject bg = new GameObject("Background");
         bg.transform.SetParent(canvasGO.transform, false);
+
         Image bgImage = bg.AddComponent<Image>();
         bgImage.color = Color.black;
+
         RectTransform bgRT = bg.GetComponent<RectTransform>();
         bgRT.anchorMin = Vector2.zero;
         bgRT.anchorMax = Vector2.one;
@@ -90,6 +102,7 @@ public class IntroVideoPlayer : MonoBehaviour
 
         GameObject displayGO = new GameObject("VideoDisplay");
         displayGO.transform.SetParent(canvasGO.transform, false);
+
         _videoDisplay = displayGO.AddComponent<RawImage>();
         _videoDisplay.color = Color.white;
 
@@ -106,6 +119,11 @@ public class IntroVideoPlayer : MonoBehaviour
 
     private IEnumerator PlayIntroVideo()
     {
+        yield return null;
+        yield return null;
+
+        StopMainMenuMusic();
+
         ResourceRequest loadRequest = Resources.LoadAsync<VideoClip>(VideoResourcePath);
         yield return loadRequest;
 
@@ -113,6 +131,8 @@ public class IntroVideoPlayer : MonoBehaviour
 
         if (clip == null)
         {
+            IsPlaying = false;
+            StartMainMenuMusic();
             Destroy(gameObject);
             yield break;
         }
@@ -121,7 +141,9 @@ public class IntroVideoPlayer : MonoBehaviour
 
         AspectRatioFitter fitter = _videoDisplay.GetComponent<AspectRatioFitter>();
         if (fitter != null && clip.height > 0)
+        {
             fitter.aspectRatio = (float)clip.width / clip.height;
+        }
 
         _videoDisplay.texture = _rt;
 
@@ -139,7 +161,11 @@ public class IntroVideoPlayer : MonoBehaviour
 
         while (!_videoPlayer.isPrepared)
         {
-            if (_skipRequested) goto Cleanup;
+            if (_skipRequested)
+            {
+                goto Cleanup;
+            }
+
             yield return null;
         }
 
@@ -149,21 +175,26 @@ public class IntroVideoPlayer : MonoBehaviour
         }
 
     Cleanup:
+
         _videoPlayer.Stop();
 
-        StopMainMenuMusic();
+        IsPlaying = false;
         StartMainMenuMusic();
 
         _videoDisplay.texture = null;
-        _rt.Release();
-        Destroy(_rt);
+
+        if (_rt != null)
+        {
+            _rt.Release();
+            Destroy(_rt);
+            _rt = null;
+        }
 
         Destroy(gameObject);
     }
 
     private void OnPrepareCompleted(VideoPlayer vp)
     {
-        StopMainMenuMusic();
         vp.Play();
     }
 
@@ -176,7 +207,7 @@ public class IntroVideoPlayer : MonoBehaviour
     {
         try
         {
-            EventManager.Instance.PostEvent(MusicEventName, EventAction.StopSound);
+            Service.Get<IAudio>().Music.Stop();
         }
         catch (System.Exception e)
         {
@@ -188,9 +219,7 @@ public class IntroVideoPlayer : MonoBehaviour
     {
         try
         {
-            EventManager.Instance.PostEvent(MusicEventName, EventAction.StopSound);
-            EventManager.Instance.PostEvent(MusicEventName, EventAction.SetSwitch, MusicTrack.MainMenu.ToString());
-            EventManager.Instance.PostEvent(MusicEventName);
+            Service.Get<IAudio>().Music.Play(MusicTrack.MainMenu);
         }
         catch (System.Exception e)
         {
@@ -200,6 +229,8 @@ public class IntroVideoPlayer : MonoBehaviour
 
     private void OnDestroy()
     {
+        IsPlaying = false;
+
         if (_videoPlayer != null)
         {
             _videoPlayer.loopPointReached -= OnVideoFinished;
@@ -210,6 +241,7 @@ public class IntroVideoPlayer : MonoBehaviour
         {
             _rt.Release();
             Destroy(_rt);
+            _rt = null;
         }
     }
 }
