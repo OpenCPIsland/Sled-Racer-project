@@ -32,6 +32,7 @@ public class InputBehaviour : AbstractInputBehaviour
         verticalAction.AddCompositeBinding("1DAxis")
             .With("Negative", "<Keyboard>/downArrow")
             .With("Positive", "<Keyboard>/upArrow");
+        verticalAction.AddBinding("<Gamepad>/buttonSouth");
         verticalAction.Enable();
 
         horizontalAction = new InputAction("Horizontal", type: InputActionType.Value, expectedControlType: "Axis");
@@ -41,6 +42,7 @@ public class InputBehaviour : AbstractInputBehaviour
         horizontalAction.AddCompositeBinding("1DAxis")
             .With("Negative", "<Keyboard>/leftArrow")
             .With("Positive", "<Keyboard>/rightArrow");
+        horizontalAction.AddBinding("<Gamepad>/leftStick/x");
         horizontalAction.Enable();
     }
 
@@ -89,6 +91,11 @@ public class InputBehaviour : AbstractInputBehaviour
             }
             return manager.right(horizontalAction.ReadValue<float>());
         }
+        float controllerX = horizontalAction.ReadValue<float>();
+        if (Mathf.Abs(controllerX) > 0.1f)
+        {
+            return manager.right(controllerX);
+        }
         return manager.right(getTouchPositions());
     }
 
@@ -105,6 +112,11 @@ public class InputBehaviour : AbstractInputBehaviour
                 return false;
             }
             return manager.left(horizontalAction.ReadValue<float>());
+        }
+        float controllerX = horizontalAction.ReadValue<float>();
+        if (Mathf.Abs(controllerX) > 0.1f)
+        {
+            return manager.left(controllerX);
         }
         return manager.left(getTouchPositions());
     }
