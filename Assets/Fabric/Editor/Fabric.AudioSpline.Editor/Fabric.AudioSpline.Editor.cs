@@ -6,7 +6,7 @@ using UnityEditor;
 using UnityEngine;
 
 [assembly: AssemblyProduct("Fabric.AudioSpline.Editor")]
-[assembly: AssemblyCopyright("Copyright © TazMan-Audio 2013")]
+[assembly: AssemblyCopyright("Copyright © TazMan-Audio 2026")]
 [assembly: RuntimeCompatibility(WrapNonExceptionThrows = true)]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
@@ -16,8 +16,8 @@ using UnityEngine;
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyTitle("Fabric.AudioSpline.Editor")]
 [assembly: Guid("2bf2dc8d-1d42-4603-9a10-0d9d0fd143eb")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
-[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("4.0.0.0")]
+[assembly: AssemblyVersion("4.0.0.0")]
 namespace Fabric
 {
 	public class DefaultHandles

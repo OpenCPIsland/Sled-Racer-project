@@ -22,7 +22,7 @@ using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
 
 [assembly: ComVisible(false)]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("4.0.0.0")]
 [assembly: AssemblyTrademark("")]
 [assembly: Guid("9b155348-94cc-4296-ba3e-3e322dedfb15")]
 [assembly: CompilationRelaxations(8)]
@@ -32,8 +32,8 @@ using UnityEngine.SceneManagement;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("TazMan-Audio")]
 [assembly: AssemblyProduct("Fabric.Core.Editor")]
-[assembly: AssemblyCopyright("Copyright © TazMan-Audio 2011")]
-[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyCopyright("Copyright © TazMan-Audio 2026")]
+[assembly: AssemblyVersion("4.0.0.0")]
 namespace Fabric
 {
 	public static class StringExtensions
