@@ -3,9 +3,10 @@
 --- !u!90 &9000000
 Avatar:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: "anvil_charAvatar"
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: anvil_charAvatar
   m_AvatarSize: 572
   m_Avatar:
     serializedVersion: 3
@@ -23,51 +24,50 @@ Avatar:
     m_AvatarSkeletonPose:
       data:
         m_X:
-        - t: {x: 0, y: 0, z: 0, w: 0}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
+          s: {x: 1, y: 1, z: 1}
     m_DefaultPose:
       data:
         m_X:
-        - t: {x: 0, y: 0, z: 0, w: 0}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
+          s: {x: 1, y: 1, z: 1}
     m_SkeletonNameIDArray: 00000000a9c64273a62605bd
     m_Human:
       data:
+        serializedVersion: 2
         m_RootX:
-          t: {x: 0, y: 0, z: 0, w: 0}
+          t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
+          s: {x: 1, y: 1, z: 1}
         m_Skeleton:
           data:
-            m_Node:
+            m_Node: []
             m_ID: 
-            m_AxesArray:
+            m_AxesArray: []
         m_SkeletonPose:
           data:
-            m_X:
+            m_X: []
         m_LeftHand:
           data:
             m_HandBoneIndex: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
         m_RightHand:
           data:
             m_HandBoneIndex: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-        m_Handles:
-        m_ColliderArray: []
-        m_HumanBoneIndex: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+        m_HumanBoneIndex: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
         m_HumanBoneMass:
         - 0.1454546
         - 0.1212121
@@ -93,7 +93,7 @@ Avatar:
         - 0
         - 0
         - 0
-        m_ColliderIndex: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+        - 0
         m_Scale: 1
         m_ArmTwist: 0.5
         m_ForeArmTwist: 0.5
@@ -104,24 +104,40 @@ Avatar:
         m_FeetSpacing: 0
         m_HasLeftHand: 0
         m_HasRightHand: 0
-        m_HasTDoF: 
+        m_HasTDoF: 0
     m_HumanSkeletonIndexArray: 
     m_HumanSkeletonReverseIndexArray: 
     m_RootMotionBoneIndex: -1
     m_RootMotionBoneX:
-      t: {x: 0, y: 0, z: 0, w: 0}
+      t: {x: 0, y: 0, z: 0}
       q: {x: 0, y: 0, z: 0, w: 1}
-      s: {x: 1, y: 1, z: 1, w: 1}
+      s: {x: 1, y: 1, z: 1}
     m_RootMotionSkeleton:
       data:
-        m_Node:
+        m_Node: []
         m_ID: 
         m_AxesArray: []
     m_RootMotionSkeletonPose:
       data:
-        m_X:
+        m_X: []
     m_RootMotionSkeletonIndexArray: 
   m_TOS:
-    0: 
-    1933756073: anvil:anvil_mesh
     3171231398: anvil:base_jnt
+    1933756073: anvil:anvil_mesh
+    0: 
+  m_HumanDescription:
+    serializedVersion: 3
+    m_Human: []
+    m_Skeleton: []
+    m_ArmTwist: 0.5
+    m_ForeArmTwist: 0.5
+    m_UpperLegTwist: 0.5
+    m_LegTwist: 0.5
+    m_ArmStretch: 0.05
+    m_LegStretch: 0.05
+    m_FeetSpacing: 0
+    m_GlobalScale: 1
+    m_RootMotionBoneName: 
+    m_HasTranslationDoF: 0
+    m_HasExtraRoot: 0
+    m_SkeletonHasParents: 1

@@ -103,7 +103,7 @@ LightingSettings:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Settings.lighting
-  serializedVersion: 9
+  serializedVersion: 10
   m_EnableBakedLightmaps: 1
   m_EnableRealtimeLightmaps: 1
   m_RealtimeEnvironmentLighting: 1
@@ -118,6 +118,12 @@ LightingSettings:
   m_BakeResolution: 40
   m_Padding: 2
   m_LightmapCompression: 3
+  m_LightmapPackingMode: 1
+  m_LightmapPackingMethod: 0
+  m_XAtlasPackingAttempts: 16384
+  m_XAtlasBruteForce: 0
+  m_XAtlasBlockAlign: 0
+  m_XAtlasRepackUnderutilizedLightmaps: 1
   m_AO: 0
   m_AOMaxDistance: 1
   m_CompAOExponent: 1
@@ -5434,14 +5440,14 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1791169579659014405}
   m_Enabled: 1
-  serializedVersion: 11
+  serializedVersion: 12
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 0.5
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
-  m_CookieSize: 10
+  m_CookieSize2D: {x: 10, y: 10}
   m_Shadows:
     m_Type: 0
     m_Resolution: -1
@@ -5572,7 +5578,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840005}
   _onEventNotifyEventName: 
   _showInMixerView: 1
   _targetGroupComponentPath: 
@@ -5593,7 +5599,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventName: SFX_WindBuffet
-  _eventID: 0
+  _eventID: -731102428
   _overrideEventTriggerAction: 0
   _overrideParameters:
     _overrideIncomingEventAction: 0
@@ -5695,7 +5701,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840007}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: c35abbb7d04c4526918b3391b8f762a4, type: 3}
   _audioClipHandle:
@@ -5812,7 +5818,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840008}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: b65f5351e7474539b44d4b6130b0dba3, type: 3}
   _audioClipHandle:
@@ -5861,7 +5867,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventName: SFX_Boost_Invincitube
-  _eventID: 0
+  _eventID: -932302880
   _overrideEventTriggerAction: 0
   _overrideParameters:
     _overrideIncomingEventAction: 0
@@ -5963,7 +5969,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840010}
   _onEventNotifyEventName: 
   _playlist:
   - {fileID: 1791169581554840161}
@@ -5991,7 +5997,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventName: MUS_Main
-  _eventID: 0
+  _eventID: 1402930239
   _overrideEventTriggerAction: 0
   _overrideParameters:
     _overrideIncomingEventAction: 0
@@ -6093,7 +6099,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840012}
   _onEventNotifyEventName: 
   _selectedComponent: {fileID: 1791169581554840034}
   _startOnSwitch: 0
@@ -6183,7 +6189,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840013}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: c9a18cdd957849eea6b87786e0b367f5, type: 3}
   _audioClipHandle:
@@ -6300,7 +6306,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840014}
   _onEventNotifyEventName: 
   _showInMixerView: 1
   _targetGroupComponentPath: 
@@ -6389,7 +6395,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840015}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 0}
   _audioClipHandle:
@@ -6438,7 +6444,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventName: SFX_WindBuffetLoop
-  _eventID: 0
+  _eventID: 1737703874
   _overrideEventTriggerAction: 0
   _overrideParameters:
     _overrideIncomingEventAction: 0
@@ -6540,7 +6546,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840017}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: a6dcd10b6b1d487cbc56c190fd346780, type: 3}
   _audioClipHandle:
@@ -6657,7 +6663,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840018}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 5e03d5ff16ab42b18879b9862aa35046, type: 3}
   _audioClipHandle:
@@ -6706,7 +6712,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventName: SFX_PlayerRoll
-  _eventID: 0
+  _eventID: 367891900
   _overrideEventTriggerAction: 0
   _overrideParameters:
     _overrideIncomingEventAction: 0
@@ -6808,7 +6814,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840020}
   _onEventNotifyEventName: 
   _playlist:
   - {fileID: 1791169581554840039}
@@ -6835,7 +6841,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventName: AMB_Main
-  _eventID: 0
+  _eventID: 762597786
   _overrideEventTriggerAction: 0
   _overrideParameters:
     _overrideIncomingEventAction: 0
@@ -6937,7 +6943,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840022}
   _onEventNotifyEventName: 
   _selectedComponent: {fileID: 0}
   _startOnSwitch: 0
@@ -7057,7 +7063,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840024}
   _onEventNotifyEventName: 
   _playlist:
   - {fileID: 1791169581554840178}
@@ -7084,7 +7090,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventName: UI_Leaderboard_CoinsEarnedTally
-  _eventID: 0
+  _eventID: 655586968
   _overrideEventTriggerAction: 0
   _overrideParameters:
     _overrideIncomingEventAction: 0
@@ -7186,7 +7192,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840026}
   _onEventNotifyEventName: 
   _stages:
   - {fileID: 1791169581554840080}
@@ -7276,7 +7282,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840027}
   _onEventNotifyEventName: 
   _showInMixerView: 1
   _targetGroupComponentPath: 
@@ -7365,7 +7371,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840028}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 0}
   _audioClipHandle:
@@ -7414,7 +7420,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventName: SFX_FluffyPopUp
-  _eventID: 0
+  _eventID: -412997676
   _overrideEventTriggerAction: 0
   _overrideParameters:
     _overrideIncomingEventAction: 0
@@ -7516,7 +7522,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840030}
   _onEventNotifyEventName: 
   _playMode: 1
   _randomWeights: 640000006400000064000000
@@ -7608,7 +7614,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840031}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 65fc10b70f564372a1b9a93e4c4332e4, type: 3}
   _audioClipHandle:
@@ -7725,7 +7731,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840032}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: f01c0a4850484f2d9c0977f25b85ce31, type: 3}
   _audioClipHandle:
@@ -7842,7 +7848,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840033}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: cdc699acafaa4a148d7b45e46c3ccec9, type: 3}
   _audioClipHandle:
@@ -7959,7 +7965,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840034}
   _onEventNotifyEventName: 
   _stages:
   - {fileID: 0}
@@ -8049,7 +8055,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840035}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: ca4becb3f4e14659a54b3d4a7ad15b1c, type: 3}
   _audioClipHandle:
@@ -8166,7 +8172,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840036}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: ea66469ff0754d52b233948a2d6aef87, type: 3}
   _audioClipHandle:
@@ -8283,7 +8289,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840037}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: ff99ed3981fa4d9a8781f8451f91970a, type: 3}
   _audioClipHandle:
@@ -8400,7 +8406,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840038}
   _onEventNotifyEventName: 
   _showInMixerView: 1
   _targetGroupComponentPath: 
@@ -8489,7 +8495,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840039}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: c7a86e8f2dc848d6a0e0e890305d1482, type: 3}
   _audioClipHandle:
@@ -8606,7 +8612,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840040}
   _onEventNotifyEventName: 
   _showInMixerView: 1
   _targetGroupComponentPath: 
@@ -8627,7 +8633,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventName: UI_ToggleOn
-  _eventID: 0
+  _eventID: 476020120
   _overrideEventTriggerAction: 0
   _overrideParameters:
     _overrideIncomingEventAction: 0
@@ -8729,7 +8735,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840042}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 9ad505e79dcb4e9281116a396f4c2220, type: 3}
   _audioClipHandle:
@@ -8846,7 +8852,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840043}
   _onEventNotifyEventName: 
   _playMode: 0
   _randomWeights: 6400000064000000
@@ -8938,7 +8944,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840044}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 694e278d483e4bd49c0293dd9bc574b3, type: 3}
   _audioClipHandle:
@@ -9106,7 +9112,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840049}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 35512390c28b4d76a3aed18a4ad9fca7, type: 3}
   _audioClipHandle:
@@ -9155,7 +9161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventName: UI_PauseOff
-  _eventID: 0
+  _eventID: 98392550
   _overrideEventTriggerAction: 0
   _overrideParameters:
     _overrideIncomingEventAction: 0
@@ -9257,7 +9263,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840051}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: f9adc2960ff94c96890cbb20cfc9516f, type: 3}
   _audioClipHandle:
@@ -9374,7 +9380,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840052}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 89f1a1a7928b47938b1449202f886e66, type: 3}
   _audioClipHandle:
@@ -9463,7 +9469,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventName: SFX_Boost_Parachute
-  _eventID: 0
+  _eventID: -411792395
   _overrideEventTriggerAction: 0
   _overrideParameters:
     _overrideIncomingEventAction: 0
@@ -9565,7 +9571,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840056}
   _onEventNotifyEventName: 
   _stages:
   - {fileID: 1791169581554840201}
@@ -9655,7 +9661,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840057}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 853e708834a248b4ab437eb585d6dde4, type: 3}
   _audioClipHandle:
@@ -9704,7 +9710,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventName: SFX_PlayerAirTime
-  _eventID: 0
+  _eventID: 640746396
   _overrideEventTriggerAction: 0
   _overrideParameters:
     _overrideIncomingEventAction: 0
@@ -9806,7 +9812,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840059}
   _onEventNotifyEventName: 
   _playMode: 1
   _randomWeights: 6400000064000000
@@ -9898,7 +9904,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840060}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: a4670a2b555845a8815877338b379052, type: 3}
   _audioClipHandle:
@@ -10015,7 +10021,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840061}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 7626d69a52badc5a496961aebfbb4e8c, type: 3}
   _audioClipHandle:
@@ -10132,7 +10138,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840062}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: ed87d1e301aa4243aa64da49018b4436, type: 3}
   _audioClipHandle:
@@ -10249,7 +10255,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840063}
   _onEventNotifyEventName: 
   _showInMixerView: 1
   _targetGroupComponentPath: 
@@ -10338,7 +10344,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840064}
   _onEventNotifyEventName: 
   _showInMixerView: 1
   _targetGroupComponentPath: 
@@ -10359,7 +10365,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventName: SFX_Bombfall
-  _eventID: 0
+  _eventID: -1045573225
   _overrideEventTriggerAction: 0
   _overrideParameters:
     _overrideIncomingEventAction: 0
@@ -10461,7 +10467,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840066}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 930476fcff84445a894c9b77d7df17de, type: 3}
   _audioClipHandle:
@@ -10510,7 +10516,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventName: SFX_Boost_WhoopeeCushion
-  _eventID: 0
+  _eventID: -1588806470
   _overrideEventTriggerAction: 0
   _overrideParameters:
     _overrideIncomingEventAction: 0
@@ -10612,7 +10618,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840068}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: a96790271ece49d182a25788bc5428b6, type: 3}
   _audioClipHandle:
@@ -10661,7 +10667,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventName: UI_ButtonBack
-  _eventID: 0
+  _eventID: 2057693614
   _overrideEventTriggerAction: 0
   _overrideParameters:
     _overrideIncomingEventAction: 0
@@ -10763,7 +10769,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840070}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 90fdca4cba1e4455869b5accd8486158, type: 3}
   _audioClipHandle:
@@ -10880,7 +10886,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840071}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 1869c313f05d408daddb6ad69c59076f, type: 3}
   _audioClipHandle:
@@ -10929,7 +10935,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventName: SFX_LandHardSpin
-  _eventID: 0
+  _eventID: 1935971638
   _overrideEventTriggerAction: 0
   _overrideParameters:
     _overrideIncomingEventAction: 0
@@ -11031,7 +11037,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840073}
   _onEventNotifyEventName: 
   _playMode: 0
   _randomWeights: 6400000064000000
@@ -11055,7 +11061,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventName: UI_PowerUpEquip
-  _eventID: 0
+  _eventID: 263627813
   _overrideEventTriggerAction: 0
   _overrideParameters:
     _overrideIncomingEventAction: 0
@@ -11157,7 +11163,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840075}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: a13e270941ef41f4bdc7ea7776117cb8, type: 3}
   _audioClipHandle:
@@ -11206,7 +11212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventName: UI_PauseOn
-  _eventID: 0
+  _eventID: 1976867036
   _overrideEventTriggerAction: 0
   _overrideParameters:
     _overrideIncomingEventAction: 0
@@ -11308,7 +11314,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840077}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: bc54c8b271cc43f6b323a4f13210843b, type: 3}
   _audioClipHandle:
@@ -11425,7 +11431,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840078}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 58b35637e3404e68a09822226b9e73c5, type: 3}
   _audioClipHandle:
@@ -11542,7 +11548,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840079}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 5b2b4f124445405c8244186bb3759eac, type: 3}
   _audioClipHandle:
@@ -11659,7 +11665,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840080}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 0}
   _audioClipHandle:
@@ -11776,7 +11782,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840081}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: e01a369e60a740d68cae21ef063540bc, type: 3}
   _audioClipHandle:
@@ -11893,7 +11899,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840082}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 5eeca6c1755347f5aaadc8585c469b70, type: 3}
   _audioClipHandle:
@@ -12010,7 +12016,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840083}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: b407b0d9701a48fea59203e927898cf1, type: 3}
   _audioClipHandle:
@@ -12127,7 +12133,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840084}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 0d1c46e2d33b430f845b88a8605cab15, type: 3}
   _audioClipHandle:
@@ -12244,7 +12250,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840085}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 404a9ee03c034969b5f242481ef2ec81, type: 3}
   _audioClipHandle:
@@ -12361,7 +12367,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840086}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 63f2390d967b4a1fb5b207519b1e6ec3, type: 3}
   _audioClipHandle:
@@ -12410,7 +12416,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventName: SFX_PlayerImpactObstacle
-  _eventID: 0
+  _eventID: -892679888
   _overrideEventTriggerAction: 0
   _overrideParameters:
     _overrideIncomingEventAction: 0
@@ -12512,7 +12518,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840088}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 616aa80d06af40b7b29b981d9917204c, type: 3}
   _audioClipHandle:
@@ -12629,7 +12635,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840089}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: e86503ceb4374c10956a4c395a2b44e2, type: 3}
   _audioClipHandle:
@@ -12678,7 +12684,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventName: SFX_HardImpact
-  _eventID: 0
+  _eventID: 2015017395
   _overrideEventTriggerAction: 0
   _overrideParameters:
     _overrideIncomingEventAction: 0
@@ -12780,7 +12786,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840091}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 1ac0fa2815e441df977a3688609c0b1a, type: 3}
   _audioClipHandle:
@@ -12927,7 +12933,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840093}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: f4c9baa7f9b2462faa039ff5c3e7d8f2, type: 3}
   _audioClipHandle:
@@ -12976,7 +12982,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventName: SFX_Boost_Skiwax
-  _eventID: 0
+  _eventID: 1964335219
   _overrideEventTriggerAction: 0
   _overrideParameters:
     _overrideIncomingEventAction: 0
@@ -13078,7 +13084,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840095}
   _onEventNotifyEventName: 
   _playMode: 0
   _randomWeights: 6400000064000000
@@ -13170,7 +13176,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840096}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 34ee5878ebbc4c66aa677c633e0910e2, type: 3}
   _audioClipHandle:
@@ -13287,7 +13293,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840097}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 4b3eae54f0c04ca98a6e7e456704cb61, type: 3}
   _audioClipHandle:
@@ -13404,7 +13410,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840098}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: d60fd2c5ffa8421c8a0b01ab714e3433, type: 3}
   _audioClipHandle:
@@ -13453,7 +13459,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventName: SFX_SledHang
-  _eventID: 0
+  _eventID: -1663269928
   _overrideEventTriggerAction: 0
   _overrideParameters:
     _overrideIncomingEventAction: 0
@@ -13555,7 +13561,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840100}
   _onEventNotifyEventName: 
   _playMode: 1
   _randomWeights: 6400000064000000
@@ -13647,7 +13653,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840101}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: b5944cf94ae9413cbcc0db59cc67ce5f, type: 3}
   _audioClipHandle:
@@ -13764,7 +13770,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840102}
   _onEventNotifyEventName: 
   _stages:
   - {fileID: 1791169581554840031}
@@ -13854,7 +13860,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840103}
   _onEventNotifyEventName: 
   _stages:
   - {fileID: 1791169581554840083}
@@ -13876,7 +13882,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventName: UI_PlayGame2
-  _eventID: 0
+  _eventID: -347369513
   _overrideEventTriggerAction: 0
   _overrideParameters:
     _overrideIncomingEventAction: 0
@@ -13978,7 +13984,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840105}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: b2570d135ca34a8b87e97108f93f7cc4, type: 3}
   _audioClipHandle:
@@ -14095,7 +14101,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840106}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 4b3eae54f0c04ca98a6e7e456704cb61, type: 3}
   _audioClipHandle:
@@ -14212,7 +14218,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840107}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: df941c2babd84336bad1e4837a03d4eb, type: 3}
   _audioClipHandle:
@@ -14261,7 +14267,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventName: SFX_Boost_Revive
-  _eventID: 0
+  _eventID: -1045840493
   _overrideEventTriggerAction: 0
   _overrideParameters:
     _overrideIncomingEventAction: 0
@@ -14363,7 +14369,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840109}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 9a85a6f393524635801829167bc2e18e, type: 3}
   _audioClipHandle:
@@ -14480,7 +14486,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840110}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: d2dfdf979a614e7d98855bca78ed819e, type: 3}
   _audioClipHandle:
@@ -14597,7 +14603,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840111}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 0ba125feb41e4b7f8cb8d90f9f23fa09, type: 3}
   _audioClipHandle:
@@ -14714,7 +14720,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840112}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 89ef0939ce4b453283006d7f1f210d63, type: 3}
   _audioClipHandle:
@@ -14763,7 +14769,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventName: RecordMarkerPassed
-  _eventID: 0
+  _eventID: -229010861
   _overrideEventTriggerAction: 0
   _overrideParameters:
     _overrideIncomingEventAction: 0
@@ -14865,7 +14871,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840114}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: b7f3f3259a5444f789eafaec11310111, type: 3}
   _audioClipHandle:
@@ -14982,7 +14988,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840115}
   _onEventNotifyEventName: 
   _showInMixerView: 1
   _targetGroupComponentPath: 
@@ -15071,7 +15077,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840116}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 2a6479e9d4c443248daddfbb9c38bb2a, type: 3}
   _audioClipHandle:
@@ -15195,11 +15201,11 @@ MonoBehaviour:
   _eventMenuListFoldout: 1
   _eventListFoldout: 1
   _forceQueueAllEvents: 0
-  _deployWithActiveEventList: 0
   _eventSequencer:
     _sequenceEntries:
       _keys: []
       _data: []
+  _deployWithActiveEventList: 0
 --- !u!114 &1791169581554840118
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15246,8 +15252,8 @@ MonoBehaviour:
     _defaultVRSolution: 0
   _audioSourcePoolManager: {fileID: 0}
   _onApplicationPauseBehavior: 0
-  _checkOnApplicationFocus: 0
   _enableEditorPreviewer: 0
+  _checkOnApplicationFocus: 0
 --- !u!114 &1791169581554840119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15329,7 +15335,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840119}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 9643cf7db4bc4cc5989a66fa98526624, type: 3}
   _audioClipHandle:
@@ -15378,7 +15384,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventName: UI_Leaderboard_IconPopUp
-  _eventID: 0
+  _eventID: 1678699186
   _overrideEventTriggerAction: 0
   _overrideParameters:
     _overrideIncomingEventAction: 0
@@ -15480,7 +15486,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840121}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 0c68a11afa684fcdb513b93d13b20fbb, type: 3}
   _audioClipHandle:
@@ -15597,7 +15603,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840122}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 059790ecd63147d293c9770ab779cee0, type: 3}
   _audioClipHandle:
@@ -15714,7 +15720,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840123}
   _onEventNotifyEventName: 
   _stages:
   - {fileID: 1791169581554840221}
@@ -15736,7 +15742,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventName: UI_Leaderboard_TotalCoinsTally
-  _eventID: 0
+  _eventID: -1900365009
   _overrideEventTriggerAction: 0
   _overrideParameters:
     _overrideIncomingEventAction: 0
@@ -15921,7 +15927,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840130}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 9900619225f5493fa837bc48a623b644, type: 3}
   _audioClipHandle:
@@ -16038,7 +16044,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840131}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 40c7aaec33e44c88aa390ee21a9bac02, type: 3}
   _audioClipHandle:
@@ -16155,7 +16161,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840132}
   _onEventNotifyEventName: 
   _showInMixerView: 1
   _targetGroupComponentPath: 
@@ -16244,7 +16250,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840133}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: ca4becb3f4e14659a54b3d4a7ad15b1c, type: 3}
   _audioClipHandle:
@@ -16361,7 +16367,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840134}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: b9e677298f38496c8c643bb799db92ef, type: 3}
   _audioClipHandle:
@@ -16478,7 +16484,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840135}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: e1f6c6a2dba44affa77ec8742cec8a90, type: 3}
   _audioClipHandle:
@@ -16527,7 +16533,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventName: UI_ButtonSelect
-  _eventID: 0
+  _eventID: 1442948033
   _overrideEventTriggerAction: 0
   _overrideParameters:
     _overrideIncomingEventAction: 0
@@ -16629,7 +16635,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840137}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 42c4a4e8fb4944589fbee98fc34407ab, type: 3}
   _audioClipHandle:
@@ -16746,7 +16752,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840138}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: a6dcd10b6b1d487cbc56c190fd346780, type: 3}
   _audioClipHandle:
@@ -16863,7 +16869,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840139}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 8558bce406ac4147aac4ef65820292c6, type: 3}
   _audioClipHandle:
@@ -16912,7 +16918,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventName: SFX_SledTurn
-  _eventID: 0
+  _eventID: 662070441
   _overrideEventTriggerAction: 0
   _overrideParameters:
     _overrideIncomingEventAction: 0
@@ -17014,7 +17020,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840141}
   _onEventNotifyEventName: 
   _playMode: 1
   _randomWeights: 64000000640000006400000064000000
@@ -17038,7 +17044,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventName: UI_Leaderboard_RunDistanceTally
-  _eventID: 0
+  _eventID: -1711454701
   _overrideEventTriggerAction: 0
   _overrideParameters:
     _overrideIncomingEventAction: 0
@@ -17140,7 +17146,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840143}
   _onEventNotifyEventName: 
   _stages:
   - {fileID: 1791169581554840152}
@@ -17162,7 +17168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventName: SFX_SledOnGround
-  _eventID: 0
+  _eventID: 265495150
   _overrideEventTriggerAction: 0
   _overrideParameters:
     _overrideIncomingEventAction: 0
@@ -17264,7 +17270,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840145}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: b03b531c43a942c796b0aa873423304c, type: 3}
   _audioClipHandle:
@@ -17381,7 +17387,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840146}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 1e9957e5253647cdad9add0f581591a0, type: 3}
   _audioClipHandle:
@@ -17498,7 +17504,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840147}
   _onEventNotifyEventName: 
   _showInMixerView: 1
   _targetGroupComponentPath: 
@@ -17519,7 +17525,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventName: SFX_Race
-  _eventID: 0
+  _eventID: -373512969
   _overrideEventTriggerAction: 0
   _overrideParameters:
     _overrideIncomingEventAction: 0
@@ -17621,7 +17627,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840149}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: f19fcf483b3542c98153414fb0009684, type: 3}
   _audioClipHandle:
@@ -17738,7 +17744,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840150}
   _onEventNotifyEventName: 
   _showInMixerView: 1
   _targetGroupComponentPath: 
@@ -17759,7 +17765,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventName: _UnSet_
-  _eventID: 0
+  _eventID: -129275519
   _overrideEventTriggerAction: 0
   _overrideParameters:
     _overrideIncomingEventAction: 0
@@ -17861,7 +17867,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840152}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 0}
   _audioClipHandle:
@@ -17910,7 +17916,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventName: UI_Leaderboard_BestDistanceTally
-  _eventID: 0
+  _eventID: -944718030
   _overrideEventTriggerAction: 0
   _overrideParameters:
     _overrideIncomingEventAction: 0
@@ -18012,7 +18018,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840154}
   _onEventNotifyEventName: 
   _stages:
   - {fileID: 1791169581554840174}
@@ -18102,7 +18108,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840155}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 62c4c8d4d91641948b0dd339d3b1e070, type: 3}
   _audioClipHandle:
@@ -18283,7 +18289,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840160}
   _onEventNotifyEventName: 
   _playlist:
   - {fileID: 1791169581554840078}
@@ -18378,7 +18384,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840161}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: d8e077e783f64ec28fd962152a5b4ab0, type: 3}
   _audioClipHandle:
@@ -18427,7 +18433,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventName: SFX_Boost_InvincitubeImpact
-  _eventID: 0
+  _eventID: 127248186
   _overrideEventTriggerAction: 0
   _overrideParameters:
     _overrideIncomingEventAction: 0
@@ -18529,7 +18535,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840163}
   _onEventNotifyEventName: 
   _playMode: 0
   _randomWeights: 6400000064000000
@@ -18621,7 +18627,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840164}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 8b272a77dbf84a7ba242d61575e9a6bc, type: 3}
   _audioClipHandle:
@@ -18670,7 +18676,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventName: UI_MainMenu_LogoStinger
-  _eventID: 0
+  _eventID: -1325722101
   _overrideEventTriggerAction: 0
   _overrideParameters:
     _overrideIncomingEventAction: 0
@@ -18772,7 +18778,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840166}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 958d0da109f343a88f6691b62ecae44c, type: 3}
   _audioClipHandle:
@@ -18821,7 +18827,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventName: UI_HUDWarn
-  _eventID: 0
+  _eventID: -965807030
   _overrideEventTriggerAction: 0
   _overrideParameters:
     _overrideIncomingEventAction: 0
@@ -18923,7 +18929,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840168}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 374c185b9b9b405495d60d8ac6cdc9c4, type: 3}
   _audioClipHandle:
@@ -19040,7 +19046,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840169}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 05ff42a2228a41759616318b7bfe88f9, type: 3}
   _audioClipHandle:
@@ -19089,7 +19095,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventName: SFX_PlayerImpactSnow
-  _eventID: 0
+  _eventID: 1565524926
   _overrideEventTriggerAction: 0
   _overrideParameters:
     _overrideIncomingEventAction: 0
@@ -19191,7 +19197,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840171}
   _onEventNotifyEventName: 
   _playMode: 1
   _randomWeights: 6400000064000000
@@ -19215,7 +19221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventName: UI_PlayGame2
-  _eventID: 0
+  _eventID: -347369513
   _overrideEventTriggerAction: 0
   _overrideParameters:
     _overrideIncomingEventAction: 0
@@ -19317,7 +19323,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840173}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 0}
   _audioClipHandle:
@@ -19434,7 +19440,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840174}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 0}
   _audioClipHandle:
@@ -19483,7 +19489,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventName: SFX_PlayerFail
-  _eventID: 0
+  _eventID: 166379459
   _overrideEventTriggerAction: 0
   _overrideParameters:
     _overrideIncomingEventAction: 0
@@ -19585,7 +19591,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840176}
   _onEventNotifyEventName: 
   _playMode: 1
   _randomWeights: 640000006400000064000000
@@ -19677,7 +19683,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840177}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: e6ccf9e9b7914516ad67e92a9b083b2b, type: 3}
   _audioClipHandle:
@@ -19794,7 +19800,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840178}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: c549b34eeb234b49baac22c6208aee9c, type: 3}
   _audioClipHandle:
@@ -19911,7 +19917,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840179}
   _onEventNotifyEventName: 
   _showInMixerView: 1
   _targetGroupComponentPath: 
@@ -20031,7 +20037,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840181}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 80921718c12b41b2bfa3d5acb94d14d6, type: 3}
   _audioClipHandle:
@@ -20080,7 +20086,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventName: SFX_Boost_Jetpack
-  _eventID: 0
+  _eventID: -529336464
   _overrideEventTriggerAction: 0
   _overrideParameters:
     _overrideIncomingEventAction: 0
@@ -20182,7 +20188,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840183}
   _onEventNotifyEventName: 
   _stages:
   - {fileID: 1791169581554840107}
@@ -20272,7 +20278,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840184}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 132fffe843244c4bbfa33d7667afe905, type: 3}
   _audioClipHandle:
@@ -20321,7 +20327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventName: UI_MainMenu_PenguinWhoosh
-  _eventID: 0
+  _eventID: -1062326082
   _overrideEventTriggerAction: 0
   _overrideParameters:
     _overrideIncomingEventAction: 0
@@ -20423,7 +20429,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840186}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 9a43c81a6e374d1f99e9adf1e6647d9f, type: 3}
   _audioClipHandle:
@@ -20472,7 +20478,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventName: SFX_PlayerImpactAnvil
-  _eventID: 0
+  _eventID: -611405233
   _overrideEventTriggerAction: 0
   _overrideParameters:
     _overrideIncomingEventAction: 0
@@ -20574,7 +20580,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840188}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: cbd16a3eac7149598f9efc7295eff092, type: 3}
   _audioClipHandle:
@@ -20623,7 +20629,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventName: SFX_SledImpactSnow
-  _eventID: 0
+  _eventID: 1966160583
   _overrideEventTriggerAction: 0
   _overrideParameters:
     _overrideIncomingEventAction: 0
@@ -20725,7 +20731,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840190}
   _onEventNotifyEventName: 
   _playMode: 1
   _randomWeights: 6400000064000000
@@ -20817,7 +20823,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840191}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: dfc98c2129784b389be05cf1f0ab6883, type: 3}
   _audioClipHandle:
@@ -20934,7 +20940,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840192}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 7de8c12d955e4b73a9fb9caf823c0d0f, type: 3}
   _audioClipHandle:
@@ -21051,7 +21057,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840193}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: aeac94818b7f4233b1231ee25f14eac6, type: 3}
   _audioClipHandle:
@@ -21168,7 +21174,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840194}
   _onEventNotifyEventName: 
   _playMode: 1
   _randomWeights: 6400000064000000
@@ -21260,7 +21266,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840195}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: c81d1ff94e4b4a6f86be3d70e5be8c17, type: 3}
   _audioClipHandle:
@@ -21309,7 +21315,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventName: UI_PowerUpRemove
-  _eventID: 0
+  _eventID: 1194936791
   _overrideEventTriggerAction: 0
   _overrideParameters:
     _overrideIncomingEventAction: 0
@@ -21411,7 +21417,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840197}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 4924a0063d3c4fb195c340fc4e789762, type: 3}
   _audioClipHandle:
@@ -21460,7 +21466,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventName: UI_MainMenu_ButtonWhoosh
-  _eventID: 0
+  _eventID: 1443815366
   _overrideEventTriggerAction: 0
   _overrideParameters:
     _overrideIncomingEventAction: 0
@@ -21562,7 +21568,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840199}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 24e31f3d877d403e8f18775782220cb7, type: 3}
   _audioClipHandle:
@@ -21679,7 +21685,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840200}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: c9a18cdd957849eea6b87786e0b367f5, type: 3}
   _audioClipHandle:
@@ -21796,7 +21802,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840201}
   _onEventNotifyEventName: 
   _playMode: 0
   _randomWeights: 6400000064000000
@@ -21888,7 +21894,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840202}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 06f5341fe7884750bfc3a3e5e7987537, type: 3}
   _audioClipHandle:
@@ -22005,7 +22011,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840203}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 3336f2252a9b409ea6913df04096195a, type: 3}
   _audioClipHandle:
@@ -22122,7 +22128,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840204}
   _onEventNotifyEventName: 
   _showInMixerView: 1
   _targetGroupComponentPath: 
@@ -22143,7 +22149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventName: SFX_PlayerImpactWood
-  _eventID: 0
+  _eventID: 530333376
   _overrideEventTriggerAction: 0
   _overrideParameters:
     _overrideIncomingEventAction: 0
@@ -22245,7 +22251,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840206}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: f0b8ae6f0fd346aab37fabd78e211f98, type: 3}
   _audioClipHandle:
@@ -22362,7 +22368,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840207}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: cd2852bd93b443c6a0e40431d23550d6, type: 3}
   _audioClipHandle:
@@ -22411,7 +22417,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventName: UI_ToggleOff
-  _eventID: 0
+  _eventID: -1613296026
   _overrideEventTriggerAction: 0
   _overrideParameters:
     _overrideIncomingEventAction: 0
@@ -22513,7 +22519,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840209}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 18728330bbbd4ea8a5f6f67a7151c41a, type: 3}
   _audioClipHandle:
@@ -22630,7 +22636,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840210}
   _onEventNotifyEventName: 
   _playMode: 0
   _randomWeights: 640000006400000064000000
@@ -22654,7 +22660,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventName: SFX_IcePatchBoost
-  _eventID: 0
+  _eventID: -196339516
   _overrideEventTriggerAction: 0
   _overrideParameters:
     _overrideIncomingEventAction: 0
@@ -22688,7 +22694,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventName: SFX_CatchAir
-  _eventID: 0
+  _eventID: -1257800903
   _overrideEventTriggerAction: 0
   _overrideParameters:
     _overrideIncomingEventAction: 0
@@ -22790,7 +22796,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840213}
   _onEventNotifyEventName: 
   _playMode: 1
   _randomWeights: 6400000064000000
@@ -22882,7 +22888,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840214}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 3f3d4ecb79674eb4b687c1e7da01bdd9, type: 3}
   _audioClipHandle:
@@ -22999,7 +23005,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840215}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 1446ffd00d4948de8eb81abe43facd5f, type: 3}
   _audioClipHandle:
@@ -23116,7 +23122,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840216}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: b7ac021674084dae8695b5468e5065c4, type: 3}
   _audioClipHandle:
@@ -23233,7 +23239,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840217}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 158d0cd8f21544328908e3625f657bb4, type: 3}
   _audioClipHandle:
@@ -23350,7 +23356,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840218}
   _onEventNotifyEventName: 
   _audioClip: {fileID: 8300000, guid: 810754aa81f8481ca00b0b671a042ebe, type: 3}
   _audioClipHandle:
@@ -23467,7 +23473,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840219}
   _onEventNotifyEventName: 
   _stages:
   - {fileID: 1791169581554840086}
@@ -23557,7 +23563,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840221}
   _onEventNotifyEventName: 
 --- !u!114 &1791169581554840222
 MonoBehaviour:
@@ -23640,7 +23646,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840222}
   _onEventNotifyEventName: 
   _showInMixerView: 1
   _targetGroupComponentPath: 
@@ -23729,7 +23735,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840223}
   _onEventNotifyEventName: 
   _showInMixerView: 1
   _targetGroupComponentPath: 
@@ -23750,7 +23756,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _eventName: SFX_PlayerJump
-  _eventID: 0
+  _eventID: -270663181
   _overrideEventTriggerAction: 0
   _overrideParameters:
     _overrideIncomingEventAction: 0
@@ -23852,7 +23858,7 @@ MonoBehaviour:
     _parameters: []
     _reference: {fileID: 0}
   Guid: 
-  _componentHolder: {fileID: 0}
+  _componentHolder: {fileID: 1791169581554840225}
   _onEventNotifyEventName: 
   _playMode: 1
   _randomWeights: 6400000064000000

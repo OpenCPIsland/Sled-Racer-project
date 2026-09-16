@@ -171,9 +171,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4540f63a16a3c3c47b9ce69cdd29a2f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::IntroVideoPlayer
-  fabricMusicStopEvent: MainMenuMusic/Stop
-  fabricMusicStartEvent: MainMenuMusic/Play
-  fabricAudioGameObjectName: MainMenuMusicSource
 --- !u!4 &2018896327
 Transform:
   m_ObjectHideFlags: 0

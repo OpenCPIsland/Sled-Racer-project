@@ -3,9 +3,10 @@
 --- !u!90 &9000000
 Avatar:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: "invincible_charAvatar"
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: invincible_charAvatar
   m_AvatarSize: 2580
   m_Avatar:
     serializedVersion: 3
@@ -59,159 +60,158 @@ Avatar:
     m_AvatarSkeletonPose:
       data:
         m_X:
-        - t: {x: 0, y: 0, z: 0, w: 0}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
+          s: {x: 1, y: 1, z: 1}
     m_DefaultPose:
       data:
         m_X:
-        - t: {x: 0, y: 0, z: 0, w: 0}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
+          s: {x: 1, y: 1, z: 1}
     m_SkeletonNameIDArray: 00000000a11ed68c20177c6b0433e08034ae88218eff81b8f7fda50a4dacac93b6ccbe130c9db78a5dbee8ce914f45e971f5a52d8b990dff5f819ff2b5a6ba5e154bd0fbbe077213392ade151bd42ed8af1ad962
     m_Human:
       data:
+        serializedVersion: 2
         m_RootX:
-          t: {x: 0, y: 0, z: 0, w: 0}
+          t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
+          s: {x: 1, y: 1, z: 1}
         m_Skeleton:
           data:
-            m_Node:
+            m_Node: []
             m_ID: 
-            m_AxesArray:
+            m_AxesArray: []
         m_SkeletonPose:
           data:
-            m_X:
+            m_X: []
         m_LeftHand:
           data:
             m_HandBoneIndex: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
         m_RightHand:
           data:
             m_HandBoneIndex: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-        m_Handles:
-        m_ColliderArray: []
-        m_HumanBoneIndex: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+        m_HumanBoneIndex: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
         m_HumanBoneMass:
         - 0.1454546
         - 0.1212121
@@ -237,7 +237,7 @@ Avatar:
         - 0
         - 0
         - 0
-        m_ColliderIndex: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+        - 0
         m_Scale: 1
         m_ArmTwist: 0.5
         m_ForeArmTwist: 0.5
@@ -248,42 +248,58 @@ Avatar:
         m_FeetSpacing: 0
         m_HasLeftHand: 0
         m_HasRightHand: 0
-        m_HasTDoF: 
+        m_HasTDoF: 0
     m_HumanSkeletonIndexArray: 
     m_HumanSkeletonReverseIndexArray: 
     m_RootMotionBoneIndex: -1
     m_RootMotionBoneX:
-      t: {x: 0, y: 0, z: 0, w: 0}
+      t: {x: 0, y: 0, z: 0}
       q: {x: 0, y: 0, z: 0, w: 1}
-      s: {x: 1, y: 1, z: 1, w: 1}
+      s: {x: 1, y: 1, z: 1}
     m_RootMotionSkeleton:
       data:
-        m_Node:
+        m_Node: []
         m_ID: 
         m_AxesArray: []
     m_RootMotionSkeletonPose:
       data:
-        m_X:
+        m_X: []
     m_RootMotionSkeletonIndexArray: 
   m_TOS:
-    0: 
-    46447374: invincible:Joints/invincible:invincibility_Jnt_A/invincible:scale_grp/invincible:Shard_Jnt_BA
-    49059273: invincible:Mesh/invincible:InvincibleFX
-    65051978: invincible:Ctrl/invincible:Shard_Ctrl_A_ZERO/invincible:Shard_Ctrl_A
-    467634767: invincible:Joints/invincible:invincibility_Jnt_A/invincible:scale_grp/invincible:Shard_Jnt_CA
-    703195341: invincible:Joints/invincible:invincibility_Jnt_A/invincible:scale_grp/invincible:Shard_Jnt_AA
-    765850993: invincible:Ctrl
-    1001040229: invincible:Ctrl/invincible:Shard_Ctrl_B_ZERO
-    1692179695: invincible:Joints/invincible:invincibility_Jnt_A/invincible:scale_grp
-    2124934062: invincible:Joints/invincible:invincibility_Jnt_A/invincible:scale_grp/invincible:Shard_Jnt_BA/invincible:Shard_Jnt_BB
     2158066808: invincible:Joints/invincible:invincibility_Jnt_A/invincible:scale_grp/invincible:Shard_Jnt_CA/invincible:Shard_Jnt_CB
-    2362842785: invincible:Joints
-    2502900342: invincible:Ctrl/invincible:Shard_Ctrl_C_ZERO/invincible:Shard_Ctrl_C
-    2816300437: invincible:Joints/invincible:invincibility_Jnt_A/invincible:scale_grp/invincible:Shard_Jnt_AA/invincible:Shard_Jnt_AB
+    467634767: invincible:Joints/invincible:invincibility_Jnt_A/invincible:scale_grp/invincible:Shard_Jnt_CA
+    1692179695: invincible:Joints/invincible:invincibility_Jnt_A/invincible:scale_grp
     3061770671: invincible:Ctrl/invincible:InvincibilityMain_Ctrl_ZERO/invincible:InvincibilityMain_Ctrl
-    3175013323: invincible:Ctrl/invincible:Shard_Ctrl_A_ZERO
-    3471359581: invincible:Mesh
+    49059273: invincible:Mesh/invincible:InvincibleFX
+    46447374: invincible:Joints/invincible:invincibility_Jnt_A/invincible:scale_grp/invincible:Shard_Jnt_BA
+    703195341: invincible:Joints/invincible:invincibility_Jnt_A/invincible:scale_grp/invincible:Shard_Jnt_AA
     3507102725: invincible:Joints/invincible:invincibility_Jnt_A
     3729320424: invincible:Ctrl/invincible:Shard_Ctrl_B_ZERO/invincible:Shard_Ctrl_B
-    4042685120: invincible:Ctrl/invincible:Shard_Ctrl_C_ZERO
+    0: 
+    2816300437: invincible:Joints/invincible:invincibility_Jnt_A/invincible:scale_grp/invincible:Shard_Jnt_AA/invincible:Shard_Jnt_AB
+    3175013323: invincible:Ctrl/invincible:Shard_Ctrl_A_ZERO
     4082646920: invincible:Ctrl/invincible:InvincibilityMain_Ctrl_ZERO
+    65051978: invincible:Ctrl/invincible:Shard_Ctrl_A_ZERO/invincible:Shard_Ctrl_A
+    4042685120: invincible:Ctrl/invincible:Shard_Ctrl_C_ZERO
+    765850993: invincible:Ctrl
+    2124934062: invincible:Joints/invincible:invincibility_Jnt_A/invincible:scale_grp/invincible:Shard_Jnt_BA/invincible:Shard_Jnt_BB
+    3471359581: invincible:Mesh
+    2502900342: invincible:Ctrl/invincible:Shard_Ctrl_C_ZERO/invincible:Shard_Ctrl_C
+    1001040229: invincible:Ctrl/invincible:Shard_Ctrl_B_ZERO
+    2362842785: invincible:Joints
+  m_HumanDescription:
+    serializedVersion: 3
+    m_Human: []
+    m_Skeleton: []
+    m_ArmTwist: 0.5
+    m_ForeArmTwist: 0.5
+    m_UpperLegTwist: 0.5
+    m_LegTwist: 0.5
+    m_ArmStretch: 0.05
+    m_LegStretch: 0.05
+    m_FeetSpacing: 0
+    m_GlobalScale: 1
+    m_RootMotionBoneName: 
+    m_HasTranslationDoF: 0
+    m_HasExtraRoot: 0
+    m_SkeletonHasParents: 1

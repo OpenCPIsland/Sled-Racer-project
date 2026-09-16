@@ -3,9 +3,10 @@
 --- !u!90 &9000000
 Avatar:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_Name: "whoopeeCushion_charfxAvatar"
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: whoopeeCushion_charfxAvatar
   m_AvatarSize: 5500
   m_Avatar:
     serializedVersion: 3
@@ -111,315 +112,314 @@ Avatar:
     m_AvatarSkeletonPose:
       data:
         m_X:
-        - t: {x: 0, y: 0, z: 0, w: 0}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 0.01, y: 0.01, z: 0.01, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 0.01, y: 0.01, z: 0.01}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 28.18987, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 28.18987, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 3.944305E-31, y: 3.552714E-15, z: 0, w: 0}
-          q: {x: 6.123234E-17, y: 0, z: 6.123234E-17, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 35.0507, w: 0}
-          q: {x: 0.7071068, y: -2.003071E-16, z: -0.7071068, w: -2.003071E-16}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: -23.63512, y: -3.549874E-30, z: -5.248052E-15, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 3.944305e-31, y: 3.552714e-15, z: 0}
+          q: {x: 6.123234e-17, y: 0, z: 6.123234e-17, w: 1}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 35.0507}
+          q: {x: 0.7071068, y: -2.003071e-16, z: -0.7071068, w: -2.003071e-16}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: -23.63512, y: -3.549874e-30, z: -5.248052e-15}
           q: {x: 0, y: 0, z: 0.01599406, w: 0.9998721}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: -23.42479, y: -3.552714E-15, z: -5.198687E-15, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: -23.42479, y: -3.552714e-15, z: -5.198687e-15}
           q: {x: 0, y: 0, z: -0.01599406, w: 0.9998721}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: -18.69125, y: 3.552714E-15, z: -1.037573E-14, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: -18.69125, y: 3.552714e-15, z: -1.037573e-14}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: -10.52026, y: -1.065814E-14, z: -5.839919E-15, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: -10.52026, y: -1.065814e-14, z: -5.839919e-15}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: -7.938629, y: -3.552714E-15, z: -4.406824E-15, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: -7.938629, y: -3.552714e-15, z: -4.406824e-15}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: -23.42479, y: 3.552714E-15, z: -5.198687E-15, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: -23.42479, y: 3.552714e-15, z: -5.198687e-15}
           q: {x: 0, y: 0, z: -0.01599406, w: 0.9998721}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 1.401298E-45, y: 7.105427E-15, z: 4.757334E-31, w: 0}
-          q: {x: 0, y: 0, z: 1.224647E-16, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 32.44574, y: 0, z: 0, w: 0}
-          q: {x: 0, y: 0, z: 1, w: -6.123234E-17}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: -21.87857, y: 2.679352E-15, z: -1.972152E-30, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 1e-45, y: 7.105427e-15, z: 4.757334e-31}
+          q: {x: 0, y: 0, z: 1.224647e-16, w: 1}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 32.44574, y: 0, z: 0}
+          q: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: -21.87857, y: 2.679352e-15, z: -1.972152e-30}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: -2.802597E-45, y: 3.552714E-15, z: 0, w: 0}
-          q: {x: 6.123234E-17, y: 0, z: -6.123234E-17, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: -36.15138, w: 0}
-          q: {x: 0.7071068, y: 4.329781E-17, z: 0.7071068, w: -4.329781E-17}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: -24.37733, y: 6.628834E-31, z: 5.412854E-15, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: -3e-45, y: 3.552714e-15, z: 0}
+          q: {x: 6.123234e-17, y: 0, z: -6.123234e-17, w: 1}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: -36.15138}
+          q: {x: 0.7071068, y: 4.329781e-17, z: 0.7071068, w: -4.329781e-17}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: -24.37733, y: 6.628834e-31, z: 5.412854e-15}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 3.552714E-15, z: -4.549237E-31, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 3.552714e-15, z: -4.549237e-31}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: -35.05219, y: 0, z: 0, w: 0}
-          q: {x: 1, y: 0, z: 0, w: 2.832769E-16}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: -23.63612, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: -35.05219, y: 0, z: 0}
+          q: {x: 1, y: 0, z: 0, w: 2.832769e-16}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: -23.63612, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 28.18987, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 28.18987, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 75.68851, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 75.68851, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 28.18987, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 28.18987, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: -4.549237E-31, w: 0}
-          q: {x: 1, y: 0, z: 0, w: 2.832769E-16}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: -4.549237e-31}
+          q: {x: 1, y: 0, z: 0, w: 2.832769e-16}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 1.421085E-14, w: 0}
-          q: {x: 0.7071068, y: -4.329781E-17, z: 0.7071068, w: 4.329781E-17}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 1.421085e-14}
+          q: {x: 0.7071068, y: -4.329781e-17, z: 0.7071068, w: 4.329781e-17}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
-          q: {x: 9.494107E-16, y: -6.123234E-17, z: 1, w: 6.123234E-17}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
+          q: {x: 9.494107e-16, y: -6.123234e-17, z: 1, w: 6.123234e-17}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
-          q: {x: 0.7071068, y: 4.329781E-17, z: -0.7071068, w: 4.329781E-17}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
+          q: {x: 0.7071068, y: 4.329781e-17, z: -0.7071068, w: 4.329781e-17}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 4.244731E-16, y: 28.93909, z: 82.09863, w: 0}
-          q: {x: 0.7071068, y: -2.712455E-15, z: -0.7071068, w: -2.712455E-15}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 4.244731e-16, y: 28.93909, z: 82.09863}
+          q: {x: 0.7071068, y: -2.712455e-15, z: -0.7071068, w: -2.712455e-15}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: -18.69125, y: 0, z: -4.150292E-15, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: -18.69125, y: 0, z: -4.150292e-15}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: -10.52026, y: 0, z: -2.335968E-15, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: -10.52026, y: 0, z: -2.335968e-15}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: -7.938629, y: -3.552714E-15, z: -4.500783E-16, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: -7.938629, y: -3.552714e-15, z: -4.500783e-16}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
+          s: {x: 1, y: 1, z: 1}
     m_DefaultPose:
       data:
         m_X:
-        - t: {x: 0, y: 0, z: 0, w: 0}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 0.01, y: 0.01, z: 0.01, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 0.01, y: 0.01, z: 0.01}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 28.18987, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 28.18987, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 3.944305E-31, y: 3.552714E-15, z: 0, w: 0}
-          q: {x: 6.123234E-17, y: 0, z: 6.123234E-17, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 35.0507, w: 0}
-          q: {x: 0.7071068, y: -2.003071E-16, z: -0.7071068, w: -2.003071E-16}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: -23.63512, y: -3.549874E-30, z: -5.248052E-15, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 3.944305e-31, y: 3.552714e-15, z: 0}
+          q: {x: 6.123234e-17, y: 0, z: 6.123234e-17, w: 1}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 35.0507}
+          q: {x: 0.7071068, y: -2.003071e-16, z: -0.7071068, w: -2.003071e-16}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: -23.63512, y: -3.549874e-30, z: -5.248052e-15}
           q: {x: 0, y: 0, z: 0.01599406, w: 0.9998721}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: -23.42479, y: -3.552714E-15, z: -5.198687E-15, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: -23.42479, y: -3.552714e-15, z: -5.198687e-15}
           q: {x: 0, y: 0, z: -0.01599406, w: 0.9998721}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: -18.69125, y: 3.552714E-15, z: -1.037573E-14, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: -18.69125, y: 3.552714e-15, z: -1.037573e-14}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: -10.52026, y: -1.065814E-14, z: -5.839919E-15, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: -10.52026, y: -1.065814e-14, z: -5.839919e-15}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: -7.938629, y: -3.552714E-15, z: -4.406824E-15, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: -7.938629, y: -3.552714e-15, z: -4.406824e-15}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: -23.42479, y: 3.552714E-15, z: -5.198687E-15, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: -23.42479, y: 3.552714e-15, z: -5.198687e-15}
           q: {x: 0, y: 0, z: -0.01599406, w: 0.9998721}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 1.401298E-45, y: 7.105427E-15, z: 4.757334E-31, w: 0}
-          q: {x: 0, y: 0, z: 1.224647E-16, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 32.44574, y: 0, z: 0, w: 0}
-          q: {x: 0, y: 0, z: 1, w: -6.123234E-17}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: -21.87857, y: 2.679352E-15, z: -1.972152E-30, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 1e-45, y: 7.105427e-15, z: 4.757334e-31}
+          q: {x: 0, y: 0, z: 1.224647e-16, w: 1}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 32.44574, y: 0, z: 0}
+          q: {x: 0, y: 0, z: 1, w: -6.123234e-17}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: -21.87857, y: 2.679352e-15, z: -1.972152e-30}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: -2.802597E-45, y: 3.552714E-15, z: 0, w: 0}
-          q: {x: 6.123234E-17, y: 0, z: -6.123234E-17, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: -36.15138, w: 0}
-          q: {x: 0.7071068, y: 4.329781E-17, z: 0.7071068, w: -4.329781E-17}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: -24.37733, y: 6.628834E-31, z: 5.412854E-15, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: -3e-45, y: 3.552714e-15, z: 0}
+          q: {x: 6.123234e-17, y: 0, z: -6.123234e-17, w: 1}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: -36.15138}
+          q: {x: 0.7071068, y: 4.329781e-17, z: 0.7071068, w: -4.329781e-17}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: -24.37733, y: 6.628834e-31, z: 5.412854e-15}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 3.552714E-15, z: -4.549237E-31, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 3.552714e-15, z: -4.549237e-31}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: -35.05219, y: 0, z: 0, w: 0}
-          q: {x: 1, y: 0, z: 0, w: 2.832769E-16}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: -23.63612, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: -35.05219, y: 0, z: 0}
+          q: {x: 1, y: 0, z: 0, w: 2.832769e-16}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: -23.63612, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 28.18987, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 28.18987, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 75.68851, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 75.68851, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 28.18987, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 28.18987, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: -4.549237E-31, w: 0}
-          q: {x: 1, y: 0, z: 0, w: 2.832769E-16}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: -4.549237e-31}
+          q: {x: 1, y: 0, z: 0, w: 2.832769e-16}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 1.421085E-14, w: 0}
-          q: {x: 0.7071068, y: -4.329781E-17, z: 0.7071068, w: 4.329781E-17}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 1.421085e-14}
+          q: {x: 0.7071068, y: -4.329781e-17, z: 0.7071068, w: 4.329781e-17}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
-          q: {x: 9.494107E-16, y: -6.123234E-17, z: 1, w: 6.123234E-17}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
+          q: {x: 9.494107e-16, y: -6.123234e-17, z: 1, w: 6.123234e-17}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
-          q: {x: 0.7071068, y: 4.329781E-17, z: -0.7071068, w: 4.329781E-17}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
+          q: {x: 0.7071068, y: 4.329781e-17, z: -0.7071068, w: 4.329781e-17}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 4.244731E-16, y: 28.93909, z: 82.09863, w: 0}
-          q: {x: 0.7071068, y: -2.712455E-15, z: -0.7071068, w: -2.712455E-15}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 4.244731e-16, y: 28.93909, z: 82.09863}
+          q: {x: 0.7071068, y: -2.712455e-15, z: -0.7071068, w: -2.712455e-15}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: -18.69125, y: 0, z: -4.150292E-15, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: -18.69125, y: 0, z: -4.150292e-15}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: -10.52026, y: 0, z: -2.335968E-15, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: -10.52026, y: 0, z: -2.335968e-15}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: -7.938629, y: -3.552714E-15, z: -4.500783E-16, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: -7.938629, y: -3.552714e-15, z: -4.500783e-16}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
-        - t: {x: 0, y: 0, z: 0, w: 0}
+          s: {x: 1, y: 1, z: 1}
+        - t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
+          s: {x: 1, y: 1, z: 1}
     m_SkeletonNameIDArray: 00000000bb4ab464260140aacf830e27a9fc038013ad0a19859d0d6e06519e42bc0097db2a3090ac723304bdaabdac9a15e8ea3eafb9e3a73989e4d039f7aa8783a6a31e1596a4694111124bfb401bd26d701ca5fedc313e28221361d2977cdd940553dfe78d05a24864c59b17bc852c17c8f98b86f77b71b96b09e390f0cb45fed99c9cda7ee1f84a340d283ccebb473c11c60e9ce255a84ebdc2ec36cc598ace40a0e098becd0c7411a9793d6d91c7e221ae0ec3222a4f276c0f6b
     m_Human:
       data:
+        serializedVersion: 2
         m_RootX:
-          t: {x: 0, y: 0, z: 0, w: 0}
+          t: {x: 0, y: 0, z: 0}
           q: {x: 0, y: 0, z: 0, w: 1}
-          s: {x: 1, y: 1, z: 1, w: 1}
+          s: {x: 1, y: 1, z: 1}
         m_Skeleton:
           data:
-            m_Node:
+            m_Node: []
             m_ID: 
-            m_AxesArray:
+            m_AxesArray: []
         m_SkeletonPose:
           data:
-            m_X:
+            m_X: []
         m_LeftHand:
           data:
             m_HandBoneIndex: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
         m_RightHand:
           data:
             m_HandBoneIndex: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
-        m_Handles:
-        m_ColliderArray: []
-        m_HumanBoneIndex: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+        m_HumanBoneIndex: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
         m_HumanBoneMass:
         - 0.1454546
         - 0.1212121
@@ -445,7 +445,7 @@ Avatar:
         - 0
         - 0
         - 0
-        m_ColliderIndex: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+        - 0
         m_Scale: 1
         m_ArmTwist: 0.5
         m_ForeArmTwist: 0.5
@@ -456,68 +456,84 @@ Avatar:
         m_FeetSpacing: 0
         m_HasLeftHand: 0
         m_HasRightHand: 0
-        m_HasTDoF: 
+        m_HasTDoF: 0
     m_HumanSkeletonIndexArray: 
     m_HumanSkeletonReverseIndexArray: 
     m_RootMotionBoneIndex: -1
     m_RootMotionBoneX:
-      t: {x: 0, y: 0, z: 0, w: 0}
+      t: {x: 0, y: 0, z: 0}
       q: {x: 0, y: 0, z: 0, w: 1}
-      s: {x: 1, y: 1, z: 1, w: 1}
+      s: {x: 1, y: 1, z: 1}
     m_RootMotionSkeleton:
       data:
-        m_Node:
+        m_Node: []
         m_ID: 
         m_AxesArray: []
     m_RootMotionSkeletonPose:
       data:
-        m_X:
+        m_X: []
     m_RootMotionSkeletonIndexArray: 
   m_TOS:
-    0: 
-    207864150: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Ctrl/whoopeeCushion:WCMain_Ctrl_ZERO/whoopeeCushion:WCMain_Ctrl/whoopeeCushion:WCRot_Ctrl_ZERO/whoopeeCushion:WCRot_Ctrl/whoopeeCushion:WC_ScaleGrp/whoopeeCushion:rightWC_Ctrl_ZERO/whoopeeCushion:rightWC_Ctrl
-    296190188: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Ctrl/whoopeeCushion:WCMain_Ctrl_ZERO/whoopeeCushion:WCMain_Ctrl/whoopeeCushion:WCRot_Ctrl_ZERO/whoopeeCushion:WCRot_Ctrl/whoopeeCushion:WC_ScaleGrp/whoopeeCushion:leftWC_Ctrl_ZERO
-    304571494: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Ctrl/whoopeeCushion:WCMain_Ctrl_ZERO/whoopeeCushion:WCMain_Ctrl/whoopeeCushion:WCRot_Ctrl_ZERO/whoopeeCushion:WCRot_Ctrl/whoopeeCushion:WC_ScaleGrp/whoopeeCushion:backWC_Ctrl_ZERO/whoopeeCushion:backWC_Ctrl
-    384135624: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Ctrl/whoopeeCushion:tipWC_Ctrl_A_ZERO/whoopeeCushion:tipWC_Ctrl_A/whoopeeCushion:tipWC_Ctrl_B_ZERO/whoopeeCushion:tipWC_Ctrl_B
-    447129826: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Joints/whoopeeCushion:middleWC_Jnt_A/whoopeeCushion:leftWC_Jnt_A/whoopeeCushion:leftWC_Jnt_B/whoopeeCushion:leftWC_Jnt_C
-    509386587: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Ctrl/whoopeeCushion:WCMain_Ctrl_ZERO/whoopeeCushion:WCMain_Ctrl/whoopeeCushion:WCRot_Ctrl_ZERO/whoopeeCushion:WCRot_Ctrl/whoopeeCushion:WC_ScaleGrp/whoopeeCushion:rightWC_Ctrl_ZERO
-    555517660: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Ctrl/whoopeeCushion:WCMain_Ctrl_ZERO/whoopeeCushion:WCMain_Ctrl/whoopeeCushion:WCRot_Ctrl_ZERO/whoopeeCushion:WCRot_Ctrl
-    709087088: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Ctrl/whoopeeCushion:WCMain_Ctrl_ZERO/whoopeeCushion:WCMain_Ctrl/whoopeeCushion:WCRot_Ctrl_ZERO/whoopeeCushion:WCRot_Ctrl/whoopeeCushion:WC_ScaleGrp/whoopeeCushion:frontWC_Ctrl_ZERO/whoopeeCushion:frontWC_Ctrl
-    732796754: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Ctrl
-    934576125: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Joints/whoopeeCushion:middleWC_Jnt_A/whoopeeCushion:leftWC_Jnt_A
-    940584976: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Joints/whoopeeCushion:middleWC_Jnt_A/whoopeeCushion:backWC_Jnt_A/whoopeeCushion:backWC_Jnt_B/whoopeeCushion:backWC_Jnt_C
-    1118348640: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Joints/whoopeeCushion:middleWC_Jnt_A/whoopeeCushion:frontWC_Jnt_A
-    1205238836: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Joints/whoopeeCushion:middleWC_Jnt_A/whoopeeCushion:frontWC_Jnt_A/whoopeeCushion:frontWC_Jnt_B/whoopeeCushion:frontWC_Jnt_C/whoopeeCushion:tipWC_Jnt_A
-    1215237363: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Joints/whoopeeCushion:middleWC_Jnt_A/whoopeeCushion:rightWC_Jnt_A/whoopeeCushion:rightWC_Jnt_B/whoopeeCushion:rightWC_Jnt_C
-    1226352414: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Joints/whoopeeCushion:middleWC_Jnt_A/whoopeeCushion:frontWC_Jnt_A/whoopeeCushion:frontWC_Jnt_B/whoopeeCushion:frontWC_Jnt_C/whoopeeCushion:tipWC_Jnt_A/whoopeeCushion:tipWC_Jnt_B/whoopeeCushion:tipWC_Jnt_C
-    1657484634: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Joints/whoopeeCushion:middleWC_Jnt_A/whoopeeCushion:frontWC_Jnt_A/whoopeeCushion:frontWC_Jnt_B
+    4211906949: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Joints/whoopeeCushion:middleWC_Jnt_A/whoopeeCushion:backWC_Jnt_A
+    3985418217: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Joints/whoopeeCushion:middleWC_Jnt_A/whoopeeCushion:frontWC_Jnt_A/whoopeeCushion:frontWC_Jnt_B/whoopeeCushion:frontWC_Jnt_C/whoopeeCushion:tipWC_Jnt_A/whoopeeCushion:tipWC_Jnt_B
+    2631439563: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Ctrl/whoopeeCushion:tipWC_Ctrl_A_ZERO/whoopeeCushion:tipWC_Ctrl_A/whoopeeCushion:tipWC_Ctrl_B_ZERO/whoopeeCushion:tipWC_Ctrl_B/whoopeeCushion:tipWC_Ctrl_C_ZERO
+    2539175158: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Ctrl/whoopeeCushion:WCMain_Ctrl_ZERO/whoopeeCushion:WCMain_Ctrl
     1689537211: whoopeeCushion:WhoopeeCushion
-    1956020723: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Ctrl/whoopeeCushion:WCMain_Ctrl_ZERO/whoopeeCushion:WCMain_Ctrl/whoopeeCushion:WCRot_Ctrl_ZERO/whoopeeCushion:WCRot_Ctrl/whoopeeCushion:WCTop_Ctrl_ZERO/whoopeeCushion:WCTop_Ctrl
-    2020189593: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Ctrl/whoopeeCushion:tipWC_Ctrl_A_ZERO/whoopeeCushion:tipWC_Ctrl_A/whoopeeCushion:tipWC_Ctrl_B_ZERO/whoopeeCushion:tipWC_Ctrl_B/whoopeeCushion:tipWC_Ctrl_C_ZERO/whoopeeCushion:tipWC_Ctrl_C/whoopeeCushion:tipWC_endCtrl_C_ZERO
+    2449856416: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Joints/whoopeeCushion:middleWC_Jnt_A/whoopeeCushion:backWC_Jnt_A/whoopeeCushion:backWC_Jnt_B
     2179193340: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Ctrl/whoopeeCushion:tipWC_Ctrl_A_ZERO
     2248768644: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Ctrl/whoopeeCushion:WCMain_Ctrl_ZERO/whoopeeCushion:WCMain_Ctrl/whoopeeCushion:WCRot_Ctrl_ZERO
-    2393729416: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Ctrl/whoopeeCushion:tipWC_Ctrl_A_ZERO/whoopeeCushion:tipWC_Ctrl_A/whoopeeCushion:tipWC_Ctrl_B_ZERO
-    2445504444: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Joints
-    2449856416: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Joints/whoopeeCushion:middleWC_Jnt_A/whoopeeCushion:backWC_Jnt_A/whoopeeCushion:backWC_Jnt_B
-    2539175158: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Ctrl/whoopeeCushion:WCMain_Ctrl_ZERO/whoopeeCushion:WCMain_Ctrl
-    2631439563: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Ctrl/whoopeeCushion:tipWC_Ctrl_A_ZERO/whoopeeCushion:tipWC_Ctrl_A/whoopeeCushion:tipWC_Ctrl_B_ZERO/whoopeeCushion:tipWC_Ctrl_B/whoopeeCushion:tipWC_Ctrl_C_ZERO
-    2789924019: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Ctrl/whoopeeCushion:WCMain_Ctrl_ZERO/whoopeeCushion:WCMain_Ctrl/whoopeeCushion:WCRot_Ctrl_ZERO/whoopeeCushion:WCRot_Ctrl/whoopeeCushion:WC_ScaleGrp
-    2894925478: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Ctrl/whoopeeCushion:WCMain_Ctrl_ZERO/whoopeeCushion:WCMain_Ctrl/whoopeeCushion:WCRot_Ctrl_ZERO/whoopeeCushion:WCRot_Ctrl/whoopeeCushion:WC_ScaleGrp/whoopeeCushion:backWC_Ctrl_ZERO
-    3029728269: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Joints/whoopeeCushion:middleWC_Jnt_A/whoopeeCushion:rightWC_Jnt_A/whoopeeCushion:rightWC_Jnt_B
-    3197759067: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Ctrl/whoopeeCushion:WCMain_Ctrl_ZERO
-    3370179710: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Mesh
-    3376317790: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Mesh/whoopeeCushion:whoopeeCushionMesh
-    3401144401: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Joints/whoopeeCushion:middleWC_Jnt_A/whoopeeCushion:frontWC_Jnt_A/whoopeeCushion:frontWC_Jnt_B/whoopeeCushion:frontWC_Jnt_C/whoopeeCushion:tipWC_Jnt_A/whoopeeCushion:tipWC_Jnt_B/whoopeeCushion:tipWC_Jnt_C/whoopeeCushion:tipWC_endJnt_C
-    3430048103: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Joints/whoopeeCushion:middleWC_Jnt_A/whoopeeCushion:leftWC_Jnt_A/whoopeeCushion:leftWC_Jnt_B
-    3466452213: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Joints/whoopeeCushion:middleWC_Jnt_A/whoopeeCushion:frontWC_Jnt_A/whoopeeCushion:frontWC_Jnt_B/whoopeeCushion:frontWC_Jnt_C
-    3471461839: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Joints/whoopeeCushion:middleWC_Jnt_A
+    1226352414: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Joints/whoopeeCushion:middleWC_Jnt_A/whoopeeCushion:frontWC_Jnt_A/whoopeeCushion:frontWC_Jnt_B/whoopeeCushion:frontWC_Jnt_C/whoopeeCushion:tipWC_Jnt_A/whoopeeCushion:tipWC_Jnt_B/whoopeeCushion:tipWC_Jnt_C
     3654595096: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Ctrl/whoopeeCushion:WCMain_Ctrl_ZERO/whoopeeCushion:WCMain_Ctrl/whoopeeCushion:WCRot_Ctrl_ZERO/whoopeeCushion:WCRot_Ctrl/whoopeeCushion:WC_ScaleGrp/whoopeeCushion:leftWC_Ctrl_ZERO/whoopeeCushion:leftWC_Ctrl
-    3849199388: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Joints/whoopeeCushion:middleWC_Jnt_A/whoopeeCushion:frontWC_Jnt_A/whoopeeCushion:frontWC_Jnt_B/whoopeeCushion:frontWC_Jnt_C/whoopeeCushion:tipWC_Follow_A
-    3985418217: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Joints/whoopeeCushion:middleWC_Jnt_A/whoopeeCushion:frontWC_Jnt_A/whoopeeCushion:frontWC_Jnt_B/whoopeeCushion:frontWC_Jnt_C/whoopeeCushion:tipWC_Jnt_A/whoopeeCushion:tipWC_Jnt_B
-    4002575437: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Ctrl/whoopeeCushion:tipWC_Ctrl_A_ZERO/whoopeeCushion:tipWC_Ctrl_A/whoopeeCushion:tipWC_Ctrl_B_ZERO/whoopeeCushion:tipWC_Ctrl_B/whoopeeCushion:tipWC_Ctrl_C_ZERO/whoopeeCushion:tipWC_Ctrl_C/whoopeeCushion:tipWC_endCtrl_C_ZERO/whoopeeCushion:tipWC_endCtrl_C
-    4055020539: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Ctrl/whoopeeCushion:WCMain_Ctrl_ZERO/whoopeeCushion:WCMain_Ctrl/whoopeeCushion:WCRot_Ctrl_ZERO/whoopeeCushion:WCRot_Ctrl/whoopeeCushion:WC_ScaleGrp/whoopeeCushion:frontWC_Ctrl_ZERO
-    4185502867: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Ctrl/whoopeeCushion:tipWC_Ctrl_A_ZERO/whoopeeCushion:tipWC_Ctrl_A
+    207864150: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Ctrl/whoopeeCushion:WCMain_Ctrl_ZERO/whoopeeCushion:WCMain_Ctrl/whoopeeCushion:WCRot_Ctrl_ZERO/whoopeeCushion:WCRot_Ctrl/whoopeeCushion:WC_ScaleGrp/whoopeeCushion:rightWC_Ctrl_ZERO/whoopeeCushion:rightWC_Ctrl
+    934576125: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Joints/whoopeeCushion:middleWC_Jnt_A/whoopeeCushion:leftWC_Jnt_A
+    3370179710: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Mesh
+    296190188: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Ctrl/whoopeeCushion:WCMain_Ctrl_ZERO/whoopeeCushion:WCMain_Ctrl/whoopeeCushion:WCRot_Ctrl_ZERO/whoopeeCushion:WCRot_Ctrl/whoopeeCushion:WC_ScaleGrp/whoopeeCushion:leftWC_Ctrl_ZERO
+    0: 
+    2393729416: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Ctrl/whoopeeCushion:tipWC_Ctrl_A_ZERO/whoopeeCushion:tipWC_Ctrl_A/whoopeeCushion:tipWC_Ctrl_B_ZERO
+    555517660: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Ctrl/whoopeeCushion:WCMain_Ctrl_ZERO/whoopeeCushion:WCMain_Ctrl/whoopeeCushion:WCRot_Ctrl_ZERO/whoopeeCushion:WCRot_Ctrl
+    1657484634: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Joints/whoopeeCushion:middleWC_Jnt_A/whoopeeCushion:frontWC_Jnt_A/whoopeeCushion:frontWC_Jnt_B
     4188085414: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Ctrl/whoopeeCushion:tipWC_Ctrl_A_ZERO/whoopeeCushion:tipWC_Ctrl_A/whoopeeCushion:tipWC_Ctrl_B_ZERO/whoopeeCushion:tipWC_Ctrl_B/whoopeeCushion:tipWC_Ctrl_C_ZERO/whoopeeCushion:tipWC_Ctrl_C
-    4189546815: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Ctrl/whoopeeCushion:WCMain_Ctrl_ZERO/whoopeeCushion:WCMain_Ctrl/whoopeeCushion:WCRot_Ctrl_ZERO/whoopeeCushion:WCRot_Ctrl/whoopeeCushion:WCTop_Ctrl_ZERO
-    4211906949: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Joints/whoopeeCushion:middleWC_Jnt_A/whoopeeCushion:backWC_Jnt_A
+    4002575437: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Ctrl/whoopeeCushion:tipWC_Ctrl_A_ZERO/whoopeeCushion:tipWC_Ctrl_A/whoopeeCushion:tipWC_Ctrl_B_ZERO/whoopeeCushion:tipWC_Ctrl_B/whoopeeCushion:tipWC_Ctrl_C_ZERO/whoopeeCushion:tipWC_Ctrl_C/whoopeeCushion:tipWC_endCtrl_C_ZERO/whoopeeCushion:tipWC_endCtrl_C
+    3197759067: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Ctrl/whoopeeCushion:WCMain_Ctrl_ZERO
+    2445504444: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Joints
+    1215237363: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Joints/whoopeeCushion:middleWC_Jnt_A/whoopeeCushion:rightWC_Jnt_A/whoopeeCushion:rightWC_Jnt_B/whoopeeCushion:rightWC_Jnt_C
+    4185502867: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Ctrl/whoopeeCushion:tipWC_Ctrl_A_ZERO/whoopeeCushion:tipWC_Ctrl_A
+    709087088: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Ctrl/whoopeeCushion:WCMain_Ctrl_ZERO/whoopeeCushion:WCMain_Ctrl/whoopeeCushion:WCRot_Ctrl_ZERO/whoopeeCushion:WCRot_Ctrl/whoopeeCushion:WC_ScaleGrp/whoopeeCushion:frontWC_Ctrl_ZERO/whoopeeCushion:frontWC_Ctrl
+    1956020723: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Ctrl/whoopeeCushion:WCMain_Ctrl_ZERO/whoopeeCushion:WCMain_Ctrl/whoopeeCushion:WCRot_Ctrl_ZERO/whoopeeCushion:WCRot_Ctrl/whoopeeCushion:WCTop_Ctrl_ZERO/whoopeeCushion:WCTop_Ctrl
+    4055020539: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Ctrl/whoopeeCushion:WCMain_Ctrl_ZERO/whoopeeCushion:WCMain_Ctrl/whoopeeCushion:WCRot_Ctrl_ZERO/whoopeeCushion:WCRot_Ctrl/whoopeeCushion:WC_ScaleGrp/whoopeeCushion:frontWC_Ctrl_ZERO
+    509386587: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Ctrl/whoopeeCushion:WCMain_Ctrl_ZERO/whoopeeCushion:WCMain_Ctrl/whoopeeCushion:WCRot_Ctrl_ZERO/whoopeeCushion:WCRot_Ctrl/whoopeeCushion:WC_ScaleGrp/whoopeeCushion:rightWC_Ctrl_ZERO
+    3430048103: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Joints/whoopeeCushion:middleWC_Jnt_A/whoopeeCushion:leftWC_Jnt_A/whoopeeCushion:leftWC_Jnt_B
+    1205238836: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Joints/whoopeeCushion:middleWC_Jnt_A/whoopeeCushion:frontWC_Jnt_A/whoopeeCushion:frontWC_Jnt_B/whoopeeCushion:frontWC_Jnt_C/whoopeeCushion:tipWC_Jnt_A
     4232163804: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Joints/whoopeeCushion:middleWC_Jnt_A/whoopeeCushion:rightWC_Jnt_A
+    3029728269: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Joints/whoopeeCushion:middleWC_Jnt_A/whoopeeCushion:rightWC_Jnt_A/whoopeeCushion:rightWC_Jnt_B
+    2020189593: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Ctrl/whoopeeCushion:tipWC_Ctrl_A_ZERO/whoopeeCushion:tipWC_Ctrl_A/whoopeeCushion:tipWC_Ctrl_B_ZERO/whoopeeCushion:tipWC_Ctrl_B/whoopeeCushion:tipWC_Ctrl_C_ZERO/whoopeeCushion:tipWC_Ctrl_C/whoopeeCushion:tipWC_endCtrl_C_ZERO
+    1118348640: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Joints/whoopeeCushion:middleWC_Jnt_A/whoopeeCushion:frontWC_Jnt_A
+    2894925478: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Ctrl/whoopeeCushion:WCMain_Ctrl_ZERO/whoopeeCushion:WCMain_Ctrl/whoopeeCushion:WCRot_Ctrl_ZERO/whoopeeCushion:WCRot_Ctrl/whoopeeCushion:WC_ScaleGrp/whoopeeCushion:backWC_Ctrl_ZERO
+    3471461839: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Joints/whoopeeCushion:middleWC_Jnt_A
+    2789924019: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Ctrl/whoopeeCushion:WCMain_Ctrl_ZERO/whoopeeCushion:WCMain_Ctrl/whoopeeCushion:WCRot_Ctrl_ZERO/whoopeeCushion:WCRot_Ctrl/whoopeeCushion:WC_ScaleGrp
+    940584976: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Joints/whoopeeCushion:middleWC_Jnt_A/whoopeeCushion:backWC_Jnt_A/whoopeeCushion:backWC_Jnt_B/whoopeeCushion:backWC_Jnt_C
+    304571494: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Ctrl/whoopeeCushion:WCMain_Ctrl_ZERO/whoopeeCushion:WCMain_Ctrl/whoopeeCushion:WCRot_Ctrl_ZERO/whoopeeCushion:WCRot_Ctrl/whoopeeCushion:WC_ScaleGrp/whoopeeCushion:backWC_Ctrl_ZERO/whoopeeCushion:backWC_Ctrl
+    3376317790: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Mesh/whoopeeCushion:whoopeeCushionMesh
+    732796754: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Ctrl
+    447129826: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Joints/whoopeeCushion:middleWC_Jnt_A/whoopeeCushion:leftWC_Jnt_A/whoopeeCushion:leftWC_Jnt_B/whoopeeCushion:leftWC_Jnt_C
+    3401144401: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Joints/whoopeeCushion:middleWC_Jnt_A/whoopeeCushion:frontWC_Jnt_A/whoopeeCushion:frontWC_Jnt_B/whoopeeCushion:frontWC_Jnt_C/whoopeeCushion:tipWC_Jnt_A/whoopeeCushion:tipWC_Jnt_B/whoopeeCushion:tipWC_Jnt_C/whoopeeCushion:tipWC_endJnt_C
+    4189546815: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Ctrl/whoopeeCushion:WCMain_Ctrl_ZERO/whoopeeCushion:WCMain_Ctrl/whoopeeCushion:WCRot_Ctrl_ZERO/whoopeeCushion:WCRot_Ctrl/whoopeeCushion:WCTop_Ctrl_ZERO
+    3849199388: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Joints/whoopeeCushion:middleWC_Jnt_A/whoopeeCushion:frontWC_Jnt_A/whoopeeCushion:frontWC_Jnt_B/whoopeeCushion:frontWC_Jnt_C/whoopeeCushion:tipWC_Follow_A
+    384135624: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Ctrl/whoopeeCushion:tipWC_Ctrl_A_ZERO/whoopeeCushion:tipWC_Ctrl_A/whoopeeCushion:tipWC_Ctrl_B_ZERO/whoopeeCushion:tipWC_Ctrl_B
+    3466452213: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Joints/whoopeeCushion:middleWC_Jnt_A/whoopeeCushion:frontWC_Jnt_A/whoopeeCushion:frontWC_Jnt_B/whoopeeCushion:frontWC_Jnt_C
+  m_HumanDescription:
+    serializedVersion: 3
+    m_Human: []
+    m_Skeleton: []
+    m_ArmTwist: 0.5
+    m_ForeArmTwist: 0.5
+    m_UpperLegTwist: 0.5
+    m_LegTwist: 0.5
+    m_ArmStretch: 0.05
+    m_LegStretch: 0.05
+    m_FeetSpacing: 0
+    m_GlobalScale: 1
+    m_RootMotionBoneName: 
+    m_HasTranslationDoF: 0
+    m_HasExtraRoot: 0
+    m_SkeletonHasParents: 1

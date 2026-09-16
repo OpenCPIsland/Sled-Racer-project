@@ -3,13 +3,14 @@
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1755756289, guid: 7e91cb6d9194edfb097f1b9c73388d86, type: 3}
-  m_Name: "GameSkin"
+  m_Name: GameSkin
   m_EditorClassIdentifier: 
   m_Font: {fileID: 12800000, guid: 9411ecea69454080b946ca3b085d833a, type: 3}
   m_CustomStyles:
