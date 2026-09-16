@@ -229,6 +229,14 @@ public enum AdditionalContentType {
 }
 
 /// <summary>
+///  Describes how the Discord client decides when to transmit the user's microphone audio.
+/// </summary>
+public enum VoiceInputModeType {
+    VoiceActivity = 0,
+    PushToTalk = 1,
+}
+
+/// <summary>
 ///  The Discord Voice audio system to use.
 /// </summary>
 public enum AudioSystem {
@@ -735,7 +743,8 @@ public static unsafe class NativeMethods {
         [DllImport(LibraryName,
                    EntryPoint = "Discord_ActivityInvite_SetIsValid",
                    CallingConvention = CallingConvention.Cdecl)]
-        public static extern void SetIsValid(ActivityInvite* self, bool value);
+        public static extern void SetIsValid(ActivityInvite* self,
+                                             [MarshalAs(UnmanagedType.U1)] bool value);
     }
     [StructLayout(LayoutKind.Sequential)]
     public struct ActivityAssets {
@@ -1173,7 +1182,8 @@ public static unsafe class NativeMethods {
         [DllImport(LibraryName,
                    EntryPoint = "Discord_ClientResult_SetSuccessful",
                    CallingConvention = CallingConvention.Cdecl)]
-        public static extern void SetSuccessful(ClientResult* self, bool value);
+        public static extern void SetSuccessful(ClientResult* self,
+                                                [MarshalAs(UnmanagedType.U1)] bool value);
         [DllImport(LibraryName,
                    EntryPoint = "Discord_ClientResult_Retryable",
                    CallingConvention = CallingConvention.Cdecl)]
@@ -1182,7 +1192,8 @@ public static unsafe class NativeMethods {
         [DllImport(LibraryName,
                    EntryPoint = "Discord_ClientResult_SetRetryable",
                    CallingConvention = CallingConvention.Cdecl)]
-        public static extern void SetRetryable(ClientResult* self, bool value);
+        public static extern void SetRetryable(ClientResult* self,
+                                               [MarshalAs(UnmanagedType.U1)] bool value);
         [DllImport(LibraryName,
                    EntryPoint = "Discord_ClientResult_RetryAfter",
                    CallingConvention = CallingConvention.Cdecl)]
@@ -1424,7 +1435,8 @@ public static unsafe class NativeMethods {
         [DllImport(LibraryName,
                    EntryPoint = "Discord_VADThresholdSettings_SetAutomatic",
                    CallingConvention = CallingConvention.Cdecl)]
-        public static extern void SetAutomatic(VADThresholdSettings* self, bool value);
+        public static extern void SetAutomatic(VADThresholdSettings* self,
+                                               [MarshalAs(UnmanagedType.U1)] bool value);
     }
     [StructLayout(LayoutKind.Sequential)]
     public struct Call {
@@ -1446,10 +1458,12 @@ public static unsafe class NativeMethods {
             }
         }
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        public delegate void OnParticipantChanged(ulong userId, bool added, void* __userData);
+        public delegate void OnParticipantChanged(ulong userId,
+                                                  [MarshalAs(UnmanagedType.U1)] bool added,
+                                                  void* __userData);
         [AOT.MonoPInvokeCallback(typeof(OnParticipantChanged))]
         public static void OnParticipantChanged_Handler(ulong userId,
-                                                        bool added,
+                                                        [MarshalAs(UnmanagedType.U1)] bool added,
                                                         void* __userData) {
             var __callback =
               NativeMethods.ManagedUserData
@@ -1462,13 +1476,15 @@ public static unsafe class NativeMethods {
             }
         }
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        public delegate void OnSpeakingStatusChanged(ulong userId,
-                                                     bool isPlayingSound,
-                                                     void* __userData);
+        public delegate void OnSpeakingStatusChanged(
+          ulong userId,
+          [MarshalAs(UnmanagedType.U1)] bool isPlayingSound,
+          void* __userData);
         [AOT.MonoPInvokeCallback(typeof(OnSpeakingStatusChanged))]
-        public static void OnSpeakingStatusChanged_Handler(ulong userId,
-                                                           bool isPlayingSound,
-                                                           void* __userData) {
+        public static void OnSpeakingStatusChanged_Handler(
+          ulong userId,
+          [MarshalAs(UnmanagedType.U1)] bool isPlayingSound,
+          void* __userData) {
             var __callback =
               NativeMethods.ManagedUserData
                 .DelegateFromPointer<Discord.Sdk.Call.OnSpeakingStatusChanged>(__userData);
@@ -1578,7 +1594,9 @@ public static unsafe class NativeMethods {
         [DllImport(LibraryName,
                    EntryPoint = "Discord_Call_SetLocalMute",
                    CallingConvention = CallingConvention.Cdecl)]
-        public static extern void SetLocalMute(Call* self, ulong userId, bool mute);
+        public static extern void SetLocalMute(Call* self,
+                                               ulong userId,
+                                               [MarshalAs(UnmanagedType.U1)] bool mute);
         [DllImport(LibraryName,
                    EntryPoint = "Discord_Call_SetOnVoiceStateChangedCallback",
                    CallingConvention = CallingConvention.Cdecl)]
@@ -1602,7 +1620,8 @@ public static unsafe class NativeMethods {
         [DllImport(LibraryName,
                    EntryPoint = "Discord_Call_SetPTTActive",
                    CallingConvention = CallingConvention.Cdecl)]
-        public static extern void SetPTTActive(Call* self, bool active);
+        public static extern void SetPTTActive(Call* self,
+                                               [MarshalAs(UnmanagedType.U1)] bool active);
         [DllImport(LibraryName,
                    EntryPoint = "Discord_Call_SetPTTReleaseDelay",
                    CallingConvention = CallingConvention.Cdecl)]
@@ -1610,11 +1629,11 @@ public static unsafe class NativeMethods {
         [DllImport(LibraryName,
                    EntryPoint = "Discord_Call_SetSelfDeaf",
                    CallingConvention = CallingConvention.Cdecl)]
-        public static extern void SetSelfDeaf(Call* self, bool deaf);
+        public static extern void SetSelfDeaf(Call* self, [MarshalAs(UnmanagedType.U1)] bool deaf);
         [DllImport(LibraryName,
                    EntryPoint = "Discord_Call_SetSelfMute",
                    CallingConvention = CallingConvention.Cdecl)]
-        public static extern void SetSelfMute(Call* self, bool mute);
+        public static extern void SetSelfMute(Call* self, [MarshalAs(UnmanagedType.U1)] bool mute);
         [DllImport(LibraryName,
                    EntryPoint = "Discord_Call_SetSpeakingStatusChangedCallback",
                    CallingConvention = CallingConvention.Cdecl)]
@@ -1634,7 +1653,9 @@ public static unsafe class NativeMethods {
         [DllImport(LibraryName,
                    EntryPoint = "Discord_Call_SetVADThreshold",
                    CallingConvention = CallingConvention.Cdecl)]
-        public static extern void SetVADThreshold(Call* self, bool automatic, float threshold);
+        public static extern void SetVADThreshold(Call* self,
+                                                  [MarshalAs(UnmanagedType.U1)] bool automatic,
+                                                  float threshold);
         [DllImport(LibraryName,
                    EntryPoint = "Discord_Call_StatusToString",
                    CallingConvention = CallingConvention.Cdecl)]
@@ -1765,7 +1786,8 @@ public static unsafe class NativeMethods {
         [DllImport(LibraryName,
                    EntryPoint = "Discord_GuildChannel_SetIsLinkable",
                    CallingConvention = CallingConvention.Cdecl)]
-        public static extern void SetIsLinkable(GuildChannel* self, bool value);
+        public static extern void SetIsLinkable(GuildChannel* self,
+                                                [MarshalAs(UnmanagedType.U1)] bool value);
         [DllImport(LibraryName,
                    EntryPoint = "Discord_GuildChannel_IsViewableAndWriteableByAllMembers",
                    CallingConvention = CallingConvention.Cdecl)]
@@ -1774,8 +1796,9 @@ public static unsafe class NativeMethods {
         [DllImport(LibraryName,
                    EntryPoint = "Discord_GuildChannel_SetIsViewableAndWriteableByAllMembers",
                    CallingConvention = CallingConvention.Cdecl)]
-        public static extern void SetIsViewableAndWriteableByAllMembers(GuildChannel* self,
-                                                                        bool value);
+        public static extern void SetIsViewableAndWriteableByAllMembers(GuildChannel* self, [
+            MarshalAs(UnmanagedType.U1)
+        ] bool value);
         [DllImport(LibraryName,
                    EntryPoint = "Discord_GuildChannel_LinkedLobby",
                    CallingConvention = CallingConvention.Cdecl)]
@@ -2273,6 +2296,11 @@ public static unsafe class NativeMethods {
         public static extern bool AdditionalContent(MessageHandle* self,
                                                     AdditionalContent* returnValue);
         [DllImport(LibraryName,
+                   EntryPoint = "Discord_MessageHandle_AdditionalName",
+                   CallingConvention = CallingConvention.Cdecl)]
+        [return:MarshalAs(UnmanagedType.U1)]
+        public static extern bool AdditionalName(MessageHandle* self, Discord_String* returnValue);
+        [DllImport(LibraryName,
                    EntryPoint = "Discord_MessageHandle_ApplicationId",
                    CallingConvention = CallingConvention.Cdecl)]
         [return:MarshalAs(UnmanagedType.U1)]
@@ -2393,7 +2421,113 @@ public static unsafe class NativeMethods {
         [DllImport(LibraryName,
                    EntryPoint = "Discord_AudioDevice_SetIsDefault",
                    CallingConvention = CallingConvention.Cdecl)]
-        public static extern void SetIsDefault(AudioDevice* self, bool value);
+        public static extern void SetIsDefault(AudioDevice* self,
+                                               [MarshalAs(UnmanagedType.U1)] bool value);
+    }
+    [StructLayout(LayoutKind.Sequential)]
+    public struct VoiceSettings {
+        public IntPtr Handle;
+        [DllImport(LibraryName,
+                   EntryPoint = "Discord_VoiceSettings_Drop",
+                   CallingConvention = CallingConvention.Cdecl)]
+        public static extern void Drop(VoiceSettings* self);
+        [DllImport(LibraryName,
+                   EntryPoint = "Discord_VoiceSettings_Clone",
+                   CallingConvention = CallingConvention.Cdecl)]
+        public static extern void Clone(VoiceSettings* self, VoiceSettings* arg0);
+        [DllImport(LibraryName,
+                   EntryPoint = "Discord_VoiceSettings_SelfMute",
+                   CallingConvention = CallingConvention.Cdecl)]
+        [return:MarshalAs(UnmanagedType.U1)]
+        public static extern bool SelfMute(VoiceSettings* self);
+        [DllImport(LibraryName,
+                   EntryPoint = "Discord_VoiceSettings_SetSelfMute",
+                   CallingConvention = CallingConvention.Cdecl)]
+        public static extern void SetSelfMute(VoiceSettings* self,
+                                              [MarshalAs(UnmanagedType.U1)] bool value);
+        [DllImport(LibraryName,
+                   EntryPoint = "Discord_VoiceSettings_SelfDeaf",
+                   CallingConvention = CallingConvention.Cdecl)]
+        [return:MarshalAs(UnmanagedType.U1)]
+        public static extern bool SelfDeaf(VoiceSettings* self);
+        [DllImport(LibraryName,
+                   EntryPoint = "Discord_VoiceSettings_SetSelfDeaf",
+                   CallingConvention = CallingConvention.Cdecl)]
+        public static extern void SetSelfDeaf(VoiceSettings* self,
+                                              [MarshalAs(UnmanagedType.U1)] bool value);
+        [DllImport(LibraryName,
+                   EntryPoint = "Discord_VoiceSettings_InputMode",
+                   CallingConvention = CallingConvention.Cdecl)]
+        public static extern Discord.Sdk.VoiceInputModeType InputMode(VoiceSettings* self);
+        [DllImport(LibraryName,
+                   EntryPoint = "Discord_VoiceSettings_SetInputMode",
+                   CallingConvention = CallingConvention.Cdecl)]
+        public static extern void SetInputMode(VoiceSettings* self,
+                                               Discord.Sdk.VoiceInputModeType value);
+        [DllImport(LibraryName,
+                   EntryPoint = "Discord_VoiceSettings_PttKey",
+                   CallingConvention = CallingConvention.Cdecl)]
+        public static extern void PttKey(VoiceSettings* self, Discord_String* returnValue);
+        [DllImport(LibraryName,
+                   EntryPoint = "Discord_VoiceSettings_SetPttKey",
+                   CallingConvention = CallingConvention.Cdecl)]
+        public static extern void SetPttKey(VoiceSettings* self, Discord_String value);
+        [DllImport(LibraryName,
+                   EntryPoint = "Discord_VoiceSettings_InputVolume",
+                   CallingConvention = CallingConvention.Cdecl)]
+        public static extern float InputVolume(VoiceSettings* self);
+        [DllImport(LibraryName,
+                   EntryPoint = "Discord_VoiceSettings_SetInputVolume",
+                   CallingConvention = CallingConvention.Cdecl)]
+        public static extern void SetInputVolume(VoiceSettings* self, float value);
+        [DllImport(LibraryName,
+                   EntryPoint = "Discord_VoiceSettings_OutputVolume",
+                   CallingConvention = CallingConvention.Cdecl)]
+        public static extern float OutputVolume(VoiceSettings* self);
+        [DllImport(LibraryName,
+                   EntryPoint = "Discord_VoiceSettings_SetOutputVolume",
+                   CallingConvention = CallingConvention.Cdecl)]
+        public static extern void SetOutputVolume(VoiceSettings* self, float value);
+        [DllImport(LibraryName,
+                   EntryPoint = "Discord_VoiceSettings_AutomaticGainControl",
+                   CallingConvention = CallingConvention.Cdecl)]
+        [return:MarshalAs(UnmanagedType.U1)]
+        public static extern bool AutomaticGainControl(VoiceSettings* self);
+        [DllImport(LibraryName,
+                   EntryPoint = "Discord_VoiceSettings_SetAutomaticGainControl",
+                   CallingConvention = CallingConvention.Cdecl)]
+        public static extern void SetAutomaticGainControl(VoiceSettings* self,
+                                                          [MarshalAs(UnmanagedType.U1)] bool value);
+        [DllImport(LibraryName,
+                   EntryPoint = "Discord_VoiceSettings_EchoCancellation",
+                   CallingConvention = CallingConvention.Cdecl)]
+        [return:MarshalAs(UnmanagedType.U1)]
+        public static extern bool EchoCancellation(VoiceSettings* self);
+        [DllImport(LibraryName,
+                   EntryPoint = "Discord_VoiceSettings_SetEchoCancellation",
+                   CallingConvention = CallingConvention.Cdecl)]
+        public static extern void SetEchoCancellation(VoiceSettings* self,
+                                                      [MarshalAs(UnmanagedType.U1)] bool value);
+        [DllImport(LibraryName,
+                   EntryPoint = "Discord_VoiceSettings_NoiseSuppression",
+                   CallingConvention = CallingConvention.Cdecl)]
+        [return:MarshalAs(UnmanagedType.U1)]
+        public static extern bool NoiseSuppression(VoiceSettings* self);
+        [DllImport(LibraryName,
+                   EntryPoint = "Discord_VoiceSettings_SetNoiseSuppression",
+                   CallingConvention = CallingConvention.Cdecl)]
+        public static extern void SetNoiseSuppression(VoiceSettings* self,
+                                                      [MarshalAs(UnmanagedType.U1)] bool value);
+        [DllImport(LibraryName,
+                   EntryPoint = "Discord_VoiceSettings_NoiseCancellation",
+                   CallingConvention = CallingConvention.Cdecl)]
+        [return:MarshalAs(UnmanagedType.U1)]
+        public static extern bool NoiseCancellation(VoiceSettings* self);
+        [DllImport(LibraryName,
+                   EntryPoint = "Discord_VoiceSettings_SetNoiseCancellation",
+                   CallingConvention = CallingConvention.Cdecl)]
+        public static extern void SetNoiseCancellation(VoiceSettings* self,
+                                                       [MarshalAs(UnmanagedType.U1)] bool value);
     }
     [StructLayout(LayoutKind.Sequential)]
     public struct UserMessageSummary {
@@ -2469,7 +2603,7 @@ public static unsafe class NativeMethods {
                    CallingConvention = CallingConvention.Cdecl)]
         public static extern void SetExperimentalAndroidPreventCommsForBluetooth(
           ClientCreateOptions* self,
-          bool value);
+          [MarshalAs(UnmanagedType.U1)] bool value);
         [DllImport(LibraryName,
                    EntryPoint = "Discord_ClientCreateOptions_CpuAffinityMask",
                    CallingConvention = CallingConvention.Cdecl)]
@@ -2655,6 +2789,25 @@ public static unsafe class NativeMethods {
             }
         }
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        public delegate void GetVoiceSettingsCallback(ClientResult* result,
+                                                      VoiceSettings* settings,
+                                                      void* __userData);
+        [AOT.MonoPInvokeCallback(typeof(GetVoiceSettingsCallback))]
+        public static void GetVoiceSettingsCallback_Handler(ClientResult* result,
+                                                            VoiceSettings* settings,
+                                                            void* __userData) {
+            var __callback =
+              NativeMethods.ManagedUserData
+                .DelegateFromPointer<Discord.Sdk.Client.GetVoiceSettingsCallback>(__userData);
+            try {
+                __callback(new Discord.Sdk.ClientResult(*result, 0),
+                           new Discord.Sdk.VoiceSettings(*settings, 0));
+            } catch (Exception ex) {
+                NativeMethods.__ReportUnhandledException(ex);
+            } finally {
+            }
+        }
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         public delegate void DeviceChangeCallback(Discord_AudioDeviceSpan inputDevices,
                                                   Discord_AudioDeviceSpan outputDevices,
                                                   void* __userData);
@@ -2697,9 +2850,12 @@ public static unsafe class NativeMethods {
             }
         }
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        public delegate void NoAudioInputCallback(bool inputDetected, void* __userData);
+        public delegate void NoAudioInputCallback([MarshalAs(UnmanagedType.U1)] bool inputDetected,
+                                                  void* __userData);
         [AOT.MonoPInvokeCallback(typeof(NoAudioInputCallback))]
-        public static void NoAudioInputCallback_Handler(bool inputDetected, void* __userData) {
+        public static void NoAudioInputCallback_Handler(
+          [MarshalAs(UnmanagedType.U1)] bool inputDetected,
+          void* __userData) {
             var __callback =
               NativeMethods.ManagedUserData
                 .DelegateFromPointer<Discord.Sdk.Client.NoAudioInputCallback>(__userData);
@@ -2725,21 +2881,39 @@ public static unsafe class NativeMethods {
             }
         }
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        public delegate void VoiceParticipantChangedCallback(ulong lobbyId,
-                                                             ulong memberId,
-                                                             bool added,
-                                                             void* __userData);
+        public delegate void VoiceParticipantChangedCallback(
+          ulong lobbyId,
+          ulong memberId,
+          [MarshalAs(UnmanagedType.U1)] bool added,
+          void* __userData);
         [AOT.MonoPInvokeCallback(typeof(VoiceParticipantChangedCallback))]
-        public static void VoiceParticipantChangedCallback_Handler(ulong lobbyId,
-                                                                   ulong memberId,
-                                                                   bool added,
-                                                                   void* __userData) {
+        public static void VoiceParticipantChangedCallback_Handler(
+          ulong lobbyId,
+          ulong memberId,
+          [MarshalAs(UnmanagedType.U1)] bool added,
+          void* __userData) {
             var __callback =
               NativeMethods.ManagedUserData
                 .DelegateFromPointer<Discord.Sdk.Client.VoiceParticipantChangedCallback>(
                   __userData);
             try {
                 __callback(lobbyId, memberId, added);
+            } catch (Exception ex) {
+                NativeMethods.__ReportUnhandledException(ex);
+            } finally {
+            }
+        }
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        public delegate void VoiceSettingsUpdatedCallback(VoiceSettings* settings,
+                                                          void* __userData);
+        [AOT.MonoPInvokeCallback(typeof(VoiceSettingsUpdatedCallback))]
+        public static void VoiceSettingsUpdatedCallback_Handler(VoiceSettings* settings,
+                                                                void* __userData) {
+            var __callback =
+              NativeMethods.ManagedUserData
+                .DelegateFromPointer<Discord.Sdk.Client.VoiceSettingsUpdatedCallback>(__userData);
+            try {
+                __callback(new Discord.Sdk.VoiceSettings(*settings, 0));
             } catch (Exception ex) {
                 NativeMethods.__ReportUnhandledException(ex);
             } finally {
@@ -3476,9 +3650,13 @@ public static unsafe class NativeMethods {
             }
         }
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        public delegate void IsDiscordAppInstalledCallback(bool installed, void* __userData);
+        public delegate void IsDiscordAppInstalledCallback(
+          [MarshalAs(UnmanagedType.U1)] bool installed,
+          void* __userData);
         [AOT.MonoPInvokeCallback(typeof(IsDiscordAppInstalledCallback))]
-        public static void IsDiscordAppInstalledCallback_Handler(bool installed, void* __userData) {
+        public static void IsDiscordAppInstalledCallback_Handler(
+          [MarshalAs(UnmanagedType.U1)] bool installed,
+          void* __userData) {
             var __callback =
               NativeMethods.ManagedUserData
                 .DelegateFromPointer<Discord.Sdk.Client.IsDiscordAppInstalledCallback>(__userData);
@@ -3636,13 +3814,15 @@ public static unsafe class NativeMethods {
             }
         }
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        public delegate void RelationshipCreatedCallback(ulong userId,
-                                                         bool isDiscordRelationshipUpdate,
-                                                         void* __userData);
+        public delegate void RelationshipCreatedCallback(
+          ulong userId,
+          [MarshalAs(UnmanagedType.U1)] bool isDiscordRelationshipUpdate,
+          void* __userData);
         [AOT.MonoPInvokeCallback(typeof(RelationshipCreatedCallback))]
-        public static void RelationshipCreatedCallback_Handler(ulong userId,
-                                                               bool isDiscordRelationshipUpdate,
-                                                               void* __userData) {
+        public static void RelationshipCreatedCallback_Handler(
+          ulong userId,
+          [MarshalAs(UnmanagedType.U1)] bool isDiscordRelationshipUpdate,
+          void* __userData) {
             var __callback =
               NativeMethods.ManagedUserData
                 .DelegateFromPointer<Discord.Sdk.Client.RelationshipCreatedCallback>(__userData);
@@ -3654,13 +3834,15 @@ public static unsafe class NativeMethods {
             }
         }
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        public delegate void RelationshipDeletedCallback(ulong userId,
-                                                         bool isDiscordRelationshipUpdate,
-                                                         void* __userData);
+        public delegate void RelationshipDeletedCallback(
+          ulong userId,
+          [MarshalAs(UnmanagedType.U1)] bool isDiscordRelationshipUpdate,
+          void* __userData);
         [AOT.MonoPInvokeCallback(typeof(RelationshipDeletedCallback))]
-        public static void RelationshipDeletedCallback_Handler(ulong userId,
-                                                               bool isDiscordRelationshipUpdate,
-                                                               void* __userData) {
+        public static void RelationshipDeletedCallback_Handler(
+          ulong userId,
+          [MarshalAs(UnmanagedType.U1)] bool isDiscordRelationshipUpdate,
+          void* __userData) {
             var __callback =
               NativeMethods.ManagedUserData
                 .DelegateFromPointer<Discord.Sdk.Client.RelationshipDeletedCallback>(__userData);
@@ -3752,7 +3934,8 @@ public static unsafe class NativeMethods {
           Discord.Sdk.LobbyMemberFlags flags,
           Discord.Sdk.NativeMethods.Client.UpdateLobbyMemberCallback callback,
           void* callback__userDataFree,
-          void* callback__userData);
+          void* callback__userData,
+          Discord_String* additionalName);
 #endif
 #if DEVELOPMENT_BUILD || UNITY_EDITOR
         [DllImport(LibraryName,
@@ -3981,13 +4164,22 @@ public static unsafe class NativeMethods {
         [return:MarshalAs(UnmanagedType.U1)]
         public static extern bool GetSelfMuteAll(Client* self);
         [DllImport(LibraryName,
+                   EntryPoint = "Discord_Client_GetVoiceSettings",
+                   CallingConvention = CallingConvention.Cdecl)]
+        public static extern void GetVoiceSettings(
+          Client* self,
+          Discord.Sdk.NativeMethods.Client.GetVoiceSettingsCallback cb,
+          void* cb__userDataFree,
+          void* cb__userData);
+        [DllImport(LibraryName,
                    EntryPoint = "Discord_Client_SetAecDump",
                    CallingConvention = CallingConvention.Cdecl)]
-        public static extern void SetAecDump(Client* self, bool on);
+        public static extern void SetAecDump(Client* self, [MarshalAs(UnmanagedType.U1)] bool on);
         [DllImport(LibraryName,
                    EntryPoint = "Discord_Client_SetAutomaticGainControl",
                    CallingConvention = CallingConvention.Cdecl)]
-        public static extern void SetAutomaticGainControl(Client* self, bool on);
+        public static extern void SetAutomaticGainControl(Client* self,
+                                                          [MarshalAs(UnmanagedType.U1)] bool on);
         [DllImport(LibraryName,
                    EntryPoint = "Discord_Client_SetDeviceChangeCallback",
                    CallingConvention = CallingConvention.Cdecl)]
@@ -3999,11 +4191,14 @@ public static unsafe class NativeMethods {
         [DllImport(LibraryName,
                    EntryPoint = "Discord_Client_SetEchoCancellation",
                    CallingConvention = CallingConvention.Cdecl)]
-        public static extern void SetEchoCancellation(Client* self, bool on);
+        public static extern void SetEchoCancellation(Client* self,
+                                                      [MarshalAs(UnmanagedType.U1)] bool on);
         [DllImport(LibraryName,
                    EntryPoint = "Discord_Client_SetEngineManagedAudioSession",
                    CallingConvention = CallingConvention.Cdecl)]
-        public static extern void SetEngineManagedAudioSession(Client* self, bool isEngineManaged);
+        public static extern void SetEngineManagedAudioSession(Client* self, [
+            MarshalAs(UnmanagedType.U1)
+        ] bool isEngineManaged);
         [DllImport(LibraryName,
                    EntryPoint = "Discord_Client_SetInputDevice",
                    CallingConvention = CallingConvention.Cdecl)]
@@ -4032,15 +4227,19 @@ public static unsafe class NativeMethods {
         [DllImport(LibraryName,
                    EntryPoint = "Discord_Client_SetNoiseCancellation",
                    CallingConvention = CallingConvention.Cdecl)]
-        public static extern void SetNoiseCancellation(Client* self, bool on);
+        public static extern void SetNoiseCancellation(Client* self,
+                                                       [MarshalAs(UnmanagedType.U1)] bool on);
         [DllImport(LibraryName,
                    EntryPoint = "Discord_Client_SetNoiseSuppression",
                    CallingConvention = CallingConvention.Cdecl)]
-        public static extern void SetNoiseSuppression(Client* self, bool on);
+        public static extern void SetNoiseSuppression(Client* self,
+                                                      [MarshalAs(UnmanagedType.U1)] bool on);
         [DllImport(LibraryName,
                    EntryPoint = "Discord_Client_SetOpusHardwareCoding",
                    CallingConvention = CallingConvention.Cdecl)]
-        public static extern void SetOpusHardwareCoding(Client* self, bool encode, bool decode);
+        public static extern void SetOpusHardwareCoding(Client* self,
+                                                        [MarshalAs(UnmanagedType.U1)] bool encode,
+                                                        [MarshalAs(UnmanagedType.U1)] bool decode);
         [DllImport(LibraryName,
                    EntryPoint = "Discord_Client_SetOutputDevice",
                    CallingConvention = CallingConvention.Cdecl)]
@@ -4057,16 +4256,19 @@ public static unsafe class NativeMethods {
         [DllImport(LibraryName,
                    EntryPoint = "Discord_Client_SetSelfDeafAll",
                    CallingConvention = CallingConvention.Cdecl)]
-        public static extern void SetSelfDeafAll(Client* self, bool deaf);
+        public static extern void SetSelfDeafAll(Client* self,
+                                                 [MarshalAs(UnmanagedType.U1)] bool deaf);
         [DllImport(LibraryName,
                    EntryPoint = "Discord_Client_SetSelfMuteAll",
                    CallingConvention = CallingConvention.Cdecl)]
-        public static extern void SetSelfMuteAll(Client* self, bool mute);
+        public static extern void SetSelfMuteAll(Client* self,
+                                                 [MarshalAs(UnmanagedType.U1)] bool mute);
         [DllImport(LibraryName,
                    EntryPoint = "Discord_Client_SetSpeakerMode",
                    CallingConvention = CallingConvention.Cdecl)]
         [return:MarshalAs(UnmanagedType.U1)]
-        public static extern bool SetSpeakerMode(Client* self, bool speakerMode);
+        public static extern bool SetSpeakerMode(Client* self,
+                                                 [MarshalAs(UnmanagedType.U1)] bool speakerMode);
         [DllImport(LibraryName,
                    EntryPoint = "Discord_Client_SetThreadPriority",
                    CallingConvention = CallingConvention.Cdecl)]
@@ -4081,6 +4283,14 @@ public static unsafe class NativeMethods {
           Discord.Sdk.NativeMethods.Client.VoiceParticipantChangedCallback cb,
           void* cb__userDataFree,
           void* cb__userData);
+        [DllImport(LibraryName,
+                   EntryPoint = "Discord_Client_SetVoiceSettingsUpdatedCallback",
+                   CallingConvention = CallingConvention.Cdecl)]
+        public static extern void SetVoiceSettingsUpdatedCallback(
+          Client* self,
+          Discord.Sdk.NativeMethods.Client.VoiceSettingsUpdatedCallback callback,
+          void* callback__userDataFree,
+          void* callback__userData);
         [DllImport(LibraryName,
                    EntryPoint = "Discord_Client_ShowAudioRoutePicker",
                    CallingConvention = CallingConvention.Cdecl)]
@@ -4237,7 +4447,9 @@ public static unsafe class NativeMethods {
         [DllImport(LibraryName,
                    EntryPoint = "Discord_Client_ProvisionalUserMergeCompleted",
                    CallingConvention = CallingConvention.Cdecl)]
-        public static extern void ProvisionalUserMergeCompleted(Client* self, bool success);
+        public static extern void ProvisionalUserMergeCompleted(Client* self, [
+            MarshalAs(UnmanagedType.U1)
+        ] bool success);
         [DllImport(LibraryName,
                    EntryPoint = "Discord_Client_RefreshToken",
                    CallingConvention = CallingConvention.Cdecl)]
@@ -4470,7 +4682,8 @@ public static unsafe class NativeMethods {
         [DllImport(LibraryName,
                    EntryPoint = "Discord_Client_SetShowingChat",
                    CallingConvention = CallingConvention.Cdecl)]
-        public static extern void SetShowingChat(Client* self, bool showingChat);
+        public static extern void SetShowingChat(Client* self,
+                                                 [MarshalAs(UnmanagedType.U1)] bool showingChat);
         [DllImport(LibraryName,
                    EntryPoint = "Discord_Client_AddLogCallback",
                    CallingConvention = CallingConvention.Cdecl)]
@@ -8245,7 +8458,7 @@ public class Call : IDisposable {
     /// </summary>
     /// <remarks>
     ///  If using push to talk you should call SetPTTActive() whenever the user presses their
-    ///  confused push to talk key.
+    ///  configured push to talk key.
     ///
     /// </remarks>
     public void SetAudioMode(Discord.Sdk.AudioModeType audioMode) {
@@ -11030,6 +11243,34 @@ public class MessageHandle : IDisposable {
         }
     }
     /// <summary>
+    ///  Returns an additional display name for this message, if one was set.
+    /// </summary>
+    /// <remarks>
+    ///  This is an optional, game-provided name (such as a character name) that the game or lobby
+    ///  integration associated with the author for this lobby.
+    ///
+    /// </remarks>
+    public string? AdditionalName() {
+        if (disposed_ != 0) {
+            throw new ObjectDisposedException(nameof(MessageHandle));
+        }
+        unsafe {
+            bool __returnIsNonNull;
+            var __returnValue = new NativeMethods.Discord_String();
+            fixed(NativeMethods.MessageHandle* self = &this.self) {
+                __returnIsNonNull =
+                  NativeMethods.MessageHandle.AdditionalName(self, &__returnValue);
+            }
+            if (!__returnIsNonNull) {
+                return null;
+            }
+            string __returnValueSurface =
+              Marshal.PtrToStringUTF8((IntPtr)__returnValue.ptr, (int)__returnValue.size);
+            NativeMethods.Discord_Free((void*)__returnValue.ptr);
+            return __returnValueSurface;
+        }
+    }
+    /// <summary>
     ///  Returns the application ID associated with this message, if any. You can use
     ///  this to identify if the mesage was sent from another child application in
     ///  your catalog.
@@ -11544,6 +11785,292 @@ public class AudioDevice : IDisposable {
     }
 }
 /// <summary>
+///  A read-only snapshot of the user's voice settings in the connected Discord desktop client.
+/// </summary>
+/// <remarks>
+///  These belong to the Discord client, not to any individual Call.
+///
+/// </remarks>
+public class VoiceSettings : IDisposable {
+    internal NativeMethods.VoiceSettings self;
+    private int disposed_;
+
+    internal VoiceSettings(NativeMethods.VoiceSettings self, int disposed) {
+        this.self = self;
+        this.disposed_ = disposed;
+    }
+
+    ~VoiceSettings() { Dispose(); }
+
+    public void Dispose() {
+        if (Interlocked.Exchange(ref disposed_, 1) != 0) {
+            return;
+        }
+        GC.SuppressFinalize(this);
+        unsafe {
+            fixed(NativeMethods.VoiceSettings* self = &this.self) {
+                NativeMethods.VoiceSettings.Drop(self);
+            }
+        }
+    }
+
+    public VoiceSettings(VoiceSettings other) {
+        if (other == null) {
+            throw new ArgumentNullException(nameof(other));
+        }
+        if (disposed_ != 0) {
+            throw new ObjectDisposedException(nameof(VoiceSettings));
+        }
+        if (other.disposed_ != 0) {
+            throw new ObjectDisposedException(nameof(other));
+        }
+        unsafe {
+            fixed(NativeMethods.VoiceSettings* otherPtr = &other.self) {
+                fixed(NativeMethods.VoiceSettings* selfPtr = &self) {
+                    NativeMethods.VoiceSettings.Clone(selfPtr, otherPtr);
+                }
+            }
+        }
+    }
+    internal unsafe VoiceSettings(NativeMethods.VoiceSettings* otherPtr) {
+        unsafe {
+            fixed(NativeMethods.VoiceSettings* selfPtr = &self) {
+                NativeMethods.VoiceSettings.Clone(selfPtr, otherPtr);
+            }
+        }
+    }
+    public bool SelfMute() {
+        if (disposed_ != 0) {
+            throw new ObjectDisposedException(nameof(VoiceSettings));
+        }
+        unsafe {
+            bool __returnValue;
+            fixed(NativeMethods.VoiceSettings* self = &this.self) {
+                __returnValue = NativeMethods.VoiceSettings.SelfMute(self);
+            }
+            return __returnValue;
+        }
+    }
+    public void SetSelfMute(bool value) {
+        if (disposed_ != 0) {
+            throw new ObjectDisposedException(nameof(VoiceSettings));
+        }
+        unsafe {
+            fixed(NativeMethods.VoiceSettings* self = &this.self) {
+                NativeMethods.VoiceSettings.SetSelfMute(self, value);
+            }
+        }
+    }
+    public bool SelfDeaf() {
+        if (disposed_ != 0) {
+            throw new ObjectDisposedException(nameof(VoiceSettings));
+        }
+        unsafe {
+            bool __returnValue;
+            fixed(NativeMethods.VoiceSettings* self = &this.self) {
+                __returnValue = NativeMethods.VoiceSettings.SelfDeaf(self);
+            }
+            return __returnValue;
+        }
+    }
+    public void SetSelfDeaf(bool value) {
+        if (disposed_ != 0) {
+            throw new ObjectDisposedException(nameof(VoiceSettings));
+        }
+        unsafe {
+            fixed(NativeMethods.VoiceSettings* self = &this.self) {
+                NativeMethods.VoiceSettings.SetSelfDeaf(self, value);
+            }
+        }
+    }
+    public Discord.Sdk.VoiceInputModeType InputMode() {
+        if (disposed_ != 0) {
+            throw new ObjectDisposedException(nameof(VoiceSettings));
+        }
+        unsafe {
+            Discord.Sdk.VoiceInputModeType __returnValue;
+            fixed(NativeMethods.VoiceSettings* self = &this.self) {
+                __returnValue = NativeMethods.VoiceSettings.InputMode(self);
+            }
+            return __returnValue;
+        }
+    }
+    public void SetInputMode(Discord.Sdk.VoiceInputModeType value) {
+        if (disposed_ != 0) {
+            throw new ObjectDisposedException(nameof(VoiceSettings));
+        }
+        unsafe {
+            fixed(NativeMethods.VoiceSettings* self = &this.self) {
+                NativeMethods.VoiceSettings.SetInputMode(self, value);
+            }
+        }
+    }
+    public string PttKey() {
+        if (disposed_ != 0) {
+            throw new ObjectDisposedException(nameof(VoiceSettings));
+        }
+        unsafe {
+            var __returnValue = new NativeMethods.Discord_String();
+            fixed(NativeMethods.VoiceSettings* self = &this.self) {
+                NativeMethods.VoiceSettings.PttKey(self, &__returnValue);
+            }
+            string __returnValueSurface =
+              Marshal.PtrToStringUTF8((IntPtr)__returnValue.ptr, (int)__returnValue.size);
+            NativeMethods.Discord_Free((void*)__returnValue.ptr);
+            return __returnValueSurface;
+        }
+    }
+    public void SetPttKey(string value) {
+        if (disposed_ != 0) {
+            throw new ObjectDisposedException(nameof(VoiceSettings));
+        }
+        unsafe {
+            var __scratchAligned = stackalloc ulong[128];
+            var __scratch = (byte*)__scratchAligned;
+            var __scratchUsed = 0;
+            NativeMethods.Discord_String __valueSpan;
+            var __valueOwned =
+              NativeMethods.__InitStringLocal(__scratch, &__scratchUsed, 1024, &__valueSpan, value);
+            fixed(NativeMethods.VoiceSettings* self = &this.self) {
+                NativeMethods.VoiceSettings.SetPttKey(self, __valueSpan);
+            }
+            NativeMethods.__FreeLocalString(&__valueSpan, __valueOwned);
+        }
+    }
+    public float InputVolume() {
+        if (disposed_ != 0) {
+            throw new ObjectDisposedException(nameof(VoiceSettings));
+        }
+        unsafe {
+            float __returnValue;
+            fixed(NativeMethods.VoiceSettings* self = &this.self) {
+                __returnValue = NativeMethods.VoiceSettings.InputVolume(self);
+            }
+            return __returnValue;
+        }
+    }
+    public void SetInputVolume(float value) {
+        if (disposed_ != 0) {
+            throw new ObjectDisposedException(nameof(VoiceSettings));
+        }
+        unsafe {
+            fixed(NativeMethods.VoiceSettings* self = &this.self) {
+                NativeMethods.VoiceSettings.SetInputVolume(self, value);
+            }
+        }
+    }
+    public float OutputVolume() {
+        if (disposed_ != 0) {
+            throw new ObjectDisposedException(nameof(VoiceSettings));
+        }
+        unsafe {
+            float __returnValue;
+            fixed(NativeMethods.VoiceSettings* self = &this.self) {
+                __returnValue = NativeMethods.VoiceSettings.OutputVolume(self);
+            }
+            return __returnValue;
+        }
+    }
+    public void SetOutputVolume(float value) {
+        if (disposed_ != 0) {
+            throw new ObjectDisposedException(nameof(VoiceSettings));
+        }
+        unsafe {
+            fixed(NativeMethods.VoiceSettings* self = &this.self) {
+                NativeMethods.VoiceSettings.SetOutputVolume(self, value);
+            }
+        }
+    }
+    public bool AutomaticGainControl() {
+        if (disposed_ != 0) {
+            throw new ObjectDisposedException(nameof(VoiceSettings));
+        }
+        unsafe {
+            bool __returnValue;
+            fixed(NativeMethods.VoiceSettings* self = &this.self) {
+                __returnValue = NativeMethods.VoiceSettings.AutomaticGainControl(self);
+            }
+            return __returnValue;
+        }
+    }
+    public void SetAutomaticGainControl(bool value) {
+        if (disposed_ != 0) {
+            throw new ObjectDisposedException(nameof(VoiceSettings));
+        }
+        unsafe {
+            fixed(NativeMethods.VoiceSettings* self = &this.self) {
+                NativeMethods.VoiceSettings.SetAutomaticGainControl(self, value);
+            }
+        }
+    }
+    public bool EchoCancellation() {
+        if (disposed_ != 0) {
+            throw new ObjectDisposedException(nameof(VoiceSettings));
+        }
+        unsafe {
+            bool __returnValue;
+            fixed(NativeMethods.VoiceSettings* self = &this.self) {
+                __returnValue = NativeMethods.VoiceSettings.EchoCancellation(self);
+            }
+            return __returnValue;
+        }
+    }
+    public void SetEchoCancellation(bool value) {
+        if (disposed_ != 0) {
+            throw new ObjectDisposedException(nameof(VoiceSettings));
+        }
+        unsafe {
+            fixed(NativeMethods.VoiceSettings* self = &this.self) {
+                NativeMethods.VoiceSettings.SetEchoCancellation(self, value);
+            }
+        }
+    }
+    public bool NoiseSuppression() {
+        if (disposed_ != 0) {
+            throw new ObjectDisposedException(nameof(VoiceSettings));
+        }
+        unsafe {
+            bool __returnValue;
+            fixed(NativeMethods.VoiceSettings* self = &this.self) {
+                __returnValue = NativeMethods.VoiceSettings.NoiseSuppression(self);
+            }
+            return __returnValue;
+        }
+    }
+    public void SetNoiseSuppression(bool value) {
+        if (disposed_ != 0) {
+            throw new ObjectDisposedException(nameof(VoiceSettings));
+        }
+        unsafe {
+            fixed(NativeMethods.VoiceSettings* self = &this.self) {
+                NativeMethods.VoiceSettings.SetNoiseSuppression(self, value);
+            }
+        }
+    }
+    public bool NoiseCancellation() {
+        if (disposed_ != 0) {
+            throw new ObjectDisposedException(nameof(VoiceSettings));
+        }
+        unsafe {
+            bool __returnValue;
+            fixed(NativeMethods.VoiceSettings* self = &this.self) {
+                __returnValue = NativeMethods.VoiceSettings.NoiseCancellation(self);
+            }
+            return __returnValue;
+        }
+    }
+    public void SetNoiseCancellation(bool value) {
+        if (disposed_ != 0) {
+            throw new ObjectDisposedException(nameof(VoiceSettings));
+        }
+        unsafe {
+            fixed(NativeMethods.VoiceSettings* self = &this.self) {
+                NativeMethods.VoiceSettings.SetNoiseCancellation(self, value);
+            }
+        }
+    }
+}
+/// <summary>
 ///  Represents a summary of a DM conversation with a user.
 /// </summary>
 public class UserMessageSummary : IDisposable {
@@ -11916,12 +12443,15 @@ public class Client : IDisposable {
     public delegate void GetCurrentOutputDeviceCallback(Discord.Sdk.AudioDevice device);
     public delegate void GetInputDevicesCallback(Discord.Sdk.AudioDevice[] devices);
     public delegate void GetOutputDevicesCallback(Discord.Sdk.AudioDevice[] devices);
+    public delegate void GetVoiceSettingsCallback(Discord.Sdk.ClientResult result,
+                                                  Discord.Sdk.VoiceSettings settings);
     public delegate void DeviceChangeCallback(Discord.Sdk.AudioDevice[] inputDevices,
                                               Discord.Sdk.AudioDevice[] outputDevices);
     public delegate void SetInputDeviceCallback(Discord.Sdk.ClientResult result);
     public delegate void NoAudioInputCallback(bool inputDetected);
     public delegate void SetOutputDeviceCallback(Discord.Sdk.ClientResult result);
     public delegate void VoiceParticipantChangedCallback(ulong lobbyId, ulong memberId, bool added);
+    public delegate void VoiceSettingsUpdatedCallback(Discord.Sdk.VoiceSettings settings);
     public delegate void UserAudioReceivedCallback(ulong userId,
                                                    IntPtr data,
                                                    ulong samplesPerChannel,
@@ -12078,7 +12608,8 @@ public class Client : IDisposable {
                                        ulong lobbyId,
                                        Dictionary<string, string> metadata,
                                        Discord.Sdk.LobbyMemberFlags flags,
-                                       Discord.Sdk.Client.UpdateLobbyMemberCallback callback) {
+                                       Discord.Sdk.Client.UpdateLobbyMemberCallback callback,
+                                       string? additionalName) {
         if (disposed_ != 0) {
             throw new ObjectDisposedException(nameof(Client));
         }
@@ -12121,6 +12652,9 @@ public class Client : IDisposable {
             __metadataNative.values = __metadataValues;
             Discord.Sdk.NativeMethods.Client.UpdateLobbyMemberCallback __callbackDelegate =
               Discord.Sdk.NativeMethods.Client.UpdateLobbyMemberCallback_Handler;
+            NativeMethods.Discord_String __additionalNameSpan;
+            var __additionalNameOwned = NativeMethods.__InitNullableStringLocal(
+              __scratch, &__scratchUsed, 1024, &__additionalNameSpan, additionalName);
             fixed(NativeMethods.Client* self = &this.self) {
                 NativeMethods.Client.AddOrUpdateLobbyMember(
                   self,
@@ -12131,8 +12665,10 @@ public class Client : IDisposable {
                   flags,
                   __callbackDelegate,
                   NativeMethods.ManagedUserData.Free,
-                  NativeMethods.ManagedUserData.CreateHandle(callback));
+                  NativeMethods.ManagedUserData.CreateHandle(callback),
+                  (additionalName != null ? &__additionalNameSpan : null));
             }
+            NativeMethods.__FreeLocalString(&__additionalNameSpan, __additionalNameOwned);
             for (int __i = 0; __i < (int)__metadataNative.size; __i++) {
                 NativeMethods.__FreeLocalString(&__metadataKeys[__i], __metadataKeyOwnership[__i]);
                 NativeMethods.__FreeLocalString(&__metadataValues[__i],
@@ -12894,6 +13430,29 @@ public class Client : IDisposable {
         }
     }
     /// <summary>
+    ///  Asynchronously fetches the user's current voice settings from the connected Discord client.
+    /// </summary>
+    /// <remarks>
+    ///  Requires a running Discord desktop client and an approved Social SDK integration.
+    ///
+    /// </remarks>
+    public void GetVoiceSettings(Discord.Sdk.Client.GetVoiceSettingsCallback cb) {
+        if (disposed_ != 0) {
+            throw new ObjectDisposedException(nameof(Client));
+        }
+        unsafe {
+            Discord.Sdk.NativeMethods.Client.GetVoiceSettingsCallback __cbDelegate =
+              Discord.Sdk.NativeMethods.Client.GetVoiceSettingsCallback_Handler;
+            fixed(NativeMethods.Client* self = &this.self) {
+                NativeMethods.Client.GetVoiceSettings(
+                  self,
+                  __cbDelegate,
+                  NativeMethods.ManagedUserData.Free,
+                  NativeMethods.ManagedUserData.CreateHandle(cb));
+            }
+        }
+    }
+    /// <summary>
     ///  Enables or disables AEC diagnostic recording.
     /// </summary>
     /// <remarks>
@@ -13280,6 +13839,32 @@ public class Client : IDisposable {
                   __cbDelegate,
                   NativeMethods.ManagedUserData.Free,
                   NativeMethods.ManagedUserData.CreateHandle(cb));
+            }
+        }
+    }
+    /// <summary>
+    ///  Sets a callback to be invoked whenever the user's voice settings change in the connected
+    ///  Discord client. Pass an empty std::function to stop receiving updates.
+    /// </summary>
+    /// <remarks>
+    ///  Requires the same access as Client::GetVoiceSettings. The callback never fires if the
+    ///  client refuses the subscription.
+    ///
+    /// </remarks>
+    public void SetVoiceSettingsUpdatedCallback(
+      Discord.Sdk.Client.VoiceSettingsUpdatedCallback callback) {
+        if (disposed_ != 0) {
+            throw new ObjectDisposedException(nameof(Client));
+        }
+        unsafe {
+            Discord.Sdk.NativeMethods.Client.VoiceSettingsUpdatedCallback __callbackDelegate =
+              Discord.Sdk.NativeMethods.Client.VoiceSettingsUpdatedCallback_Handler;
+            fixed(NativeMethods.Client* self = &this.self) {
+                NativeMethods.Client.SetVoiceSettingsUpdatedCallback(
+                  self,
+                  __callbackDelegate,
+                  NativeMethods.ManagedUserData.Free,
+                  NativeMethods.ManagedUserData.CreateHandle(callback));
             }
         }
     }
