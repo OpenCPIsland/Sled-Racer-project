@@ -26,7 +26,7 @@ public class CPSNCommentaryTMP : MonoBehaviour
 
     private void Start()
     {
-        DisplayRandomQuote(); // Show first quote immediately
+        DisplayRandomQuote();
     }
 
     private void ScheduleNextQuote()
@@ -39,7 +39,6 @@ public class CPSNCommentaryTMP : MonoBehaviour
     {
         if (quotes.Length == 0)
         {
-            Debug.LogWarning("No CPSN quotes assigned!");
             return;
         }
 
@@ -51,9 +50,8 @@ public class CPSNCommentaryTMP : MonoBehaviour
         }
         else
         {
-            Debug.Log($"[CPSN] {quote}");
         }
 
-        ScheduleNextQuote(); // Loop it
+        ScheduleNextQuote();
     }
 }
