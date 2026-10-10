@@ -57,7 +57,7 @@ PlayerSettings:
   mipStripping: 0
   numberOfMipsStripped: 0
   numberOfMipsStrippedPerMipmapLimitGroup: {}
-  m_StackTraceTypes: 010000000100000001000000010000000100000001000000
+  m_StackTraceTypes: 010000000000000000000000000000000100000001000000
   iosShowActivityIndicatorOnLoading: -1
   androidShowActivityIndicatorOnLoading: -1
   iosUseCustomAppBackgroundBehavior: 0
@@ -147,9 +147,9 @@ PlayerSettings:
   vulkanEnableLateAcquireNextImage: 0
   vulkanEnableCommandBufferRecycling: 1
   loadStoreDebugModeEnabled: 0
-  visionOSBundleVersion: 1.3.0
+  visionOSBundleVersion: 1.4.0
   tvOSBundleVersion: 1.0
-  bundleVersion: 1.3.0
+  bundleVersion: 1.4.0
   preloadedAssets:
   - {fileID: -944628639613478452, guid: 566a194e464ff047fb87a3a73575a575, type: 3}
   metroInputSource: 0
@@ -175,16 +175,17 @@ PlayerSettings:
   applicationIdentifier:
     Android: com.OpenCPI.SledRacer
     Standalone: com.OpenCPI.SledRacer
-    VisionOS: com.OpenCPI.SledRacer
+    VisionOS: com.OpenCPI.Sled-Racer
     iPhone: com.OpenCPI.SledRacer
+    tvOS: com.OpenCPI.Sled-Racer
   buildNumber:
     Bratwurst: 0
     Standalone: 1.3.0
-    VisionOS: 1.3.0
-    iPhone: 1.3.0
+    VisionOS: 1.4.0
+    iPhone: 1.4.0
     tvOS: 0
   overrideDefaultApplicationIdentifier: 1
-  AndroidBundleVersionCode: 130
+  AndroidBundleVersionCode: 140
   AndroidMinSdkVersion: 25
   AndroidTargetSdkVersion: 36
   AndroidPreferredInstallLocation: 1
@@ -279,7 +280,7 @@ PlayerSettings:
   useCustomGradlePropertiesTemplate: 0
   useCustomGradleSettingsTemplate: 0
   useCustomProguardFile: 0
-  AndroidTargetArchitectures: 15
+  AndroidTargetArchitectures: 3
   AndroidAllowedArchitectures: -1
   AndroidSplashScreenScale: 2
   androidSplashScreen: {fileID: 2800000, guid: 498291a6d4114b559afe89b16ee7fbd5, type: 3}
@@ -294,13 +295,13 @@ PlayerSettings:
   useAndroidAppCategory: 1
   androidAppCategoryOther: 
   AndroidEnableTango: 0
-  androidEnableBanner: 1
+  androidEnableBanner: 0
   androidUseLowAccuracyLocation: 0
   androidUseCustomKeystore: 0
   m_AndroidBanners:
   - width: 320
     height: 180
-    banner: {fileID: 2800000, guid: a6936c9ba2b812e4db9383603a820605, type: 3}
+    banner: {fileID: 0}
   androidGamepadSupportLevel: 0
   AndroidMinifyRelease: 1
   AndroidMinifyDebug: 0
@@ -320,115 +321,115 @@ PlayerSettings:
   - m_BuildTarget: Android
     m_Icons:
     - m_Textures:
-      - {fileID: 2800000, guid: a6936c9ba2b812e4db9383603a820605, type: 3}
+      - {fileID: 0}
       m_Width: 192
       m_Height: 192
       m_Kind: 0
       m_SubKind: 
     - m_Textures:
-      - {fileID: 2800000, guid: a6936c9ba2b812e4db9383603a820605, type: 3}
+      - {fileID: 0}
       m_Width: 144
       m_Height: 144
       m_Kind: 0
       m_SubKind: 
     - m_Textures:
-      - {fileID: 2800000, guid: a6936c9ba2b812e4db9383603a820605, type: 3}
+      - {fileID: 0}
       m_Width: 96
       m_Height: 96
       m_Kind: 0
       m_SubKind: 
     - m_Textures:
-      - {fileID: 2800000, guid: a6936c9ba2b812e4db9383603a820605, type: 3}
+      - {fileID: 0}
       m_Width: 72
       m_Height: 72
       m_Kind: 0
       m_SubKind: 
     - m_Textures:
-      - {fileID: 2800000, guid: a6936c9ba2b812e4db9383603a820605, type: 3}
+      - {fileID: 0}
       m_Width: 48
       m_Height: 48
       m_Kind: 0
       m_SubKind: 
     - m_Textures:
-      - {fileID: 2800000, guid: a6936c9ba2b812e4db9383603a820605, type: 3}
+      - {fileID: 0}
       m_Width: 36
       m_Height: 36
       m_Kind: 0
       m_SubKind: 
     - m_Textures:
-      - {fileID: 2800000, guid: a6936c9ba2b812e4db9383603a820605, type: 3}
+      - {fileID: 0}
       m_Width: 192
       m_Height: 192
       m_Kind: 1
       m_SubKind: 
     - m_Textures:
-      - {fileID: 2800000, guid: a6936c9ba2b812e4db9383603a820605, type: 3}
+      - {fileID: 0}
       m_Width: 144
       m_Height: 144
       m_Kind: 1
       m_SubKind: 
     - m_Textures:
-      - {fileID: 2800000, guid: a6936c9ba2b812e4db9383603a820605, type: 3}
+      - {fileID: 0}
       m_Width: 96
       m_Height: 96
       m_Kind: 1
       m_SubKind: 
     - m_Textures:
-      - {fileID: 2800000, guid: a6936c9ba2b812e4db9383603a820605, type: 3}
+      - {fileID: 0}
       m_Width: 72
       m_Height: 72
       m_Kind: 1
       m_SubKind: 
     - m_Textures:
-      - {fileID: 2800000, guid: a6936c9ba2b812e4db9383603a820605, type: 3}
+      - {fileID: 0}
       m_Width: 48
       m_Height: 48
       m_Kind: 1
       m_SubKind: 
     - m_Textures:
-      - {fileID: 2800000, guid: a6936c9ba2b812e4db9383603a820605, type: 3}
+      - {fileID: 0}
       m_Width: 36
       m_Height: 36
       m_Kind: 1
       m_SubKind: 
     - m_Textures:
-      - {fileID: 2800000, guid: a6936c9ba2b812e4db9383603a820605, type: 3}
-      - {fileID: 2800000, guid: a6936c9ba2b812e4db9383603a820605, type: 3}
+      - {fileID: 2800000, guid: c5c455d3c57317a45af79d25173fc07d, type: 3}
+      - {fileID: 2800000, guid: c5c455d3c57317a45af79d25173fc07d, type: 3}
       m_Width: 432
       m_Height: 432
       m_Kind: 2
       m_SubKind: 
     - m_Textures:
-      - {fileID: 2800000, guid: a6936c9ba2b812e4db9383603a820605, type: 3}
-      - {fileID: 2800000, guid: a6936c9ba2b812e4db9383603a820605, type: 3}
+      - {fileID: 2800000, guid: c5c455d3c57317a45af79d25173fc07d, type: 3}
+      - {fileID: 2800000, guid: c5c455d3c57317a45af79d25173fc07d, type: 3}
       m_Width: 324
       m_Height: 324
       m_Kind: 2
       m_SubKind: 
     - m_Textures:
-      - {fileID: 2800000, guid: a6936c9ba2b812e4db9383603a820605, type: 3}
-      - {fileID: 2800000, guid: a6936c9ba2b812e4db9383603a820605, type: 3}
+      - {fileID: 2800000, guid: c5c455d3c57317a45af79d25173fc07d, type: 3}
+      - {fileID: 2800000, guid: c5c455d3c57317a45af79d25173fc07d, type: 3}
       m_Width: 216
       m_Height: 216
       m_Kind: 2
       m_SubKind: 
     - m_Textures:
-      - {fileID: 2800000, guid: a6936c9ba2b812e4db9383603a820605, type: 3}
-      - {fileID: 2800000, guid: a6936c9ba2b812e4db9383603a820605, type: 3}
+      - {fileID: 2800000, guid: c5c455d3c57317a45af79d25173fc07d, type: 3}
+      - {fileID: 2800000, guid: c5c455d3c57317a45af79d25173fc07d, type: 3}
       m_Width: 162
       m_Height: 162
       m_Kind: 2
       m_SubKind: 
     - m_Textures:
-      - {fileID: 2800000, guid: a6936c9ba2b812e4db9383603a820605, type: 3}
-      - {fileID: 2800000, guid: a6936c9ba2b812e4db9383603a820605, type: 3}
+      - {fileID: 2800000, guid: c5c455d3c57317a45af79d25173fc07d, type: 3}
+      - {fileID: 2800000, guid: c5c455d3c57317a45af79d25173fc07d, type: 3}
       m_Width: 108
       m_Height: 108
       m_Kind: 2
       m_SubKind: 
     - m_Textures:
-      - {fileID: 2800000, guid: a6936c9ba2b812e4db9383603a820605, type: 3}
-      - {fileID: 2800000, guid: a6936c9ba2b812e4db9383603a820605, type: 3}
+      - {fileID: 2800000, guid: c5c455d3c57317a45af79d25173fc07d, type: 3}
+      - {fileID: 2800000, guid: c5c455d3c57317a45af79d25173fc07d, type: 3}
       m_Width: 81
       m_Height: 81
       m_Kind: 2
@@ -698,25 +699,31 @@ PlayerSettings:
   m_BuildTargetGroupLightmapEncodingQuality:
   - serializedVersion: 2
     m_BuildTarget: iOS
-    m_EncodingQuality: 0
+    m_EncodingQuality: 2
   - serializedVersion: 2
     m_BuildTarget: Android
-    m_EncodingQuality: 0
+    m_EncodingQuality: 2
   - serializedVersion: 2
     m_BuildTarget: VisionOS
+    m_EncodingQuality: 2
+  - serializedVersion: 2
+    m_BuildTarget: tvOS
     m_EncodingQuality: 2
   m_BuildTargetGroupHDRCubemapEncodingQuality:
   - serializedVersion: 2
     m_BuildTarget: iOS
-    m_EncodingQuality: 0
+    m_EncodingQuality: 2
   - serializedVersion: 2
     m_BuildTarget: Android
-    m_EncodingQuality: 0
+    m_EncodingQuality: 2
   - serializedVersion: 2
     m_BuildTarget: WebGL
     m_EncodingQuality: 2
   - serializedVersion: 2
     m_BuildTarget: VisionOS
+    m_EncodingQuality: 2
+  - serializedVersion: 2
+    m_BuildTarget: tvOS
     m_EncodingQuality: 2
   m_BuildTargetGroupLightmapSettings: []
   m_BuildTargetGroupLoadStoreDebugModeSettings: []
