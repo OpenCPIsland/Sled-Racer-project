@@ -93,7 +93,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 741059ccc3809d78f9c7982a8e4ece73,
+  m_LightingDataAsset: {fileID: 112000000, guid: f714371cf3578ca489a9117e89020cb8,
     type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: dfbcd4c44d4c126428727ab7ba8fd8f8,
     type: 2}
@@ -868,7 +868,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: c3b3135956074dca95bab93fb6a83f77, type: 3}
+    m_Font: {fileID: 12800000, guid: 8c30feacbc657ed46a957733cca28910, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1

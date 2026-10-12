@@ -40,7 +40,7 @@ namespace Disney.ClubPenguin.SledRacer
 			ignoreToggleEvents = true;
 			InitAudioToggles();
 			ignoreToggleEvents = false;
-			VersionText.text = "1.3";
+			VersionText.text = "1.4";
 			HardwareBackButtonDispatcher.SetTargetClickHandler(BackButton);
 			eventDataService.OnUIEvent += UIEventHandler;
 			SetLoginButtonStates(playerDataService.IsPlayerLoggedIn());
