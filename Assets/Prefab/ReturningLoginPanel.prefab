@@ -2832,7 +2832,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AppID: CPMCAPP
   AppVersion: 1.6
-  LoginClickedAudioClip: {fileID: 8300000, guid: 02c13338cdd04bcb942675d77b498f07,
+  LoginClickedAudioClip: {fileID: 8300000, guid: d4f9859540764ecc80260be74d46773b,
     type: 3}
   ErrorPopupAudioClip: {fileID: 8300000, guid: da9178974649481db3be2a8648c3ccd8, type: 3}
   SelectForgotPasswordAudioClip: {fileID: 8300000, guid: 4ddac8ffb2ad49338e5210a8f8c6fa4a,

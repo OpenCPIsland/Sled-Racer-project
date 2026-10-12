@@ -4201,7 +4201,7 @@ MonoBehaviour:
   GaryImage: {fileID: 1791169579659014306}
   BackButton: {fileID: 1791169581554839836}
   BackButtonSound: {fileID: 8300000, guid: 3dac149e2f8047cb841802c665e4b33a, type: 3}
-  BuyNowButtonSound: {fileID: 8300000, guid: b66227c9164347908dccb27ef2e1de81, type: 3}
+  BuyNowButtonSound: {fileID: 8300000, guid: d4f9859540764ecc80260be74d46773b, type: 3}
   PlayerID: 0
 --- !u!114 &1791169581554839887
 MonoBehaviour:
