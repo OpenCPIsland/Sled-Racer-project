@@ -497,9 +497,9 @@ Avatar:
     3410453666: penguin:skel
     4089790662: penguin:skel/penguin:tube_trans_jnt
     850045921: penguin:geo/penguin:innertube
+    3250988206: penguin:skel/penguin:back_jnt/penguin:arm_base_jnt/penguin:head_jnt/penguin:head_stretch_jnt/penguin:l_strap_upp_jnt
     2720885486: penguin:skel/penguin:back_jnt/penguin:arm_base_jnt/penguin:scarf_upp_jnt/penguin:scarf_low_jnt/penguin:scarf_low_eff_jnt
     3003566144: penguin:skel/penguin:back_jnt/penguin:arm_base_jnt/penguin:r_clav_jnt
-    3250988206: penguin:skel/penguin:back_jnt/penguin:arm_base_jnt/penguin:head_jnt/penguin:head_stretch_jnt/penguin:l_strap_upp_jnt
     3380901750: penguin:skel/penguin:r_foot_jnt/penguin:r_toe_jnt/penguin:r_toe_eff_jnt
     2136504784: penguin:skel/penguin:back_jnt/penguin:arm_base_jnt/penguin:r_clav_jnt/penguin:r_shoulder_jnt/penguin:r_arm_jnt/penguin:r_forearm_jnt/penguin:r_hand_jnt/penguin:r_hand_eff_jnt
     1236784328: penguin:skel/penguin:back_jnt/penguin:arm_base_jnt/penguin:head_jnt/penguin:head_stretch_jnt/penguin:l_strap_upp_jnt/penguin:l_strap_mid_jnt/penguin:l_strap_low_jnt/penguin:l_strap_eff_jnt
@@ -513,8 +513,8 @@ Avatar:
     934697033: penguin:skel/penguin:back_jnt/penguin:arm_base_jnt/penguin:r_clav_jnt/penguin:r_shoulder_jnt
     1469723221: penguin:skel/penguin:back_jnt/penguin:arm_base_jnt/penguin:l_clav_jnt/penguin:l_shoulder_jnt/penguin:l_arm_jnt
     2642464858: penguin:skel/penguin:back_jnt/penguin:arm_base_jnt/penguin:head_jnt/penguin:beak_jnt/penguin:beak_eff
-    1286869823: penguin:skel/penguin:back_jnt/penguin:arm_base_jnt/penguin:head_jnt/penguin:head_stretch_jnt
     3179497513: penguin:skel/penguin:back_jnt/penguin:arm_base_jnt/penguin:head_jnt/penguin:head_stretch_jnt/penguin:l_strap_upp_jnt/penguin:l_strap_mid_jnt
+    1286869823: penguin:skel/penguin:back_jnt/penguin:arm_base_jnt/penguin:head_jnt/penguin:head_stretch_jnt
     1013422688: penguin:skel/penguin:back_jnt/penguin:arm_base_jnt/penguin:r_clav_jnt/penguin:r_shoulder_jnt/penguin:r_arm_jnt/penguin:r_forearm_jnt/penguin:r_hand_jnt
     366349762: penguin:skel/penguin:back_jnt/penguin:arm_base_jnt/penguin:head_jnt/penguin:head_stretch_jnt/penguin:r_strap_upp_jnt/penguin:r_strap_low_jnt
     401285097: penguin:skel/penguin:r_foot_jnt

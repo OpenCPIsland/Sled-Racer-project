@@ -878,12 +878,12 @@ Avatar:
     2096029920: penguin:Penguin/penguin:ctrl/penguin:top_ctrl/penguin:main_ctrl/penguin:COG_ctrl/penguin:chest_ctrl/penguin:head_ctrl/penguin:head_stretch_ctrl/penguin:l_strap_upp_group/penguin:l_strap_upp_ctrl/penguin:l_strap_mid_group/penguin:l_strap_mid_ctrl/penguin:l_strap_low_group
     895325480: penguin:Penguin/penguin:skel/penguin:back_jnt/penguin:arm_base_jnt/penguin:l_clav_jnt/penguin:l_shoulder_jnt/penguin:l_arm_jnt
     1149018731: penguin:Penguin/penguin:ctrl/penguin:top_ctrl/penguin:main_ctrl/penguin:COG_ctrl/penguin:chest_ctrl/penguin:r_shoulder_group/penguin:r_shoulder_ctrl/penguin:r_arm_group/penguin:r_arm_ctrl
-    3695083498: penguin:Penguin/penguin:geo/penguin:penguin_mesh
     4026339153: penguin:Penguin/penguin:ctrl
+    3695083498: penguin:Penguin/penguin:geo/penguin:penguin_mesh
     612328265: penguin:Penguin/penguin:skel/penguin:back_jnt/penguin:arm_base_jnt/penguin:head_jnt/penguin:beak_jnt/penguin:beak_eff
     347386054: penguin:Penguin/penguin:skel/penguin:back_jnt/penguin:arm_base_jnt/penguin:head_jnt/penguin:head_stretch_jnt/penguin:l_strap_upp_jnt
-    3181721596: penguin:Penguin/penguin:skel/penguin:back_jnt/penguin:arm_base_jnt/penguin:head_jnt/penguin:head_stretch_jnt/penguin:r_strap_upp_jnt
     3716782938: penguin:Penguin/penguin:ctrl/penguin:top_ctrl/penguin:main_ctrl/penguin:COG_ctrl/penguin:chest_ctrl/penguin:r_shoulder_group/penguin:r_shoulder_ctrl/penguin:r_arm_group/penguin:r_arm_ctrl/penguin:r_elbow_group/penguin:r_elbow_ctrl
+    3181721596: penguin:Penguin/penguin:skel/penguin:back_jnt/penguin:arm_base_jnt/penguin:head_jnt/penguin:head_stretch_jnt/penguin:r_strap_upp_jnt
     3826640940: penguin:Penguin
     740399068: penguin:Penguin/penguin:ctrl/penguin:top_ctrl/penguin:main_ctrl/penguin:r_foot_group
     2529692721: penguin:Penguin/penguin:ctrl/penguin:top_ctrl/penguin:main_ctrl/penguin:COG_ctrl/penguin:chest_ctrl/penguin:head_ctrl/penguin:head_stretch_ctrl/penguin:r_strap_upp_group/penguin:r_strap_upp_ctrl/penguin:r_strap_low_group

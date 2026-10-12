@@ -266,7 +266,7 @@ Avatar:
         m_X: []
     m_RootMotionSkeletonIndexArray: 
   m_TOS:
-    3868686894: fluffy:skel/fluffy:base_jnt/fluffy:neck_jnt/fluffy:jaw_jnt
+    2326056245: fluffy:skel/fluffy:base_jnt/fluffy:l_upp_arm_jnt/fluffy:l_low_arm_jnt/fluffy:joint8
     4156989378: fluffy:skel/fluffy:rock_base_jnt/fluffy:rock_top_jnt
     4178909393: fluffy:skel/fluffy:base_jnt/fluffy:neck_jnt/fluffy:tongue_base_jnt
     3458976790: fluffy:skel/fluffy:rock_base_jnt/fluffy:rock_02
@@ -286,7 +286,7 @@ Avatar:
     234380517: fluffy:skel/fluffy:base_jnt/fluffy:neck_jnt/fluffy:tongue_base_jnt/fluffy:tongue_tip_jnt/fluffy:tongue_eff_jnt
     1461886380: fluffy:skel/fluffy:rock_base_jnt/fluffy:rock_01
     3024242398: fluffy:skel/fluffy:base_jnt/fluffy:l_upp_arm_jnt
-    2326056245: fluffy:skel/fluffy:base_jnt/fluffy:l_upp_arm_jnt/fluffy:l_low_arm_jnt/fluffy:joint8
+    3868686894: fluffy:skel/fluffy:base_jnt/fluffy:neck_jnt/fluffy:jaw_jnt
   m_HumanDescription:
     serializedVersion: 3
     m_Human: []

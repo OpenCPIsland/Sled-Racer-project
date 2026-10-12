@@ -474,7 +474,7 @@ Avatar:
         m_X: []
     m_RootMotionSkeletonIndexArray: 
   m_TOS:
-    4211906949: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Joints/whoopeeCushion:middleWC_Jnt_A/whoopeeCushion:backWC_Jnt_A
+    3466452213: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Joints/whoopeeCushion:middleWC_Jnt_A/whoopeeCushion:frontWC_Jnt_A/whoopeeCushion:frontWC_Jnt_B/whoopeeCushion:frontWC_Jnt_C
     3985418217: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Joints/whoopeeCushion:middleWC_Jnt_A/whoopeeCushion:frontWC_Jnt_A/whoopeeCushion:frontWC_Jnt_B/whoopeeCushion:frontWC_Jnt_C/whoopeeCushion:tipWC_Jnt_A/whoopeeCushion:tipWC_Jnt_B
     2631439563: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Ctrl/whoopeeCushion:tipWC_Ctrl_A_ZERO/whoopeeCushion:tipWC_Ctrl_A/whoopeeCushion:tipWC_Ctrl_B_ZERO/whoopeeCushion:tipWC_Ctrl_B/whoopeeCushion:tipWC_Ctrl_C_ZERO
     2539175158: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Ctrl/whoopeeCushion:WCMain_Ctrl_ZERO/whoopeeCushion:WCMain_Ctrl
@@ -518,9 +518,9 @@ Avatar:
     447129826: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Joints/whoopeeCushion:middleWC_Jnt_A/whoopeeCushion:leftWC_Jnt_A/whoopeeCushion:leftWC_Jnt_B/whoopeeCushion:leftWC_Jnt_C
     3401144401: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Joints/whoopeeCushion:middleWC_Jnt_A/whoopeeCushion:frontWC_Jnt_A/whoopeeCushion:frontWC_Jnt_B/whoopeeCushion:frontWC_Jnt_C/whoopeeCushion:tipWC_Jnt_A/whoopeeCushion:tipWC_Jnt_B/whoopeeCushion:tipWC_Jnt_C/whoopeeCushion:tipWC_endJnt_C
     4189546815: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Ctrl/whoopeeCushion:WCMain_Ctrl_ZERO/whoopeeCushion:WCMain_Ctrl/whoopeeCushion:WCRot_Ctrl_ZERO/whoopeeCushion:WCRot_Ctrl/whoopeeCushion:WCTop_Ctrl_ZERO
+    4211906949: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Joints/whoopeeCushion:middleWC_Jnt_A/whoopeeCushion:backWC_Jnt_A
     3849199388: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Joints/whoopeeCushion:middleWC_Jnt_A/whoopeeCushion:frontWC_Jnt_A/whoopeeCushion:frontWC_Jnt_B/whoopeeCushion:frontWC_Jnt_C/whoopeeCushion:tipWC_Follow_A
     384135624: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Ctrl/whoopeeCushion:tipWC_Ctrl_A_ZERO/whoopeeCushion:tipWC_Ctrl_A/whoopeeCushion:tipWC_Ctrl_B_ZERO/whoopeeCushion:tipWC_Ctrl_B
-    3466452213: whoopeeCushion:WhoopeeCushion/whoopeeCushion:Joints/whoopeeCushion:middleWC_Jnt_A/whoopeeCushion:frontWC_Jnt_A/whoopeeCushion:frontWC_Jnt_B/whoopeeCushion:frontWC_Jnt_C
   m_HumanDescription:
     serializedVersion: 3
     m_Human: []
