@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
-  m_Name: cpBurbankSmallBold SDF
+  m_Name: BurbankSmall-Bold SDF
   m_EditorClassIdentifier: 
   m_Version: 1.1.0
   m_FaceInfo:
@@ -36,10 +36,10 @@ MonoBehaviour:
     m_StrikethroughThickness: 5
     m_TabWidth: 26
   m_Material: {fileID: 3046190854761860811}
-  m_SourceFontFileGUID: 8c30feacbc657ed46a957733cca28910
+  m_SourceFontFileGUID: e638e78c5e994a0799cb77db3885c128
   m_CreationSettings:
     sourceFontFileName: 
-    sourceFontFileGUID: 8c30feacbc657ed46a957733cca28910
+    sourceFontFileGUID: e638e78c5e994a0799cb77db3885c128
     faceIndex: 0
     pointSizeSamplingMode: 0
     pointSize: 100
